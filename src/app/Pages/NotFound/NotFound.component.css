@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+.notFound {
+  background-color: #040205;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  height: 100dvh;
+
+  .notFound-imgWrapper {
+    max-width: 20rem;
+    position: relative;
+    height: 20rem;
+    aspect-ratio: 1/1;
+    margin: auto;
+    background-color: #ffffff;
+  }
+
+  .notFound-img {
+    object-fit: cover;
+    user-select: none;
+    width: 100%;
+  }
+
+  .notFound-title {
+    font-weight: 900;
+    font-size: 1.25rem;
+    color: #ffffff;
+  }
+
+  .notFound-description {
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .notFound-urlData {
+    display: block;
+    padding-top: 1rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+    text-decoration: underline;
+    cursor: not-allowed;
+  }
+}
