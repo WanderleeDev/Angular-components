@@ -6,6 +6,7 @@
     "paths": {
       "@pages/*": ["app/pages/*"],
       "@shared/*": ["app/shared/*"],
+      "@components/*": ["app/components/*"],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

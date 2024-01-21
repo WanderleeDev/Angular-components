@@ -1,0 +1,29 @@
+:host {
+  display: contents;
+}
+
+.btn-gradient {
+  color: #303030;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(to right, #f51dc1, #2dfafa);
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover,
+  &:focus {
+    /* var(--negro, #333) */
+    outline: solid .1rem #333;
+    outline-offset: .3rem;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

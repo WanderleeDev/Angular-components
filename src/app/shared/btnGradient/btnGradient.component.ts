@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+//  Interface
+import { ICustomStyles } from 'app/interfaces/ICustomStyles.interface';
 
 @Component({
   selector: 'app-btn-gradient',
@@ -10,37 +12,18 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `
     <button
       class="btn-gradient"
+      [ngStyle]="customStyles"
       type="button"
       title="to home"
-      aria-label="to home"
+      [attr.aria-label]="text"
     >
-      Back to Home
+      {{ text ?? 'Back to Home'}}
     </button>
   `,
-  styles: `
-    :host {
-      display: contents;
-    }
-
-    .btn-gradient {
-      color: #303030;
-      padding: 0.5rem 1rem;
-      margin: 1rem 0;
-
-      border-radius: 0.5rem;
-      font-weight: bold;
-      cursor: pointer;
-      background: linear-gradient(to right, #F51DC1, #2DFAFA);
-      transition: transform 0.3s ease-in-out;
-      &:hover {
-          transform: scale(1.05);
-      }
-
-      &:active {
-          transform: scale(0.95);
-      }
-    }
-  `,
+  styleUrls: ['./btnGradient.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BtnGradientComponent { }
+export class BtnGradientComponent {
+  @Input() customStyles?: ICustomStyles;
+  @Input() text?: string = 'Back to home';
+}

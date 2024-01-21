@@ -8,10 +8,12 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadComponent: () => import('./Pages/Home/Home.component')
+    title:'home',
+    loadComponent: () => import('./Pages/Home/Home.component'),
   },
   {
     path: '**',
+    title: 'not found',
     loadComponent: () => import('./Pages/NotFound/NotFound.component')
   }
 ];

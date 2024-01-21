@@ -31,7 +31,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/styles/resetPro.css",
+              "src/assets/styles/variables.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -95,7 +97,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/styles/resetPro.css",
+              "src/assets/styles/variables.css"
             ],
             "scripts": []
           }
