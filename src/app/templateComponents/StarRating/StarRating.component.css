@@ -1,0 +1,14 @@
+:host {
+  display: contents;
+}
+
+.container-stars {
+  display: inline-flex;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    color: rgb(255, 187, 0);
+  }
+}

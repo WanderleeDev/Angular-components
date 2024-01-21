@@ -1,8 +1,10 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BtnGradientComponent } from '@shared/btnGradient/btnGradient.component';
+import { WindowComponentComponent } from '@shared/windowComponent/windowComponent.component';
 //  Interfaces
 import { ICustomStyles } from 'app/interfaces/ICustomStyles.interface';
+import { StarRatingComponent } from 'app/templateComponents/StarRating/StarRating.component';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,9 @@ import { ICustomStyles } from 'app/interfaces/ICustomStyles.interface';
   imports: [
     CommonModule,
     NgOptimizedImage,
-    BtnGradientComponent
+    BtnGradientComponent,
+    StarRatingComponent,
+    WindowComponentComponent
   ],
   templateUrl: './Home.component.html',
   styleUrl: './Home.component.css',
