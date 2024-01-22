@@ -4,11 +4,24 @@
 
 .container-stars {
   display: inline-flex;
+  flex-flow: row nowrap;
+  transition: color .1s ease-in-out;
+  &:hover > svg {
+    color: rgb(252, 185, 61);
+  }
 
   svg {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
-    color: rgb(255, 187, 0);
+    transition: color .1s ease-in-out;
+    &:hover ~ svg {
+      color: currentColor;
+    }
+  }
+
+  .active-rating {
+    color: rgb(252, 185, 61);
   }
 }
+

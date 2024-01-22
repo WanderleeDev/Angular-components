@@ -1,14 +1,16 @@
 <div
   class="container-stars"
   [ngStyle]="{
-    flexDirection: ratingStarConfig?.orientation === 'horizontal' ? 'row' : 'column'
+    flexDirection: ratingStarConfig?.orientation === 'horizontal' ? 'row' : 'column',
+    pointerEvents: ratingStarConfig?.isReadonly ? 'none': 'initial',
+    color: ratingStarConfig?.backgroundColor
   }"
 >
   @for (item of arrayStars; let i = $index; track i) {
     <svg
-      [attr.aria-label]="['rate with '+ (i + 1)+ ((i+1 < 2) ? ' star' : ' stars')]"
       (click)="viewRating(i+1)"
-      [ngStyle]="customStyles"
+      [class.active-rating]="(i + 1) <= rating"
+      [attr.aria-label]="['rate with '+ (i + 1)+ ((i+1 < 2) ? ' star' : ' stars')]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 256 256"
     >

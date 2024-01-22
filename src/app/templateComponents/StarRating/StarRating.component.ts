@@ -5,7 +5,6 @@ import { ICustomStyles } from 'app/interfaces/ICustomStyles.interface';
 interface IRatingStarConfig {
   numberStars: number;
   isReadonly: boolean;
-  activeColor: string;
   backgroundColor: string;
   orientation: 'horizontal' | 'vertical';
 }
@@ -21,23 +20,20 @@ interface IRatingStarConfig {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StarRatingComponent{
+  @Input({required: true}) rating = 0;
   @Input() customStyles?: Partial<ICustomStyles>;
   @Input() ratingStarConfig?: Partial<IRatingStarConfig> = {
     numberStars: 5,
     isReadonly: false,
-    activeColor: 'rgb(255, 187, 0)',
     backgroundColor: '#dcdcdc',
     orientation: 'horizontal'
   };
   arrayStars = Array(this.ratingStarConfig?.numberStars).fill('');
-  private rating = 0;
 
   public viewRating (rating: number): void {
     if (this.ratingStarConfig?.isReadonly) return
     if (rating === this.rating) return
 
     this.rating = rating;
-    console.log(this.rating);
-
   }
 }

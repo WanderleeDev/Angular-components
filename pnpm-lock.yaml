@@ -35,6 +35,9 @@ dependencies:
   '@angular/ssr':
     specifier: ^17.0.0
     version: 17.1.0(@angular/common@17.1.0)(@angular/core@17.1.0)
+  '@fontsource-variable/quicksand':
+    specifier: ^5.0.16
+    version: 5.0.16
   express:
     specifier: ^4.18.2
     version: 4.18.2
@@ -2078,6 +2081,10 @@ packages:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
     dev: true
+
+  /@fontsource-variable/quicksand@5.0.16:
+    resolution: {integrity: sha512-I8QmSpiukev1QRNE9eimA+r7SLbYlNGi1iOZrLKdm6bXN1nSHFU98PlWIK1K/VRjR2MqNeStaVaIzwi4pnuDOA==}
+    dev: false
 
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}

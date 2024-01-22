@@ -27,7 +27,6 @@ import { CursorCustomComponent } from '@shared/cursorCustom/cursorCustom.compone
     :host {
       display: contents;
     }
-
     main {
       min-height: 100dvh;
     }
