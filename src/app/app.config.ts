@@ -2,6 +2,7 @@ import { ApplicationConfig } from '@angular/core';
 import { ViewTransitionsFeature, provideRouter, withViewTransitions } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 const viewTransition: ViewTransitionsFeature = withViewTransitions({
   skipInitialTransition: true,
@@ -12,10 +13,9 @@ const viewTransition: ViewTransitionsFeature = withViewTransitions({
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(
-      routes,
-      viewTransition
-    ),
-    provideClientHydration()
-  ]
+    provideRouter(routes, viewTransition),
+    provideClientHydration(),
+    provideAnimations(),
+    provideAnimations()
+]
 };

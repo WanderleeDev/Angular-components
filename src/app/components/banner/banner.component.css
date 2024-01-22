@@ -1,0 +1,30 @@
+:host {
+  display: contents;
+}
+
+.banner {
+  min-height: 100dvh;
+}
+
+.logo {
+  position: relative;
+  width: min(100%, 90rem);
+  height: 40rem;
+  margin-inline: auto;
+
+  .logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.btnContainer {
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  margin-inline: auto;
+  user-select: none;
+}
