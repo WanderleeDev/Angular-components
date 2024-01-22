@@ -9,7 +9,12 @@ export const routes: Routes = [
   {
     path: 'home',
     title:'home',
-    loadComponent: () => import('./Pages/Home/Home.component'),
+    loadComponent: () => import('./Pages/Home/Home.component')
+  },
+  {
+    path: 'components',
+    title: 'components',
+    loadComponent: () => import('./Pages/Components/Components.component'),
   },
   {
     path: '**',

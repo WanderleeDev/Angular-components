@@ -1,5 +1,6 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { BtnGradientComponent } from '@shared/btnGradient/btnGradient.component';
 import { WindowComponentComponent } from '@shared/windowComponent/windowComponent.component';
 //  Interfaces
@@ -14,7 +15,8 @@ import { StarRatingComponent } from 'app/templateComponents/StarRating/StarRatin
     NgOptimizedImage,
     BtnGradientComponent,
     StarRatingComponent,
-    WindowComponentComponent
+    WindowComponentComponent,
+    RouterLink
   ],
   templateUrl: './Home.component.html',
   styleUrl: './Home.component.css',
