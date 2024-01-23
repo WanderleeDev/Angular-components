@@ -1,7 +1,13 @@
 <section class="components">
-  <app-sidenav >
-    <app-window-component nameComponent="test">
-      <app-star-rating [rating]="5"/>
-    </app-window-component>
-  </app-sidenav>
+  @if (componentsData | async; as data) {
+    <app-sidenav [dataSidenav]="data">
+      <app-grid-container>
+        @for (item of data; track item.title) {
+          <app-animated-card [cardData]="item" [cardColor]="generarColorClaroHex()"/>
+        }
+      </app-grid-container>
+    </app-sidenav>
+  }@else {
+    <p>Loading components...</p>
+  }
 </section>

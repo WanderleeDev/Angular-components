@@ -21,7 +21,7 @@ import { CursorCustomComponent } from '@shared/cursorCustom/cursorCustom.compone
       <app-cursor-custom />
       <router-outlet />
     </main>
-    <app-footer />
+    <!-- <app-footer /> -->
   `,
     styles: `
     :host {

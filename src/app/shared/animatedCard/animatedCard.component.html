@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-content">
+    <a
+      [routerLink]="cardData.title"
+      class="card-link"
+    >
+      <div [ngStyle]="{'background-color': cardColor}" class="card-background"></div>
+
+      <h2 class="card-title">
+        {{cardData.title}}
+      </h2>
+
+      <div class="card-extraData">
+        Available:
+        <span class="card-number" >
+          {{cardData.numberComponents}} components
+        </span>
+      </div>
+    </a>
+  </div>
+</div>

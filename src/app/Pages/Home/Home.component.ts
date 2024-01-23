@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BannerComponent } from '@components/banner/banner.component';
 
@@ -7,7 +7,6 @@ import { BannerComponent } from '@components/banner/banner.component';
   standalone: true,
   imports: [
     CommonModule,
-    NgOptimizedImage,
     BannerComponent
   ],
   templateUrl: './Home.component.html',

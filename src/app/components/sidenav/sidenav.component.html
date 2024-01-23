@@ -1,14 +1,20 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar
     [ngStyle]="{
-      background: 'linear-gradient(60deg, rgba(242, 7, 15, 0.6), rgba(120, 2, 255, 0.6))'
+      background:
+        'linear-gradient(60deg, rgba(242, 7, 15, 0.6), rgba(120, 2, 255, 0.6))'
     }"
     color="primary"
-    class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
+    class="example-toolbar"
+  >
+    <button
+      aria-label="sidebar button toggle"
+      mat-icon-button
+      (click)="snav.toggle()"
+    >
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="example-app-name">Responsive App</h1>
+    <h1 class="example-app-name">Angular components</h1>
   </mat-toolbar>
 
   <mat-sidenav-container
@@ -17,7 +23,7 @@
   >
     <mat-sidenav
       [style]="{
-        'min-width': '10rem'
+        'min-width': '10rem',
       }"
       #snav
       [mode]="mobileQuery.matches ? 'over' : 'side'"
@@ -25,14 +31,18 @@
       fixedTopGap="56"
     >
       <mat-nav-list>
-        @for (nav of fillerNav; track nav) {
-          <a
-            mat-list-item
-            [routerLink]="nav"
-            [attr.aria-label]="'go to ' + nav + ' components'"
-          >
-            {{ nav }}
-          </a>
+        @for (nav of dataSidenav; track nav) {
+        <a
+          routerLinkActive="active-link"
+          ngClass="mat-nav-link"
+          class="mat-nav-link"
+          mat-list-item
+          [routerLink]="nav.title"
+          [attr.aria-label]="'go to ' + nav.title + ' components'"
+        >
+          {{ nav.title }}
+        </a>
+        <span class="divider"></span>
         }
       </mat-nav-list>
     </mat-sidenav>

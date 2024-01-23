@@ -1,8 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+//  Components
 import { SidenavComponent } from '@components/sidenav/sidenav.component';
-import { WindowComponentComponent } from '@shared/windowComponent/windowComponent.component';
-import { StarRatingComponent } from 'app/templateComponents/StarRating/StarRating.component';
+import { AnimatedCardComponent } from '@shared/animatedCard/animatedCard.component';
+import { GridContainerComponent } from '@shared/gridContainer/gridContainer.component';
+//  Services
+import { ComponentsDataService } from 'app/services/componentsData/ComponentsData.service';
 
 @Component({
   selector: 'app-components',
@@ -10,11 +13,24 @@ import { StarRatingComponent } from 'app/templateComponents/StarRating/StarRatin
   imports: [
     CommonModule,
     SidenavComponent,
-    WindowComponentComponent,
-    StarRatingComponent
+    AnimatedCardComponent,
+    GridContainerComponent
   ],
   templateUrl: './Components.component.html',
   styleUrl: './Components.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class ComponentsComponent { }
+export default class ComponentsComponent {
+  private componentsDataSvc = inject(ComponentsDataService);
+  componentsData = this.componentsDataSvc.getDataComponents$();
+
+  generarColorClaroHex() {
+    // Generar componente de color en el rango de 180 a 255
+    const componente = () => Math.floor(Math.random() * 76) + 180;
+
+    // Convertir a formato hexadecimal
+    const colorHex = `#${componente().toString(16)}${componente().toString(16)}${componente().toString(16)}`;
+
+    return colorHex;
+  }
+}
