@@ -1,0 +1,58 @@
+:host {
+  display: contents;
+}
+
+.ScrollCarousel {
+  /* Stretch it out, so that we create room for the horizontal scroll animation */
+  height: 500vh;
+  overflow: visible; /* To make position sticky work … */
+  background-color: #111111;
+  view-timeline-name: --scroll-carousel;
+  view-timeline-axis: block;
+}
+
+.ScrollCarousel-wrapSticky {
+  /* Stick to Top */
+  height: 100vh;
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.ScrollCarousel-wrap {
+  height: 100vh;
+  width: 250vmax;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 8rem;
+  align-items: center;
+  /* Hook animation */
+  will-change: transform;
+  animation: linear move forwards;
+  /* Link animation to view-timeline */
+  animation-timeline: --scroll-carousel;
+  animation-range: contain 0% contain 100%;
+}
+
+.ScrollCarousel-image {
+  height: 80vh;
+  width: 50dvw;
+  object-fit: cover;
+}
+
+.ScrollCarousel-title {
+  width: min(100dvw, 50rem);
+  font-size: 2rem;
+  text-wrap: pretty;
+}
+
+
+@keyframes move {
+	to {
+		/* Move horizontally so that right edge is aligned against the viewport */
+		transform: translateX(calc(-100% + 100vw));
+		left: 0px;
+	}
+}

@@ -1,21 +1,25 @@
 import { ApplicationConfig } from '@angular/core';
-import { ViewTransitionsFeature, provideRouter, withViewTransitions } from '@angular/router';
+import { InMemoryScrollingFeature, provideRouter, withInMemoryScrolling, withViewTransitions } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
-const viewTransition: ViewTransitionsFeature = withViewTransitions({
-  skipInitialTransition: true,
-  onViewTransitionCreated(transition) {
-    console.log(transition);
-  }
-})
+const viewTransition = withViewTransitions({
+  skipInitialTransition: true
+});
+
+const memoryScrolling: InMemoryScrollingFeature = withInMemoryScrolling({
+  scrollPositionRestoration: 'enabled'
+});
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, viewTransition),
+    provideRouter(
+      routes,
+      memoryScrolling,
+      viewTransition
+    ),
     provideClientHydration(),
     provideAnimations(),
-    provideAnimations()
 ]
 };

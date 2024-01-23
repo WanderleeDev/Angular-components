@@ -1,0 +1,30 @@
+:host {
+  display: contents;
+}
+
+.FontsSection {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 50px 10vw;
+  margin: auto;
+  place-items: center;
+}
+
+.FontsSection-image {
+  height: 80dvh;
+  width: 50dvw;
+  object-fit: cover;
+}
+
+.FontsSection-credit {
+  font-size: 2rem;
+  width: min(25rem, 400px);
+}
+
+.FontsSection-creditLink {
+  /* Estilos para los enlaces dentro del bloque de créditos en la sección de fuentes */
+}
