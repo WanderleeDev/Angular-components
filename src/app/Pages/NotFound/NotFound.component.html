@@ -13,7 +13,7 @@
   <p class="notFound-description">
     The route you want to access does not exist:
     <span class="notFound-urlData">
-      {{ url }}
+      {{ url() || 'empty' }}
     </span>
   </p>
   <app-btn-gradient routerLink="" />

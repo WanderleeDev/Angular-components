@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { IDataLink } from 'app/interfaces/IDataCard.interface';
+import { INavList } from 'app/interfaces/IDataCard.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComponentsDataService {
-  private dataComponents$ = new BehaviorSubject<IDataLink[]>(
+  private dataComponents$ = new BehaviorSubject<INavList[]>(
     [
       {
         title: 'navbars',
@@ -46,7 +46,7 @@ export class ComponentsDataService {
     ]
   );
 
-  public getDataComponents$(): Observable<IDataLink[]> {
+  public getDataComponents$(): Observable<INavList[]> {
     return this.dataComponents$.asObservable();
   }
 }

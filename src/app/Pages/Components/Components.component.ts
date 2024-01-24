@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 //  Components
 import { SidenavComponent } from '@components/sidenav/sidenav.component';
-import { AnimatedCardComponent } from '@shared/Ui/animatedCard/animatedCard.component';
-import { GridContainerComponent } from '@shared/Ui/gridContainer/gridContainer.component';
 //  Services
 import { ComponentsDataService } from 'app/services/componentsData/ComponentsData.service';
 
@@ -13,24 +12,21 @@ import { ComponentsDataService } from 'app/services/componentsData/ComponentsDat
   imports: [
     CommonModule,
     SidenavComponent,
-    AnimatedCardComponent,
-    GridContainerComponent
+    RouterOutlet
   ],
   templateUrl: './Components.component.html',
-  styleUrl: './Components.component.css',
+  styles: `
+    :host {
+      display: contents;
+    }
+
+    .components {
+      min-height: 100dvh;
+    }
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class ComponentsComponent {
   private componentsDataSvc = inject(ComponentsDataService);
   componentsData = this.componentsDataSvc.getDataComponents$();
-
-  generarColorClaroHex() {
-    // Generar componente de color en el rango de 180 a 255
-    const componente = () => Math.floor(Math.random() * 76) + 180;
-
-    // Convertir a formato hexadecimal
-    const colorHex = `#${componente().toString(16)}${componente().toString(16)}${componente().toString(16)}`;
-
-    return colorHex;
-  }
 }

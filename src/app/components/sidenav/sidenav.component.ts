@@ -8,7 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { IDataLink } from 'app/interfaces/IDataCard.interface';
+import { INavList } from 'app/interfaces/IDataCard.interface';
 
 @Component({
   selector: 'app-sidenav',
@@ -28,7 +28,7 @@ import { IDataLink } from 'app/interfaces/IDataCard.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidenavComponent {
-  @Input({required: true}) dataSidenav: IDataLink[] = [];
+  @Input({required: true}) navList: INavList[] = [];
   private readonly media = inject(MediaMatcher);
   mobileQuery: MediaQueryList = this.media.matchMedia('(max-width: 600px)');
 }

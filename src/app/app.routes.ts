@@ -15,6 +15,17 @@ export const routes: Routes = [
     path: 'components',
     title: 'components',
     loadComponent: () => import('./Pages/Components/Components.component'),
+    children: [
+      {
+        path: '',
+        title:'components | catalog',
+        loadComponent: () => import('./Pages/Components/Pages/EntryPage/EntryPage.component')
+      },
+      {
+        path: 'models/:id',
+        loadComponent: () => import('./Pages/Components/Pages/Models/Models.component')
+      }
+    ]
   },
   {
     path: '**',
@@ -22,3 +33,4 @@ export const routes: Routes = [
     loadComponent: () => import('./Pages/NotFound/NotFound.component')
   }
 ];
+

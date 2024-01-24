@@ -31,13 +31,13 @@
       fixedTopGap="56"
     >
       <mat-nav-list>
-        @for (nav of dataSidenav; track nav) {
+        @for (nav of navList; track nav.title) {
         <a
           routerLinkActive="active-link"
           ngClass="mat-nav-link"
           class="mat-nav-link"
           mat-list-item
-          [routerLink]="nav.title"
+          [routerLink]="'models/' + nav.title"
           [attr.aria-label]="'go to ' + nav.title + ' components'"
         >
           {{ nav.title }}

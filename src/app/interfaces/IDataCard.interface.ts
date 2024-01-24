@@ -4,6 +4,6 @@ export interface IDataCard {
   numberComponents: number;
 }
 
-export interface IDataLink extends IDataCard {
+export interface INavList extends IDataCard {
   icon: string;
 }

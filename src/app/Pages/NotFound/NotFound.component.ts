@@ -1,5 +1,5 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, afterNextRender, signal, afterRender, inject, ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BtnGradientComponent } from '@shared/Ui/btnGradient/btnGradient.component';
 
@@ -17,5 +17,17 @@ import { BtnGradientComponent } from '@shared/Ui/btnGradient/btnGradient.compone
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class NotFoundComponent {
-  readonly url = window.location.href;
+  private cdRef = inject(ChangeDetectorRef)
+  url = signal('');
+  constructor() {
+    afterNextRender(() => {
+      console.log(window.location.href);
+      this.url.update(() => window.location.href )
+      console.log(this.url());
+
+    })
+    afterRender(() => {
+      this.url.update(() => window.location.href )
+    })
+  }
 }

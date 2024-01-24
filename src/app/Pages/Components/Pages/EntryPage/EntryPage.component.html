@@ -1,0 +1,5 @@
+<app-grid-container>
+  @for (item of componentsData | async; track item.title) {
+  <app-animated-card [cardData]="item" [cardColor]="generarColorClaroHex()" />
+  }
+</app-grid-container>

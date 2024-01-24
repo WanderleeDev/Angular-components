@@ -4,12 +4,12 @@
 
 .starDecoration {
   position: relative;
-  .starDecoration::before {
+  &::before {
     content: "";
     display: block;
     position: absolute;
-    top: -10px;
-    left: -11px;
+    top: -4%;
+    left: -5%;
     width: 20px;
     height: 20px;
     background: url(https://static.artguru.ai/_next/static/media/star-1.c2eda227.png)
@@ -17,17 +17,37 @@
     animation: 2s linear 0s infinite normal none running star1;
   }
 
-  .starDecoration::after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
-    top: -10px;
-    right: -18px;
+    bottom: 0;
+    right: -8%;
     width: 20px;
     height: 20px;
     background: url(https://static.artguru.ai/_next/static/media/star-2.44d8486e.png)
       center center / 100% no-repeat;
     animation: 2s linear 0s infinite normal none running star2;
+  }
+
+  .starDecoration-extra {
+    display: block;
+    position: absolute;
+    width: 100%;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 1.2rem;
+      right: .6rem;
+      width: .9rem;
+      height: .9rem;
+      background: url(https://static.artguru.ai/_next/static/media/star-1.c2eda227.png)
+        center center / 100% no-repeat;
+      animation: 2s linear 0s infinite reverse star1;
+      filter: drop-shadow(1px 1px .2rem #dda844a1);
+      z-index: 10;
+    }
   }
 }
 
@@ -38,10 +58,10 @@
   }
   25%,
   75% {
-    transform: scale(0.5);
+    transform: scale(0.7);
   }
   50% {
-    transform: scale(1);
+    transform: scale(1.3);
   }
 }
 
@@ -52,9 +72,9 @@
     transform: scale(0);
   }
   50% {
-    transform: scale(0.5);
+    transform: scale(0.7);
   }
   75% {
-    transform: scale(1);
+    transform: scale(1.3);
   }
 }

@@ -7,6 +7,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [CommonModule],
   template: `
     <div class="starDecoration">
+      <div
+        aria-hidden="true" class="starDecoration-extra"
+      ></div>
       <ng-content></ng-content>
     </div>
   `,
