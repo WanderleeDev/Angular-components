@@ -1,0 +1,19 @@
+<section class="ScrollCarousel">
+  <div class="ScrollCarousel-wrapSticky">
+    <div class="ScrollCarousel-wrap">
+      <h2 class="ScrollCarousel-title">
+        Aquí encontrarás una gran variedad de recursos para mejorar tus proyectos web con Angular, desde botones y formularios hasta gráficos y animaciones. ¡Anímate a explorar, aprender y contribuir con tus propias creaciones!
+      </h2>
+    @for (img of images; track $index) {
+      <div class="ScrollCarousel-imageWrapper">
+        <img
+          class="ScrollCarousel-imageWrapper"
+          [ngSrc]="img"
+          alt="s"
+          fill
+        >
+      </div>
+    }
+    </div>
+  </div>
+</section>

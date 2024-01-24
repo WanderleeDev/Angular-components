@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from '@components/footer/footer.component';
 //  Services
 import { SeoService } from './services/seo/seo.service';
-import { CursorCustomComponent } from '@shared/cursorCustom/cursorCustom.component';
+import { CursorCustomComponent } from '@shared/Ui/cursorCustom/cursorCustom.component';
 
 @Component({
   selector: 'app-root',

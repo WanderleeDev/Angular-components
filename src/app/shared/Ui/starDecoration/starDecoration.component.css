@@ -1,0 +1,60 @@
+:host {
+  display: contents;
+}
+
+.starDecoration {
+  position: relative;
+  .starDecoration::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -11px;
+    width: 20px;
+    height: 20px;
+    background: url(https://static.artguru.ai/_next/static/media/star-1.c2eda227.png)
+      center center / 100% no-repeat;
+    animation: 2s linear 0s infinite normal none running star1;
+  }
+
+  .starDecoration::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: -18px;
+    width: 20px;
+    height: 20px;
+    background: url(https://static.artguru.ai/_next/static/media/star-2.44d8486e.png)
+      center center / 100% no-repeat;
+    animation: 2s linear 0s infinite normal none running star2;
+  }
+}
+
+@keyframes star1 {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  25%,
+  75% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes star2 {
+  0%,
+  25%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(1);
+  }
+}

@@ -1,7 +1,7 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BtnGradientComponent } from '@shared/btnGradient/btnGradient.component';
+import { BtnGradientComponent } from '@shared/Ui/btnGradient/btnGradient.component';
 
 @Component({
   selector: 'app-not-found',

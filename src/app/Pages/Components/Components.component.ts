@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 //  Components
 import { SidenavComponent } from '@components/sidenav/sidenav.component';
-import { AnimatedCardComponent } from '@shared/animatedCard/animatedCard.component';
-import { GridContainerComponent } from '@shared/gridContainer/gridContainer.component';
+import { AnimatedCardComponent } from '@shared/Ui/animatedCard/animatedCard.component';
+import { GridContainerComponent } from '@shared/Ui/gridContainer/gridContainer.component';
 //  Services
 import { ComponentsDataService } from 'app/services/componentsData/ComponentsData.service';
 

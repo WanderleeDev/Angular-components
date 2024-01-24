@@ -2,13 +2,18 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-scroll-carousel',
+  selector: 'app-loader',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  templateUrl: './scrollCarousel.component.html',
-  styleUrl: './scrollCarousel.component.css',
+  template: `
+  <div class="loader-wrapper">
+    <div class="loader"></div>,
+    <p class="loader-text">Getting Section</p>
+  </div>
+  `,
+  styleUrl: './loader.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ScrollCarouselComponent { }
+export class LoaderComponent { }

@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-loader',
+  selector: 'app-carousel-skeleton',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  template: '<div class="loader"></div>',
-  styleUrl: './loader.component.css',
+  templateUrl: './carouselSkeleton.component.html',
+  styleUrl: './carouselSkeleton.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoaderComponent { }
+export class CarouselSkeletonComponent { }

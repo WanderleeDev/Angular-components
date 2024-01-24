@@ -36,16 +36,26 @@
   animation-range: contain 0% contain 100%;
 }
 
-.ScrollCarousel-image {
+.ScrollCarousel-imageWrapper {
+  position: relative;
   height: 80vh;
   width: 50dvw;
   object-fit: cover;
+  background-color: gainsboro;
+  border-radius: .5rem;
+}
+
+.ScrollCarousel-image {
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+  border-radius: .5rem;
 }
 
 .ScrollCarousel-title {
   width: min(100dvw, 50rem);
   font-size: 2rem;
   text-wrap: pretty;
+  line-height: 1.3;
 }
 
 

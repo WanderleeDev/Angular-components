@@ -10,11 +10,13 @@
   </figure>
   <p></p>
   <div class="btnContainer">
-    <app-btn-gradient
-    routerLink="/components"
-      text="View components"
-      [customStyles]="customStyles"
-    />
+    <app-star-decoration>
+      <app-btn-gradient
+      routerLink="/components"
+        text="View components"
+        [customStyles]="customStyles"
+      />
+    </app-star-decoration>
     <app-btn-gradient
       text="More details"
       [customStyles]="customStyles"

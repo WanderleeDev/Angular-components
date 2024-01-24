@@ -2,9 +2,10 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 //  Components
-import { BtnGradientComponent } from "../../shared/btnGradient/btnGradient.component";
+import { BtnGradientComponent } from "../../shared/Ui/btnGradient/btnGradient.component";
 //  Interfaces
 import { ICustomStyles } from 'app/interfaces/ICustomStyles.interface';
+import { StarDecorationComponent } from '@shared/Ui/starDecoration/starDecoration.component';
 
 @Component({
     selector: 'app-banner',
@@ -16,6 +17,7 @@ import { ICustomStyles } from 'app/interfaces/ICustomStyles.interface';
         CommonModule,
         BtnGradientComponent,
         NgOptimizedImage,
+        StarDecorationComponent,
         RouterLink
     ]
 })

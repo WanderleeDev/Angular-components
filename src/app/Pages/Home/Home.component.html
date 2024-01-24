@@ -1,4 +1,18 @@
 <app-banner/>
-<app-presentation />
-<app-scroll-carousel />
-<app-fonts-section/>
+<app-presentation #presentation/>
+
+@defer (on viewport) {
+  <app-scroll-carousel />
+}@placeholder(minimum 500ms) {
+  <app-carousel-skeleton/>
+}@error {
+  <p>An error occurred while trying to load the page content</p>
+}
+
+@defer (on viewport) {
+  <app-fonts-section/>
+}@placeholder {
+  <p>Getting Section</p>
+}@error {
+  <p>An error occurred while trying to load the page content</p>
+}
