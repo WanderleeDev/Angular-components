@@ -18,6 +18,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     display: grid;
     max-width: var(--xl, 1280px);
     margin: 0 auto;
+    gap: 1.5rem;
     @media (width >= 350px) {
       grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
     }

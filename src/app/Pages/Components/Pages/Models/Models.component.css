@@ -1,3 +1,20 @@
 :host {
-  display: block;
+  display: contents;
+}
+
+.model {
+  max-width: var(--xl, 1280px);
+  margin-inline: auto;
+  padding: 2rem 1rem;
+  text-transform: capitalize;
+
+  .model-title {
+    font-size: var(--font-xl);
+    margin-bottom: 2rem;
+  }
+
+  .model-number {
+    font-size: var(--font-base);
+    vertical-align: top;
+  }
 }

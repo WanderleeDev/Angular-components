@@ -1,1 +1,27 @@
-{{id ?? 'empty'}}
+
+<section class="model">
+  <h2 class="model-title">
+    {{id ?? 'empty'}}
+    <span class="model-number">(15)</span>
+  </h2>
+  <app-grid-container>
+    <app-window-component nameComponent="star rating">
+      <app-star-rating [rating]="5"/>
+    </app-window-component>
+    <app-window-component nameComponent="star rating">
+      <app-star-rating [rating]="5"/>
+    </app-window-component>
+    <app-window-component nameComponent="star rating">
+      <app-star-rating [rating]="5"/>
+    </app-window-component>
+    <app-window-component nameComponent="star rating">
+      <app-star-rating [rating]="5"/>
+    </app-window-component>
+    <app-window-component nameComponent="star rating">
+      <app-star-rating [rating]="5"/>
+    </app-window-component>
+    <app-window-component nameComponent="star rating">
+      <app-star-rating [rating]="5"/>
+    </app-window-component>
+  </app-grid-container>
+</section>
