@@ -1,11 +1,11 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar
+    class="example-toolbar"
     [ngStyle]="{
       background:
         'linear-gradient(60deg, rgba(242, 7, 15, 0.6), rgba(120, 2, 255, 0.6))'
     }"
     color="primary"
-    class="example-toolbar"
   >
     <button
       aria-label="sidebar button toggle"
@@ -14,7 +14,9 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="example-app-name">Angular components</h1>
+    <h1 class="example-app-name">
+      <a routerLink="/components"> Angular components </a>
+    </h1>
   </mat-toolbar>
 
   <mat-sidenav-container

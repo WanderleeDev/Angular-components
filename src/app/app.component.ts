@@ -5,7 +5,8 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from '@components/footer/footer.component';
 //  Services
 import { SeoService } from './services/seo/seo.service';
-import { CursorCustomComponent } from '@shared/Ui/cursorCustom/cursorCustom.component';
+import { CursorCustomComponent } from '@shared/components/cursorCustom/cursorCustom.component';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { CursorCustomComponent } from '@shared/Ui/cursorCustom/cursorCustom.comp
     CommonModule,
     RouterOutlet,
     FooterComponent,
-    CursorCustomComponent
+    CursorCustomComponent,
+    HighlightModule,
   ],
   template: `
     <main>
@@ -23,7 +25,7 @@ import { CursorCustomComponent } from '@shared/Ui/cursorCustom/cursorCustom.comp
     </main>
     <!-- <app-footer /> -->
   `,
-    styles: `
+  styles: `
     :host {
       display: contents;
     }

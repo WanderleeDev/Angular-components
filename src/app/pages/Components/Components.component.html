@@ -1,0 +1,8 @@
+<section class="components">
+  @if (componentsData | async; as navList) {
+    <app-sidenav [navList]="navList">
+      <router-outlet/>
+    </app-sidenav>
+  }@else {
+  }
+</section>

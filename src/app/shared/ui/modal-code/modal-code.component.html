@@ -1,0 +1,21 @@
+<div class="dialog-wrapper">
+  <dialog class="dialog-content" [open]="isViewModal()">
+    <app-btn-base
+      class="btn--left"
+      (click)="toggleModal()"
+      label="close modal">
+      <app-close-svg />
+    </app-btn-base>
+    <div class="code-wrapper hljs" [gist]="gistId" (gistLoad)="gist = $event">
+      @if (gist) {
+        <div>
+          @for (file of gist.files | keyvalue; track file.key) {
+            <app-code [code]="gist | gistFile: file.key" />
+          }
+        </div>
+      } @else {
+        <app-loader />
+      }
+    </div>
+  </dialog>
+</div>

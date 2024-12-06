@@ -3,20 +3,20 @@ import { Inject, Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeoService {
-
   constructor(
-    @Inject(DOCUMENT) private document:Document,
+    @Inject(DOCUMENT) private document: Document,
     public title: Title,
-    public meta: Meta,
-  ){}
+    public meta: Meta
+  ) {}
 
   public setCanonicalURL(url?: string) {
     const canURL = url === undefined ? this.document.URL : url;
     const head = this.document.getElementsByTagName('head')[0];
-    let element: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']") || null;
+    let element: HTMLLinkElement | null =
+      this.document.querySelector("link[rel='canonical']") || null;
 
     if (!element) {
       element = this.document.createElement('link') as HTMLLinkElement;
@@ -30,7 +30,7 @@ export class SeoService {
   public setIndexFollow(state = true) {
     this.meta.updateTag({
       name: 'robots',
-      content: state ? 'index, follow' : 'noindex, nofollow'
+      content: state ? 'index, follow' : 'noindex, nofollow',
     });
   }
 

@@ -5,7 +5,8 @@
     "packageManager": "pnpm",
     "schematicCollections": [
       "@angular-eslint/schematics"
-    ]
+    ],
+    "analytics": "b41681b7-fcfd-42c3-8c33-1fb9e36dfa75"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -34,7 +35,8 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "src/assets/styles/resetPro.css",
-              "src/assets/styles/variables.css"
+              "src/assets/styles/variables.css",
+              "node_modules/highlight.js/styles/github.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",

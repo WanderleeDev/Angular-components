@@ -1,0 +1,22 @@
+<article class="windowComponent">
+  <header class="windowComponent-header">
+    <h3 class="windowComponent-title">{{ nameComponent() || 'Empty name' }}</h3>
+    <div class="windowComponent-groupBtn">
+      <app-btn-base #btnModal (click)="toggleModal()" label="view code">
+        <app-code-svg />
+      </app-btn-base>
+      <app-btn-base routerLink="/" label="code details">
+        <app-arrow-right-svg />
+      </app-btn-base>
+    </div>
+  </header>
+  <div class="windowComponent-content">
+    <ng-content></ng-content>
+  </div>
+</article>
+
+@defer (on hover(btnModal)) {
+  @if (isViewModel()) {
+    <app-modal-code [(isViewModal)]="isViewModel" />
+  }
+}

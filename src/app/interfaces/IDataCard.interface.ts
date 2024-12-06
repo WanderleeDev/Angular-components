@@ -1,4 +1,3 @@
-
 export interface IDataCard {
   title: string;
   numberComponents: number;

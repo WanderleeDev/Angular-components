@@ -1,26 +1,16 @@
 import { ApplicationConfig } from '@angular/core';
-import { InMemoryScrollingFeature, provideRouter, withComponentInputBinding, withInMemoryScrolling, withViewTransitions } from '@angular/router';
-import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-
-const viewTransition = withViewTransitions({
-  skipInitialTransition: true
-});
-
-const memoryScrolling: InMemoryScrollingFeature = withInMemoryScrolling({
-  scrollPositionRestoration: 'enabled'
-});
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { highlightProviders } from '@config/providers/ngx-highlightjs';
+import { routerProviders } from '@config/providers/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(
-      routes,
-      memoryScrolling,
-      viewTransition,
-      withComponentInputBinding()
-    ),
+    routerProviders,
     provideClientHydration(),
     provideAnimations(),
-  ]
+    provideHttpClient(withFetch()),
+    highlightProviders,
+  ],
 };

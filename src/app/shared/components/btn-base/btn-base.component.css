@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  --size-btn: 2rem;
+}
+
+.btn {
+  display: grid;
+  place-content: center;
+  width: var(--size-btn);
+  height: var(--size-btn);
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+
+  &:hover {
+    border: solid 0.1rem;
+  }
+}
