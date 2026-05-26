@@ -8,7 +8,6 @@ import {
 
 @Directive({
   selector: '[appCursor]',
-  standalone: true,
 })
 export class CursorDirective {
   private readonly elementRef = inject(ElementRef);

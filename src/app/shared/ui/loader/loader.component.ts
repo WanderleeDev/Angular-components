@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-loader',
-  standalone: true,
+
   imports: [],
   template: `
     <div class="loader-wrapper">

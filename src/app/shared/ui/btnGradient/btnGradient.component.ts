@@ -5,7 +5,7 @@ import { ICustomStyles } from 'app/interfaces/ICustomStyles.interface';
 
 @Component({
   selector: 'app-btn-gradient',
-  standalone: true,
+
   imports: [NgStyle],
   template: `
     <button

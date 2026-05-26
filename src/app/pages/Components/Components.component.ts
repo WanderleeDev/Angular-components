@@ -8,7 +8,7 @@ import { ComponentsDataService } from 'app/services/componentsData/ComponentsDat
 
 @Component({
   selector: 'app-components',
-  standalone: true,
+
   imports: [CommonModule, SidenavComponent, RouterOutlet],
   templateUrl: './Components.component.html',
   styles: `

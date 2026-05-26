@@ -6,7 +6,7 @@ import { IDataCard } from 'app/interfaces/IDataCard.interface';
 
 @Component({
   selector: 'app-animated-card',
-  standalone: true,
+
   imports: [CommonModule, RouterLink],
   templateUrl: './animatedCard.component.html',
   styleUrl: './animatedCard.component.css',

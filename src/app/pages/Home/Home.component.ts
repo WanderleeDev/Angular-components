@@ -8,7 +8,7 @@ import { CarouselSkeletonComponent } from '@shared/skeleton/carouselSkeleton/car
 
 @Component({
   selector: 'app-home',
-  standalone: true,
+
   imports: [
     BannerComponent,
     PresentationComponent,

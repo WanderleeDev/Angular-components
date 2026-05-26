@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-fonts-section',
-  standalone: true,
+
   imports: [],
   templateUrl: './fontsSection.component.html',
   styleUrl: './fontsSection.component.css',

@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-scroll-carousel',
-  standalone: true,
+
   imports: [NgOptimizedImage],
   templateUrl: './scrollCarousel.component.html',
   styleUrl: './scrollCarousel.component.css',

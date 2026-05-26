@@ -4,7 +4,7 @@ import { CursorDirective } from 'app/directives/cursor.directive';
 
 @Component({
   selector: 'app-cursor-custom',
-  standalone: true,
+
   imports: [CursorDirective, ActiveCursorDirective],
   template: `
     <div class="cursor" appCursor appActiveCursor aria-hidden="true">

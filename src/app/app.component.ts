@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
 //  components
-import { FooterComponent } from '@components/footer/footer.component';
 //  Services
 import { SeoService } from './services/seo/seo.service';
 import { CursorCustomComponent } from '@shared/components/cursorCustom/cursorCustom.component';
@@ -10,13 +9,8 @@ import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    FooterComponent,
-    CursorCustomComponent,
-    HighlightModule,
-  ],
+
+  imports: [RouterOutlet, CursorCustomComponent, HighlightModule],
   template: `
     <main>
       <app-cursor-custom />

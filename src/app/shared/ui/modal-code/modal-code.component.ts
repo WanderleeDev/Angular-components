@@ -14,7 +14,7 @@ import { CloseSvgComponent } from '@shared/icons/close-svg.component';
 
 @Component({
   selector: 'app-modal-code',
-  standalone: true,
+
   imports: [
     CommonModule,
     CodeComponent,

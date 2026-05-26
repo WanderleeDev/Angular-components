@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-btn-base',
-  standalone: true,
+
   imports: [MatTooltipModule],
   template: ` <button
     class="btn"

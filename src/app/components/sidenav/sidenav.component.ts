@@ -17,7 +17,7 @@ import { INavList } from 'app/interfaces/IDataCard.interface';
 
 @Component({
   selector: 'app-sidenav',
-  standalone: true,
+
   imports: [
     CommonModule,
     MatButtonModule,

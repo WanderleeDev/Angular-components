@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-grid-container',
-  standalone: true,
+
   imports: [],
   template: ` <div class="grid-container">
     <ng-content></ng-content>

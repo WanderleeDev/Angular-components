@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-star-decoration',
-  standalone: true,
+
   imports: [],
   template: `
     <div class="starDecoration">

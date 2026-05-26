@@ -8,7 +8,7 @@ import { ComponentsDataService } from 'app/services/componentsData/ComponentsDat
 
 @Component({
   selector: 'app-entry-page',
-  standalone: true,
+
   templateUrl: './EntryPage.component.html',
   styleUrl: './EntryPage.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

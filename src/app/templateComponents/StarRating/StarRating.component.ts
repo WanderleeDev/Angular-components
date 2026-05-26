@@ -11,7 +11,7 @@ interface IRatingStarConfig {
 
 @Component({
   selector: 'app-star-rating',
-  standalone: true,
+
   imports: [NgStyle],
   templateUrl: './StarRating.component.html',
   styleUrl: './StarRating.component.css',

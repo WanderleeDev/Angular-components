@@ -5,7 +5,7 @@ import { StarRatingComponent } from 'app/templateComponents/StarRating/StarRatin
 
 @Component({
   selector: 'app-models',
-  standalone: true,
+
   imports: [
     GridContainerComponent,
     WindowComponentComponent,

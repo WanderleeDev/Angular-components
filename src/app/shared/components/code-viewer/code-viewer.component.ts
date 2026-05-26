@@ -3,7 +3,6 @@ import { HighlightModule } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 
 @Component({
-  standalone: true,
   selector: 'app-code',
   imports: [HighlightModule, HighlightLineNumbers],
   template: `

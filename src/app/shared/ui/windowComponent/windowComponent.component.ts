@@ -12,7 +12,7 @@ import { ModalCodeComponent } from '../modal-code/modal-code.component';
 
 @Component({
   selector: 'app-window-component',
-  standalone: true,
+
   imports: [
     RouterLink,
     BtnBaseComponent,
