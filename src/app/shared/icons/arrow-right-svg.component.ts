@@ -1,10 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-arrow-right-svg',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
     width="2rem"

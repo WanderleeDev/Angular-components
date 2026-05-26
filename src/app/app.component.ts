@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterOutlet } from '@angular/router';
 //  components
 import { FooterComponent } from '@components/footer/footer.component';
@@ -12,7 +12,6 @@ import { HighlightModule } from 'ngx-highlightjs';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
     RouterOutlet,
     FooterComponent,
     CursorCustomComponent,

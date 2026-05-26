@@ -7,7 +7,7 @@
       "@pages/*": ["app/pages/*"],
       "@shared/*": ["app/shared/*"],
       "@components/*": ["app/components/*"],
-      "@config/*": ["app/config/*"],
+      "@config/*": ["app/config/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -19,17 +19,12 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": false,
     "target": "ES2022",
     "module": "ES2022",
-    "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

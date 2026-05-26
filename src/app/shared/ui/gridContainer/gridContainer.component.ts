@@ -1,10 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-grid-container',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: ` <div class="grid-container">
     <ng-content></ng-content>
   </div>`,

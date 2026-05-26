@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 //  Components
@@ -14,7 +14,6 @@ import { StarDecorationComponent } from '@shared/components/starDecoration/starD
   styleUrl: './banner.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
     BtnGradientComponent,
     NgOptimizedImage,
     StarDecorationComponent,

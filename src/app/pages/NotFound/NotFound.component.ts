@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -14,7 +14,7 @@ import { BtnGradientComponent } from '@shared/ui/btnGradient/btnGradient.compone
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, RouterLink, BtnGradientComponent],
+  imports: [NgOptimizedImage, RouterLink, BtnGradientComponent],
   templateUrl: './NotFound.component.html',
   styleUrls: ['./NotFound.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

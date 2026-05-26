@@ -1,10 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-star-decoration',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     <div class="starDecoration">
       <div aria-hidden="true" class="starDecoration-extra"></div>

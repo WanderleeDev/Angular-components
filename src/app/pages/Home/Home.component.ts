@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 //  Components
 import { BannerComponent } from '@components/banner/banner.component';
@@ -11,7 +10,6 @@ import { CarouselSkeletonComponent } from '@shared/skeleton/carouselSkeleton/car
   selector: 'app-home',
   standalone: true,
   imports: [
-    CommonModule,
     BannerComponent,
     PresentationComponent,
     FontsSectionComponent,

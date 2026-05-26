@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { GridContainerComponent } from '@shared/ui/gridContainer/gridContainer.component';
 import { WindowComponentComponent } from '@shared/ui/windowComponent/windowComponent.component';
@@ -8,7 +7,6 @@ import { StarRatingComponent } from 'app/templateComponents/StarRating/StarRatin
   selector: 'app-models',
   standalone: true,
   imports: [
-    CommonModule,
     GridContainerComponent,
     WindowComponentComponent,
     StarRatingComponent,
