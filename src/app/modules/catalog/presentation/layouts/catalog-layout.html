@@ -1,0 +1,96 @@
+<div
+  class="relative min-h-screen flex flex-col bg-app-bg text-app-text font-sans">
+  <header
+    class="h-16 flex items-center justify-between px-6 bg-app-card border-b border-app-border sticky top-0 z-30 backdrop-blur-md bg-app-card/80">
+    <div class="flex items-center gap-3">
+      <button
+        (click)="toggleMobileMenu()"
+        type="button"
+        class="lg:hidden p-2 rounded-xl text-app-text/70 hover:bg-app-text/5 hover:text-app-text transition-all focus-visible:ring-2 focus-visible:ring-app-accent/50 focus:outline-none"
+        aria-label="Toggle navigation menu">
+        <span class="material-icons text-2xl">menu</span>
+      </button>
+
+      <a
+        routerLink="/home"
+        class="flex items-center font-krona gap-2.5 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50 rounded-lg p-1">
+        Angular Components
+      </a>
+      <span
+        class="text-[0.7rem] font-bold uppercase tracking-wider text-app-accent bg-app-accent/10 px-2 py-0.5 rounded border border-app-accent/20 hidden sm:inline-block"
+        >Gallery</span
+      >
+    </div>
+
+    <div class="flex items-center gap-4">
+      <nav class="hidden md:flex items-center gap-1.5">
+        <a
+          routerLink="/home"
+          routerLinkActive="bg-app-accent/10 text-app-accent"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-sm font-semibold text-app-text/70 px-3.5 py-1.5 rounded-lg hover:text-app-text hover:bg-app-text/5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50"
+          >Home</a
+        >
+        <a
+          routerLink="/catalog"
+          routerLinkActive="bg-app-accent/10 text-app-accent"
+          class="text-sm font-semibold text-app-text/70 px-3.5 py-1.5 rounded-lg hover:text-app-text hover:bg-app-text/5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50"
+          >Catalog</a
+        >
+      </nav>
+      <app-theme-select />
+    </div>
+  </header>
+
+  <div class="flex flex-1 relative overflow-hidden">
+    @if (isMobileMenuOpen()) {
+    <div
+      (click)="closeMobileMenu()"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+      aria-hidden="true"></div>
+    }
+
+    <aside
+      [class.translate-x-0]="isMobileMenuOpen()"
+      [class.-translate-x-full]="!isMobileMenuOpen()"
+      class="fixed top-0 bottom-0 left-0 w-72 bg-app-card border-r border-app-border p-5 z-45 transform transition-transform duration-300 ease-out lg:static lg:translate-x-0 lg:z-auto flex flex-col pt-20 lg:pt-5 overflow-y-auto">
+      <div
+        class="px-3 py-2 border-b border-app-border/40 mb-4 flex justify-between items-center">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-app-accent">
+          Categories
+        </h2>
+        <button
+          (click)="closeMobileMenu()"
+          type="button"
+          class="lg:hidden p-1.5 rounded-lg text-app-text/60 hover:bg-app-text/5 hover:text-app-text focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50"
+          aria-label="Close menu">
+          <span class="material-icons text-xl">close</span>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-1">
+        @for (nav of navList(); track nav.title) {
+        <a
+          (click)="closeMobileMenu()"
+          [routerLink]="'/catalog/category/' + nav.title"
+          routerLinkActive="bg-app-accent/8! text-app-accent! border-app-accent/20! shadow-[0_0_15px_rgba(var(--accent),0.02)] font-semibold"
+          class="flex items-center gap-3.5 px-4 h-12 rounded-xl text-app-text/70 font-medium border border-transparent hover:bg-app-accent/5 hover:text-app-text/90 hover:border-app-accent/10 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50">
+          <div class="text-app-text/50 flex items-center justify-center">
+            <span class="material-icons text-xl">{{ nav.icon }}</span>
+          </div>
+          <span class="capitalize text-sm tracking-wide">{{ nav.title }}</span>
+        </a>
+        }@empty {
+        <div class="flex flex-col items-center justify-center py-6 text-app-text/40 gap-1.5 select-none">
+          <span class="material-icons text-2xl">category</span>
+          <span class="text-xs font-semibold">No categories found</span>
+        </div>
+        }
+      </nav>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto p-6 md:p-10 bg-app-bg">
+      <router-outlet />
+    </main>
+  </div>
+</div>

@@ -1,2 +1,2 @@
-import { routeProviders } from './providers/router';
-import { highlightProviders } from './providers/ngx-highlightjs';
+export { routeProviders } from './providers/router';
+export { highlightProviders } from './providers/ngx-highlightjs';

@@ -1,0 +1,34 @@
+@if (isViewModal()) {
+  <div
+    class="fixed inset-0 w-full h-full bg-black/40 backdrop-blur-[5px] z-[999999] flex items-center justify-center p-4 md:p-8"
+    (click)="toggleModal()">
+    <dialog
+      class="w-full max-w-[70rem] h-[80%] rounded-lg bg-slate-900 border border-slate-800/80 p-6 md:p-8 z-50 text-slate-100 overflow-y-auto block relative animate-fade-in"
+      [open]="true"
+      (click)="$event.stopPropagation()"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Code viewer dialog">
+      <app-btn-base
+        class="w-fit ml-auto block mb-4"
+        (click)="toggleModal()"
+        label="close modal">
+        <span class="material-icons text-[1.1rem]">close</span>
+      </app-btn-base>
+      <div
+        class="code-wrapper hljs"
+        [gist]="gistId()"
+        (gistLoad)="gist = $event">
+        @if (gist) {
+          <div class="space-y-4">
+            @for (file of gist.files | keyvalue; track file.key) {
+              <app-code [code]="gist | gistFile: file.key" />
+            }
+          </div>
+        } @else {
+          <div class="flex items-center justify-center h-48"></div>
+        }
+      </div>
+    </dialog>
+  </div>
+}

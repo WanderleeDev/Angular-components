@@ -1,41 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
-body {
-  overflow-x: hidden;
-  position: relative;
-}
+@import "tailwindcss";
+@import 'tailwind-animations';
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
+@theme {
+  --font-krona: "Candal", sans-serif;
+  --color-app-bg: var(--background);
+  --color-app-text: var(--text);
+  --color-app-card: var(--card-bg);
+  --color-app-border: var(--border);
+  --color-app-accent: var(--accent);
+  --color-app-accent-hover: var(--accent-hover);
+  --color-app-accent-text: var(--accent-text);
 
-* {
-  --sb-track-color: #F0E6FF;
-  --sb-thumb-color: #e279d1;
-  --sb-size: 14px;
-}
+  --animate-pulse-glow: pulseGlow 2.5s ease-in-out infinite alternate;
+  --animate-star1: star1 2s linear infinite;
+  --animate-star1-reverse: star1 2s linear infinite reverse;
+  --animate-star2: star2 2s linear infinite;
 
-*::-webkit-scrollbar {
-  width: var(--sb-size);
-}
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow:
+        0 0 12px rgba(226, 28, 52, 0.25),
+        0 0 6px rgba(236, 72, 153, 0.2),
+        0 0 6px rgba(99, 102, 241, 0.2);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow:
+        0 0 28px rgba(226, 28, 52, 0.55),
+        0 0 18px rgba(236, 72, 153, 0.45),
+        0 0 18px rgba(99, 102, 241, 0.45);
+      transform: scale(1.025);
+    }
+  }
 
-*::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 12px;
-}
+  @keyframes star1 {
+    0%, 100% {
+      transform: scale(0) rotate(0deg);
+    }
+    25%, 75% {
+      transform: scale(0.7) rotate(90deg);
+    }
+    50% {
+      transform: scale(1.2) rotate(180deg);
+    }
+  }
 
-*::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 12px;
-  border: 3px solid #f5eeff;
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  * {
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  @keyframes star2 {
+    0%, 25%, 100% {
+      transform: scale(0) rotate(0deg);
+    }
+    50% {
+      transform: scale(0.7) rotate(-90deg);
+    }
+    75% {
+      transform: scale(1.2) rotate(-180deg);
+    }
   }
 }
