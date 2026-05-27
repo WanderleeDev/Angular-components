@@ -1,3 +1,4 @@
+import { provideThemeStack } from 'ngx-theme-stack';
 import {
   ApplicationConfig,
   provideBrowserGlobalErrorListeners,
@@ -17,5 +18,12 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
     highlightProviders,
+    provideThemeStack({
+      themes: ['system', 'light', 'dark', 'angular'],
+      defaultTheme: 'angular',
+      storageKey: 'ngx-theme-stack',
+      mode: 'class',
+      strategy: 'critters',
+    }),
   ],
 };

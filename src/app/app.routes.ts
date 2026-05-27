@@ -9,23 +9,24 @@ export const routes: Routes = [
   {
     path: 'home',
     title: 'home',
-    loadComponent: () => import('./pages/Home/Home.component'),
+    loadComponent: () => import('./modules/home/presentation/views/home-view'),
   },
   {
-    path: 'components',
-    title: 'components',
-    loadComponent: () => import('./pages/Components/Components.component'),
+    path: 'catalog',
+    title: 'catalog',
+    loadComponent: () =>
+      import('./modules/catalog/presentation/layouts/catalog-layout'),
     children: [
       {
         path: '',
-        title: 'components | catalog',
+        title: 'catalog | entry',
         loadComponent: () =>
-          import('./pages/Components/Pages/EntryPage/EntryPage.component'),
+          import('./modules/catalog/presentation/views/catalog-entry-view/catalog-entry-view'),
       },
       {
-        path: 'models/:id',
+        path: 'category/:id',
         loadComponent: () =>
-          import('./pages/Components/Pages/Models/Models.component'),
+          import('./modules/catalog/presentation/views/catalog-detail-view/catalog-detail-view'),
       },
       {
         path: '**',
@@ -37,6 +38,7 @@ export const routes: Routes = [
   {
     path: '**',
     title: 'not found',
-    loadComponent: () => import('./pages/NotFound/NotFound.component'),
+    loadComponent: () =>
+      import('./modules/shared/presentation/view/not-found-view'),
   },
 ];
