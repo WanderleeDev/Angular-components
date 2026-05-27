@@ -45,7 +45,10 @@ pre {
       }
     }
 
-    table, tbody, tr, td {
+    table,
+    tbody,
+    tr,
+    td {
       background: inherit;
     }
 
