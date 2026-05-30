@@ -11,7 +11,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         loop
         muted
         playsinline>
-        <source src="assets/mp_.mp4" type="video/mp4" />
+        <source src="assets/v.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
