@@ -15,8 +15,13 @@ import { ModalCodeComponent } from '../modal-code/modal-code.component';
 })
 export class Window {
   nameComponent = input.required<string>();
-  tailwindGistId = input<string>('6fd1b8fe940ded9f792335addb60c809');
-  cssGistId = input<string>('6fd1b8fe940ded9f792335addb60c809');
+  
+  tailwindPath = input<string | null | undefined>(null);
+  tailwindFiles = input<string[] | null | undefined>(null);
+  
+  cssPath = input<string | null | undefined>(null);
+  cssFiles = input<string[] | null | undefined>(null);
+
   isTailwindModalOpen = signal(false);
   isCssModalOpen = signal(false);
 

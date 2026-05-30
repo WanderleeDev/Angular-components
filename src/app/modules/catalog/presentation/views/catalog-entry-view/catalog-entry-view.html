@@ -6,9 +6,10 @@
   <section class="w-full">
     <div
       class="grid w-full gap-6 grid-cols-1 min-[350px]:grid-cols-[repeat(auto-fill,minmax(min(100%,330px),1fr))]">
-      @for (item of filteredComponents(); track item.title) {
+      @for (item of filteredComponents(); track item.title) { @defer (hydrate on
+      hover) {
       <app-animated-card [cardData]="item" />
-      }@empty {
+      } }@empty {
       <div
         class="col-span-full flex flex-col items-center justify-center py-16 px-10 bg-app-card border border-dashed border-app-border rounded-2xl text-center my-5 shadow-sm">
         <span class="material-icons text-app-text/30 mb-4 text-5xl"

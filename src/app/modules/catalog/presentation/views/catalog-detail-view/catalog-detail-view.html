@@ -1,32 +1,68 @@
 <section class="max-w-7xl mx-auto px-4 py-8">
   <div class="mb-6">
-    <a routerLink="/catalog" class="inline-flex items-center gap-2 no-underline text-app-text/60 hover:text-app-accent text-xs font-bold uppercase tracking-wider transition-all hover:-translate-x-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50 rounded-lg p-1">
+    <a
+      routerLink="/catalog"
+      class="inline-flex items-center gap-2 no-underline text-app-text/60 hover:text-app-accent text-xs font-bold uppercase tracking-wider transition-all hover:-translate-x-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50 rounded-lg p-1">
       <span class="material-icons text-sm">arrow_back</span>
       <span>Back to Catalog</span>
     </a>
   </div>
-  <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-8 text-app-text flex items-center gap-3 capitalize tracking-tight font-krona">
+
+  <h2
+    class="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-8 text-app-text flex items-center gap-3 capitalize tracking-tight font-krona">
     {{ id() ?? 'empty' }}
-    <span class="text-xs font-bold text-app-accent bg-app-accent/10 border border-app-accent/20 px-3 py-1 rounded-full">15</span>
+    <span
+      class="text-xs font-bold text-app-accent bg-app-accent/10 border border-app-accent/20 px-3 py-1 rounded-full">
+      {{ categoryComponents().length }}
+    </span>
   </h2>
-  <div class="grid w-full gap-6 grid-cols-1 min-[350px]:[grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr))]">
-    <app-window nameComponent="interactive star rating">
-      <app-star-rating [rating]="3" />
+
+  @if (categoryComponents().length > 0) {
+  <div
+    class="grid w-full gap-6 grid-cols-1 min-[350px]:[grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr))]">
+    @for (comp of categoryComponents(); track comp.id) {
+    <app-window
+      [nameComponent]="comp.name"
+      [tailwindPath]="comp.tailwindPath"
+      [tailwindFiles]="comp.tailwindFiles"
+      [cssPath]="comp.cssPath"
+      [cssFiles]="comp.cssFiles">
+      @switch (comp.id) { @case ('star-rating') {
+      <app-star-rating />
+      } @case ('date-picker') {
+      <div class="w-full max-w-[260px] mx-auto py-4">
+        <app-native-picker
+          type="date"
+          [(value)]="selectedDate"
+          label="Select Date"
+          variant="glass"
+          colorScheme="accent" />
+        <div
+          class="mt-3 text-[10px] font-bold text-white/30 text-center tracking-wider">
+          RAW VALUE: {{ selectedDate() }}
+        </div>
+      </div>
+      } }
     </app-window>
-    <app-window nameComponent="readonly rating display">
-      <app-star-rating [rating]="4" [isReadonly]="true" />
-    </app-window>
-    <app-window nameComponent="10 star rating scale">
-      <app-star-rating [rating]="7" [numberStars]="10" />
-    </app-window>
-    <app-window nameComponent="vertical layout">
-      <app-star-rating [rating]="2" orientation="vertical" />
-    </app-window>
-    <app-window nameComponent="custom accent rating">
-      <app-star-rating [rating]="4" backgroundColor="var(--accent)" />
-    </app-window>
-    <app-window nameComponent="empty/placeholder state">
-      <app-star-rating [rating]="0" [isReadonly]="true" />
-    </app-window>
+    }
   </div>
+  } @else {
+  <div
+    class="flex flex-col items-center justify-center py-16 text-center border border-white/5 bg-white/5 backdrop-blur-md rounded-2xl p-8 max-w-xl mx-auto">
+    <span class="material-icons text-5xl text-white/20 mb-4 animate-bounce"
+      >construction</span
+    >
+    <h3 class="text-xl font-bold mb-2 font-krona text-white/80">Coming Soon</h3>
+    <p class="text-white/60 text-sm max-w-sm">
+      We are building standard and custom components for the
+      <span class="text-app-accent font-bold font-krona">{{ id() }}</span>
+      category.
+    </p>
+    <a
+      routerLink="/catalog"
+      class="mt-6 px-6 py-2.5 bg-white/10 hover:bg-white/15 text-xs font-bold uppercase tracking-wider rounded-xl no-underline text-white transition-all">
+      Explore "Others" Category
+    </a>
+  </div>
+  }
 </section>
