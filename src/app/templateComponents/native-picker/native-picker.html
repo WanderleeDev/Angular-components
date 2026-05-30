@@ -1,0 +1,67 @@
+<div class="relative w-full flex flex-col gap-1.5 group select-none">
+  <!-- Label -->
+  @if (label()) {
+    <label class="text-[10px] font-bold tracking-wider uppercase text-white/40 transition-colors duration-300 group-focus-within:text-[#EC4899] font-krona">
+      {{ label() }}
+    </label>
+  }
+
+  <!-- Interactive Trigger Container -->
+  <div 
+    class="relative w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 overflow-hidden"
+    [class.cursor-not-allowed]="disabled()"
+    [class.opacity-50]="disabled()"
+    [class]="containerClasses()">
+    
+    <!-- Background Glow effect for Hover/Focus -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-r transition-opacity duration-300 opacity-0 group-hover:opacity-10 group-focus-within:opacity-15 pointer-events-none"
+         [class]="glowClasses()"></div>
+
+    <!-- Content Wrapper -->
+    <div class="relative z-10 flex items-center gap-3 w-full min-w-0 pointer-events-none">
+      <!-- Icon (Left) -->
+      <span class="material-icons text-lg flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+            [class]="iconClasses()">
+        {{ resolvedIcon() }}
+      </span>
+
+      <!-- Value Display / Placeholder -->
+      <div class="flex-grow min-w-0 flex flex-col">
+        <span class="text-xs font-semibold truncate tracking-wide"
+              [class.text-white]="value()"
+              [class.text-white/40]="!value()">
+          {{ formattedValue() }}
+        </span>
+      </div>
+
+      <!-- Color Preview Pill (if color picker) -->
+      @if (type() === 'color' && value()) {
+        <div 
+          class="w-5 h-5 rounded-full border border-white/20 shadow-inner flex-shrink-0 transition-transform duration-200 hover:scale-110"
+          [style.background-color]="value()">
+        </div>
+      }
+
+      <!-- Chevron/Dropdown Indicator -->
+      @if (type() !== 'color') {
+        <span class="material-icons text-base text-white/30 transition-transform duration-300 group-hover:translate-y-0.5">
+          unfold_more
+        </span>
+      }
+    </div>
+
+    <!-- Hidden Native Input overlaying the entire trigger container -->
+    <input
+      #nativeInput
+      [type]="type()"
+      [value]="value()"
+      [min]="min()"
+      [max]="max()"
+      [disabled]="disabled()"
+      (input)="onInputChange($event)"
+      (change)="onInputChange($event)"
+      class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20 disabled:cursor-not-allowed outline-none"
+      [attr.aria-label]="label() || placeholder() || type()"
+    />
+  </div>
+</div>

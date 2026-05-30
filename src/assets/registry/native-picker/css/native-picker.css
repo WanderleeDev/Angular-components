@@ -1,0 +1,218 @@
+.picker-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+  user-select: none;
+}
+
+.picker-label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Krona One', sans-serif;
+  transition: color 0.3rem ease;
+  text-align: left;
+}
+
+.picker-wrapper:focus-within .picker-label {
+  color: #EC4899;
+}
+
+/* Container class base styling */
+.picker-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Glass Variant */
+.variant-glass {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+.variant-glass:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.variant-glass:focus-within {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Solid Variant */
+.variant-solid {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+}
+.variant-solid:hover {
+  border-color: #334155;
+}
+.variant-solid:focus-within {
+  border-color: #475569;
+}
+
+/* Bordered Variant */
+.variant-bordered {
+  background-color: transparent;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+}
+.variant-bordered:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.variant-bordered:focus-within {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Disabled state */
+.picker-container.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Rings based on Scheme */
+.scheme-primary:focus-within {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+.scheme-accent:focus-within {
+  box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.3);
+}
+.scheme-success:focus-within {
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+}
+.scheme-warn:focus-within {
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3);
+}
+
+/* Background Glow effect for hover/focus */
+.picker-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scheme-primary .picker-glow {
+  background: linear-gradient(90deg, #2563eb, #4f46e5);
+}
+.scheme-accent .picker-glow {
+  background: linear-gradient(90deg, #E21C34, #EC4899, #6366F1);
+}
+.scheme-success .picker-glow {
+  background: linear-gradient(90deg, #10b981, #0d9488);
+}
+.scheme-warn .picker-glow {
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+}
+
+.picker-container:hover .picker-glow {
+  opacity: 0.10;
+}
+.picker-container:focus-within .picker-glow {
+  opacity: 0.15;
+}
+
+/* Content wrapper styling */
+.picker-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-w: 0;
+  pointer-events: none;
+}
+
+.picker-icon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.picker-container:hover .picker-icon {
+  transform: scale(1.1);
+}
+
+/* Icon colors */
+.scheme-primary .picker-icon { color: #60a5fa; }
+.scheme-accent .picker-icon { color: #f472b6; }
+.scheme-success .picker-icon { color: #34d399; }
+.scheme-warn .picker-icon { color: #fbbf24; }
+
+.picker-value-wrapper {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.picker-value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.025em;
+  color: #ffffff;
+}
+
+.picker-value.empty {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.picker-color-preview {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.picker-color-preview:hover {
+  transform: scale(1.1);
+}
+
+.picker-chevron {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.picker-container:hover .picker-chevron {
+  transform: translateY(2px);
+}
+
+/* Hidden native overlay input styling */
+.native-hidden-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+  outline: none;
+}
+
+.native-hidden-input:disabled {
+  cursor: not-allowed;
+}

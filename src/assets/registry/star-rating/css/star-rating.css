@@ -1,0 +1,58 @@
+:host {
+  display: contents;
+}
+
+.container-stars {
+  display: inline-flex;
+  transition: color 0.15s ease-in-out;
+}
+
+.star-icon {
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.star-icon.readonly:hover {
+  transform: scale(1.05);
+}
+
+.star-button {
+  background: transparent;
+  border: none;
+  padding: 0.125rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: all 0.1s ease-in-out;
+}
+
+.star-button:focus-visible {
+  outline: 2px solid #3b82f6;
+  border-radius: 0.25rem;
+}
+
+.star-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.container-stars:hover .star-button {
+  color: #fcb93d !important;
+}
+
+.star-button:hover ~ .star-button {
+  color: inherit !important;
+}
+
+.star-button:hover {
+  transform: scale(1.2);
+}
+
+.star-button:active {
+  transform: scale(0.9);
+}
