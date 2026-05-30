@@ -18,6 +18,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputMode": "static",
             "outputPath": "dist/mi-angular-components",
             "index": "src/index.html",
             "browser": "src/main.ts",

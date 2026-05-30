@@ -2,7 +2,8 @@
 @import 'tailwind-animations';
 
 @theme {
-  --font-krona: "Candal", sans-serif;
+  --font-sans: var(--app-font, "Roboto", sans-serif);
+  --font-krona: var(--title-font, "Candal", sans-serif);
   --color-app-bg: var(--background);
   --color-app-text: var(--text);
   --color-app-card: var(--card-bg);
@@ -56,4 +57,12 @@
       transform: scale(1.2) rotate(-180deg);
     }
   }
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6, .font-krona {
+  font-family: var(--font-krona);
 }

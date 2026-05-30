@@ -9,6 +9,8 @@
   --accent: #3b82f6;
   --accent-hover: #2563eb;
   --accent-text: #ffffff;
+  --app-font: "Roboto", sans-serif;
+  --title-font: "Candal", sans-serif;
 }
 
 .dark {
@@ -29,5 +31,137 @@
   --accent: #e21c34;
   --accent-hover: #b10b24;
   --accent-text: #ffffff;
+}
+
+.nordic-light {
+  --background: #f1f5f9;
+  --text: #1e293b;
+  --card-bg: #ffffff;
+  --border: rgba(30, 41, 59, 0.08);
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+  --accent-text: #ffffff;
+  --app-font: "DM Sans", sans-serif;
+  --title-font: "Space Grotesk", sans-serif;
+}
+
+.peach-blossom {
+  --background: #fffaf5;
+  --text: #2d1a12;
+  --card-bg: #ffffff;
+  --border: rgba(45, 26, 18, 0.08);
+  --accent: #f43f5e;
+  --accent-hover: #e11d48;
+  --accent-text: #ffffff;
+  --app-font: "Plus Jakarta Sans", sans-serif;
+  --title-font: "Fraunces", serif;
+}
+
+.neo-mint {
+  --background: #f0fdf4;
+  --text: #064e3b;
+  --card-bg: #ffffff;
+  --border: rgba(6, 78, 59, 0.12);
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --accent-text: #ffffff;
+  --app-font: "Outfit", sans-serif;
+  --title-font: "Syne", sans-serif;
+}
+
+.cyberpunk-dark {
+  --background: #0f051d;
+  --text: #f8fafc;
+  --card-bg: #1a0b2e;
+  --border: rgba(255, 0, 127, 0.25);
+  --accent: #ff007f;
+  --accent-hover: #e60072;
+  --accent-text: #ffffff;
+  --app-font: "Space Mono", monospace;
+  --title-font: "Orbitron", sans-serif;
+}
+
+.emerald-abyss {
+  --background: #040d0e;
+  --text: #e6f4f1;
+  --card-bg: #0b1c1e;
+  --border: rgba(16, 185, 129, 0.15);
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --accent-text: #040d0e;
+  --app-font: "Lora", serif;
+  --title-font: "Cinzel", serif;
+}
+
+.brutalist-light {
+  --background: #f4f4f5;
+  --text: #000000;
+  --card-bg: #ffffff;
+  --border: #000000;
+  --accent: #facc15;
+  --accent-hover: #eab308;
+  --accent-text: #000000;
+  --app-font: "Space Grotesk", sans-serif;
+  --title-font: "Archivo Black", sans-serif;
+}
+
+.brutalist-dark {
+  --background: #000000;
+  --text: #ffffff;
+  --card-bg: #18181b;
+  --border: #ffffff;
+  --accent: #a855f7;
+  --accent-hover: #9333ea;
+  --accent-text: #ffffff;
+  --app-font: "Space Grotesk", sans-serif;
+  --title-font: "Archivo Black", sans-serif;
+}
+
+.aero-light {
+  --background: #f0f9ff;
+  --text: #0c4a6e;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --border: rgba(56, 189, 248, 0.25);
+  --accent: #22c55e;
+  --accent-hover: #16a34a;
+  --accent-text: #ffffff;
+  --app-font: "Ubuntu", sans-serif;
+  --title-font: "Comfortaa", sans-serif;
+}
+
+.aero-dark {
+  --background: #082f49;
+  --text: #e0f2fe;
+  --card-bg: rgba(15, 23, 42, 0.6);
+  --border: rgba(14, 165, 233, 0.3);
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-text: #ffffff;
+  --app-font: "Ubuntu", sans-serif;
+  --title-font: "Comfortaa", sans-serif;
+}
+
+.pixel-light {
+  --background: #c0c0c0;
+  --text: #000000;
+  --card-bg: #ffffff;
+  --border: #000000;
+  --accent: #000080;
+  --accent-hover: #0000a0;
+  --accent-text: #ffffff;
+  --app-font: "Silkscreen", sans-serif;
+  --title-font: "Press Start 2P", display;
+}
+
+.pixel-dark {
+  --background: #000000;
+  --text: #39ff14;
+  --card-bg: #051005;
+  --border: #39ff14;
+  --accent: #39ff14;
+  --accent-hover: #22c55e;
+  --accent-text: #000000;
+  --app-font: "VT323", monospace;
+  --title-font: "Press Start 2P", display;
 }
 
