@@ -3,7 +3,6 @@
   <header
     class="h-16 flex items-center justify-between px-6 bg-app-card border-b border-app-border sticky top-0 z-30 backdrop-blur-md bg-app-card/80">
     <div class="flex items-center gap-3">
-      @defer (hydrate on hover) {
       <button
         (click)="toggleMobileMenu()"
         type="button"
@@ -11,7 +10,6 @@
         aria-label="Toggle navigation menu">
         <span class="material-icons text-2xl">menu</span>
       </button>
-      }
 
       <a
         routerLink="/home"
@@ -70,7 +68,6 @@
         </button>
       </div>
 
-      @defer (hydrate on hover) {
       <nav class="flex flex-col gap-1">
         @for (nav of navList(); track nav.title) {
         <a
@@ -91,7 +88,6 @@
         </div>
         }
       </nav>
-      }
     </aside>
 
     <main class="flex-1 overflow-y-auto p-6 md:p-10 bg-app-bg">
