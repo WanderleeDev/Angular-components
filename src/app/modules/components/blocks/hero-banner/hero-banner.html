@@ -1,0 +1,85 @@
+<div class="hero-container">
+  <div class="hero-grid">
+    
+    <!-- Left Section: Copy & CTA -->
+    <div class="hero-left">
+      <span class="hero-badge">
+        <span class="badge-dot"></span>
+        Standalone UI Library v2.0
+      </span>
+      
+      <h1>Next-gen components for enterprise apps</h1>
+      
+      <p class="hero-desc">
+        Deploy premium, highly interactive Angular modules styled with pure vanilla CSS. Optimized for strict SSR hydration, accessibility-first, and zero external bundle bloat.
+      </p>
+
+      <div class="hero-actions">
+        <button class="cta-btn primary-cta">Get Started</button>
+        <button (click)="triggerAction()" class="cta-btn secondary-cta">
+          <span class="material-icons terminal-icon">code</span>
+          <span>npm i @novgorod/ui</span>
+        </button>
+      </div>
+
+      <!-- Live metrics telemetry -->
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <span class="metric-value">{{ requestCount().toLocaleString() }}</span>
+          <span class="metric-label">Live edge requests</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-value text-green">{{ currentUptime() }}</span>
+          <span class="metric-label">Global edge uptime</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Section: Abstract interactive compiler mockup -->
+    <div class="hero-right">
+      <div class="compiler-mockup">
+        <div class="compiler-glow"></div>
+        
+        <!-- Header -->
+        <div class="compiler-header">
+          <div class="window-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="compiler-title">novgorod-compiler.sh</span>
+        </div>
+
+        <!-- Terminal body code lines -->
+        <div class="compiler-body">
+          <div class="code-line"><span class="c-pink">import</span> &#123; <span class="c-blue">provideThemeStack</span> &#125; <span class="c-pink">from</span> <span class="c-green">'ngx-theme-stack'</span>;</div>
+          <div class="code-line"><span class="c-pink">import</span> &#123; <span class="c-blue">BentoGrid</span> &#125; <span class="c-pink">from</span> <span class="c-green">'./components'</span>;</div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line"><span class="c-grey">// Initialize application config</span></div>
+          <div class="code-line"><span class="c-pink">export const</span> <span class="c-yellow">appConfig</span> = &#123;</div>
+          <div class="code-line">&nbsp;&nbsp;providers: [</div>
+          <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">provideThemeStack</span>(&#123; default: <span class="c-green">'dark'</span> &#125;)</div>
+          <div class="code-line">&nbsp;&nbsp;]</div>
+          <div class="code-line">&#125;;</div>
+        </div>
+
+        <!-- Floating node stats overlay widget -->
+        <div class="floating-telemetry-widget">
+          <span class="widget-title">COMPILING MODULES</span>
+          <div class="widget-row">
+            <span class="material-icons pulse-green">sync</span>
+            <span>BentoGrid.ts</span>
+            <span class="widget-status">SUCCESS</span>
+          </div>
+          <div class="widget-row">
+            <span class="material-icons pulse-blue">sync</span>
+            <span>StatsGrid.ts</span>
+            <span class="widget-status">ACTIVE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,113 @@
+.dual-slider-wrapper {
+  background: var(--card-bg, #0b0f19);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dual-slider-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dual-slider-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text, #f8fafc);
+  opacity: 0.7;
+}
+
+.dual-slider-value-display {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--accent, #38bdf8);
+}
+
+.dual-slider-control-container {
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track-base {
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: var(--border, rgba(255, 255, 255, 0.08));
+  border-radius: 9999px;
+  z-index: 1;
+}
+
+.slider-track-range {
+  position: absolute;
+  height: 6px;
+  background: var(--accent, #38bdf8);
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+.thumb-input {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  z-index: 3;
+  margin: 0;
+}
+
+.thumb-input::-webkit-slider-thumb {
+  pointer-events: auto;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--text, #f8fafc);
+  border: 2px solid var(--accent, #38bdf8);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.thumb-input::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: var(--accent, #38bdf8);
+}
+
+.thumb-input::-moz-range-thumb {
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--text, #f8fafc);
+  border: 2px solid var(--accent, #38bdf8);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.thumb-input::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  background: var(--accent, #38bdf8);
+}
+
+.dual-slider-bounds {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text, #f8fafc);
+  opacity: 0.4;
+  margin-top: 0.5rem;
+}

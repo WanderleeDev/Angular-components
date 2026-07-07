@@ -8,9 +8,26 @@
           var k = 'ngx-theme-stack',
             d = 'angular',
             m = 'class',
+            v = [
+              'system',
+              'light',
+              'dark',
+              'angular',
+              'nordic-light',
+              'peach-blossom',
+              'neo-mint',
+              'cyberpunk-dark',
+              'emerald-abyss',
+              'brutalist-light',
+              'brutalist-dark',
+              'aero-light',
+              'aero-dark',
+              'pixel-light',
+              'pixel-dark',
+            ],
             t = localStorage.getItem(k) || d,
             e = document.documentElement;
-          if (!/^[a-zA-Z][a-zA-Z0-9_-]*$/.test(t)) t = d;
+          if (!/^[a-zA-Z][a-zA-Z0-9_-]*$/.test(t) || v.indexOf(t) === -1) t = d;
           if (t === 'system')
             t = window.matchMedia('(prefers-color-scheme: dark)').matches
               ? 'dark'

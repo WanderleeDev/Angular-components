@@ -1,0 +1,36 @@
+<div class="hero-wrapper">
+  <div class="hero-grid">
+    <!-- Left column: content -->
+    <div class="hero-content">
+      <div class="hero-badge-container">
+        <span class="hero-badge">{{ badgeText() }}</span>
+      </div>
+      <h1 class="hero-title">{{ title() }}</h1>
+      <p class="hero-description">{{ description() }}</p>
+      
+      <div class="hero-ctas">
+        <button type="button" class="btn-hero-primary">{{ ctaText1() }}</button>
+        <button type="button" class="btn-hero-secondary">{{ ctaText2() }}</button>
+      </div>
+    </div>
+
+    <!-- Right column: visual glow backdrop simulation / telemetry layout -->
+    <div class="hero-visual">
+      <div class="visual-container">
+        <div class="glow-sphere"></div>
+        <div class="preview-box">
+          <div class="preview-header">
+            <span class="circle red"></span>
+            <span class="circle yellow"></span>
+            <span class="circle green"></span>
+          </div>
+          <div class="preview-body">
+            <div class="line w-3/4"></div>
+            <div class="line w-1/2"></div>
+            <div class="line w-5/6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

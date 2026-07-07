@@ -1,0 +1,30 @@
+<div class="spotlight-container">
+  <!-- Header Area -->
+  <div class="spotlight-header">
+    <span class="category-tag">Developer Platform</span>
+    <h2>Built for high performance</h2>
+    <p>Hover over the cards below to see the interactive spotlight illumination track your mouse in real time.</p>
+  </div>
+
+  <!-- Cards Grid -->
+  <div class="spotlight-grid">
+    @for (item of features(); track item.title) {
+      <div 
+        (mousemove)="onMouseMove($event)"
+        class="spotlight-card">
+        
+        <!-- Spotlight Effect Layer -->
+        <div class="spotlight-layer"></div>
+        
+        <div class="card-content">
+          <div class="icon-wrapper">
+            <span class="material-icons feature-icon">{{ item.icon }}</span>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+
+      </div>
+    }
+  </div>
+</div>

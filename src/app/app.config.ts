@@ -36,7 +36,7 @@ export const appConfig: ApplicationConfig = {
         'aero-dark',
         'pixel-light',
         'pixel-dark',
-      ],
+      ] as const,
       defaultTheme: 'angular',
       storageKey: 'ngx-theme-stack',
       mode: 'class',

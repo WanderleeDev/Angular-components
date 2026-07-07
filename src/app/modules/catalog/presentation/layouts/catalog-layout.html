@@ -42,7 +42,7 @@
     </div>
   </header>
 
-  <div class="flex flex-1 relative overflow-hidden">
+  <div class="flex flex-1 relative overflow-hidden lg:overflow-visible">
     @if (isMobileMenuOpen()) {
     <div
       (click)="closeMobileMenu()"
@@ -51,9 +51,9 @@
     }
 
     <aside
-      [class.translate-x-0]="isMobileMenuOpen()"
-      [class.-translate-x-full]="!isMobileMenuOpen()"
-      class="fixed top-0 bottom-0 left-0 w-72 bg-app-card border-r border-app-border p-5 z-45 transform transition-transform duration-300 ease-out lg:static lg:translate-x-0 lg:z-auto flex flex-col pt-20 lg:pt-5 overflow-y-auto">
+      [class.max-lg:translate-x-0]="isMobileMenuOpen()"
+      [class.max-lg:-translate-x-full]="!isMobileMenuOpen()"
+      class="fixed top-0 bottom-0 left-0 w-72 bg-app-card border-r border-app-border p-5 z-45 transform transition-transform duration-300 ease-out lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] lg:translate-x-0 lg:z-auto flex flex-col pt-20 lg:pt-5 overflow-y-auto">
       <div
         class="px-3 py-2 border-b border-app-border/40 mb-4 flex justify-between items-center">
         <h2 class="text-xs font-bold uppercase tracking-widest text-app-accent">
@@ -69,10 +69,20 @@
       </div>
 
       <nav class="flex flex-col gap-1">
+        <a
+          (click)="closeMobileMenu()"
+          routerLink="/catalog/themes"
+          routerLinkActive="bg-app-accent/8! text-app-accent! border-app-accent/20! shadow-[0_0_15px_rgba(var(--accent),0.02)] font-semibold"
+          class="flex items-center gap-3.5 px-4 h-12 rounded-xl text-app-text/70 font-medium border border-transparent hover:bg-app-accent/5 hover:text-app-text/90 hover:border-app-accent/10 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50">
+          <div class="text-app-text/50 flex items-center justify-center">
+            <span class="material-icons text-xl">palette</span>
+          </div>
+          <span class="capitalize text-sm tracking-wide">Themes</span>
+        </a>
         @for (nav of navList(); track nav.title) {
         <a
           (click)="closeMobileMenu()"
-          [routerLink]="['/catalog/category', nav.title]"
+          [routerLink]="['/catalog', nav.title]"
           routerLinkActive="bg-app-accent/8! text-app-accent! border-app-accent/20! shadow-[0_0_15px_rgba(var(--accent),0.02)] font-semibold"
           class="flex items-center gap-3.5 px-4 h-12 rounded-xl text-app-text/70 font-medium border border-transparent hover:bg-app-accent/5 hover:text-app-text/90 hover:border-app-accent/10 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50">
           <div class="text-app-text/50 flex items-center justify-center">
@@ -80,12 +90,6 @@
           </div>
           <span class="capitalize text-sm tracking-wide">{{ nav.title }}</span>
         </a>
-        }@empty {
-        <div
-          class="flex flex-col items-center justify-center py-6 text-app-text/40 gap-1.5 select-none">
-          <span class="material-icons text-2xl">category</span>
-          <span class="text-xs font-semibold">No categories found</span>
-        </div>
         }
       </nav>
     </aside>

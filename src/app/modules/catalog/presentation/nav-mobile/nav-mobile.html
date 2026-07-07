@@ -34,7 +34,7 @@
       @for (nav of navList(); track nav.title) {
       <a
         (click)="hideMenu()"
-        [routerLink]="'/catalog/category/' + nav.title"
+        [routerLink]="'/catalog/' + nav.title"
         routerLinkActive="bg-app-accent/8! text-app-accent! border-app-accent/20! shadow-[0_0_15px_rgba(var(--accent),0.02)] font-semibold"
         class="flex items-center gap-3.5 px-4 h-12 rounded-xl text-app-text/70 font-medium border border-transparent hover:bg-app-accent/5 hover:text-app-text/90 hover:border-app-accent/10 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50">
         <div class="text-app-text/50 flex items-center justify-center">

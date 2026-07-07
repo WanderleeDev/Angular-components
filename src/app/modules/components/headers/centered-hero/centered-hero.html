@@ -1,0 +1,35 @@
+<div class="centered-hero-wrapper">
+  <!-- Glowing background blobs -->
+  <div class="glow-blob blob-1"></div>
+  <div class="glow-blob blob-2"></div>
+
+  <div class="centered-hero-container">
+    <!-- Badge -->
+    <div class="hero-badge-row">
+      <span class="hero-badge-pill">
+        <span class="pulse-indicator"></span>
+        {{ badgeText() }}
+      </span>
+    </div>
+
+    <!-- Title & Description -->
+    <h1 class="hero-title">{{ title() }}</h1>
+    <p class="hero-desc">{{ description() }}</p>
+
+    <!-- CTAs -->
+    <div class="hero-actions">
+      <button type="button" class="btn-primary">Start Deploying</button>
+      <button type="button" class="btn-secondary">View Documentation</button>
+    </div>
+
+    <!-- Integrated social proof logo grid -->
+    <div class="hero-social-proof">
+      <span class="proof-label">Trusted by engineers at</span>
+      <div class="proof-logos">
+        <div class="logo-item"><span class="material-icons">code</span><span>StackOverflow</span></div>
+        <div class="logo-item"><span class="material-icons">cloud</span><span>AWS</span></div>
+        <div class="logo-item"><span class="material-icons">dns</span><span>GitHub</span></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+.list-wrapper {
+  background: var(--card-bg, #0b0f19);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.list-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text, #f8fafc);
+  opacity: 0.7;
+  margin: 0 0 1.25rem 0;
+  border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  padding-bottom: 0.75rem;
+}
+
+.list-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid transparent;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(56, 189, 248, 0.15);
+  transform: translateX(4px);
+}
+
+.item-icon-wrapper {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  transition: all 0.25s ease;
+}
+
+.list-item:hover .item-icon-wrapper {
+  background: var(--accent, #38bdf8);
+  border-color: var(--accent, #38bdf8);
+  color: var(--accent-text, #070a13);
+}
+
+.item-icon {
+  font-size: 1.1rem;
+  color: var(--text, #f8fafc);
+  opacity: 0.8;
+  transition: color 0.25s ease;
+}
+
+.list-item:hover .item-icon {
+  color: var(--accent-text, #070a13);
+  opacity: 1;
+}
+
+.item-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text, #f8fafc);
+  opacity: 0.85;
+  flex-grow: 1;
+}
+
+.item-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.badge-primary {
+  color: var(--accent, #38bdf8);
+  background: rgba(56, 189, 248, 0.15);
+}
+
+.badge-success {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.badge-warn {
+  color: #f43f5e;
+  background: rgba(244, 63, 94, 0.15);
+}

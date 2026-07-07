@@ -1,0 +1,17 @@
+<div class="desc-list-wrapper">
+  <!-- Header -->
+  <div class="desc-list-header">
+    <h3 class="desc-list-title">{{ title() }}</h3>
+    <p class="desc-list-subtitle">{{ description() }}</p>
+  </div>
+
+  <!-- Rows -->
+  <dl class="desc-list-container">
+    @for (field of fields(); track field.key; let isOdd = $odd) {
+      <div class="desc-list-row" [class.row-alt]="isOdd">
+        <dt class="desc-list-key">{{ field.key }}</dt>
+        <dd class="desc-list-val">{{ field.val }}</dd>
+      </div>
+    }
+  </dl>
+</div>

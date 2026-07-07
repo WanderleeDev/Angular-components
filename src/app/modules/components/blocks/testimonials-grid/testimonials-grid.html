@@ -1,0 +1,48 @@
+<div class="testimonials-container">
+  <!-- Header Area -->
+  <div class="testimonials-header">
+    <span class="category-tag">Social Proof</span>
+    <h2>Loved by developers & designers</h2>
+    <p>See what leading engineering teams say about using our custom standalone UI modules.</p>
+  </div>
+
+  <!-- Bento Testimonial Grid -->
+  <div class="testimonials-grid">
+    @for (item of reviews(); track item.name) {
+      <div 
+        class="testimonial-card" 
+        [class.featured-card]="item.featured">
+        
+        @if (item.featured) {
+          <div class="card-glow"></div>
+        }
+
+        <!-- Rating Stars -->
+        <div class="rating-stars">
+          @for (star of [].constructor(item.rating); track $index) {
+            <svg viewBox="0 0 20 20" fill="currentColor" class="star-icon">
+              <path d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.6 3.1-.114 4.715c-.02.836.88 1.48 1.577 1.013L10 15.71l4.005 2.501c.697.467 1.597-.177 1.577-1.013l-.114-4.715 3.6-3.1c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+            </svg>
+          }
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="quote-text">
+          "{{ item.quote }}"
+        </blockquote>
+
+        <!-- User Info -->
+        <div class="user-info">
+          <div class="avatar-wrapper">
+            <img [src]="item.avatar" [alt]="item.name" class="avatar-img" />
+          </div>
+          <div class="user-details">
+            <span class="user-name">{{ item.name }}</span>
+            <span class="user-meta">{{ item.role }}, {{ item.company }}</span>
+          </div>
+        </div>
+
+      </div>
+    }
+  </div>
+</div>

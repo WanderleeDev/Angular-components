@@ -1,0 +1,42 @@
+<div class="stats-container">
+  <!-- Header & Selectors -->
+  <div class="stats-header">
+    <span class="category-tag">Analytics</span>
+    <h2>Performance Overview</h2>
+    <p>Monitor critical application metrics and activity trends across timelines.</p>
+
+    <div class="timeframe-selector">
+      <button 
+        [class.active]="selectedTimeframe() === 'day'" 
+        (click)="setTimeframe('day')" 
+        class="timeframe-btn">
+        24 Hours
+      </button>
+      <button 
+        [class.active]="selectedTimeframe() === 'week'" 
+        (click)="setTimeframe('week')" 
+        class="timeframe-btn">
+        7 Days
+      </button>
+      <button 
+        [class.active]="selectedTimeframe() === 'month'" 
+        (click)="setTimeframe('month')" 
+        class="timeframe-btn">
+        30 Days
+      </button>
+    </div>
+  </div>
+
+  <!-- Grid Layout -->
+  <div class="stats-grid">
+    @for (item of currentMetrics(); track item.title) {
+      <app-active-users-card
+        [title]="item.title"
+        [value]="item.value"
+        [trend]="item.trend"
+        [positive]="item.positive"
+        [icon]="item.icon"
+        [points]="item.points" />
+    }
+  </div>
+</div>

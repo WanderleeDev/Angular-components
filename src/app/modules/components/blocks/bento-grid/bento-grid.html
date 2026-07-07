@@ -1,0 +1,109 @@
+<div class="bento-container">
+  <div class="bento-grid">
+    
+    <!-- Card 1: Main / Hero Feature -->
+    <div class="bento-card card-hero">
+      <div class="card-glow"></div>
+      <div class="card-content">
+        <span class="category-tag">Status</span>
+        <h3>Core Engine</h3>
+        <p>Real-time telemetry and resource scaling based on active system load.</p>
+        <div class="status-indicator-wrapper">
+          <span class="status-dot pulsing"></span>
+          <span class="status-text">{{ metrics().status }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Interactive Mode Selector -->
+    <div class="bento-card card-control">
+      <div class="card-content">
+        <span class="category-tag">Controls</span>
+        <h3>Performance Profile</h3>
+        <p>Adjust optimization parameters on the fly.</p>
+        <div class="mode-actions">
+          <button 
+            [class.active]="selectedMode() === 'eco'"
+            (click)="selectMode('eco')"
+            class="mode-btn eco-btn">
+            <span class="material-icons">eco</span>
+            Eco Mode
+          </button>
+          <button 
+            [class.active]="selectedMode() === 'balance'"
+            (click)="selectMode('balance')"
+            class="mode-btn balance-btn">
+            <span class="material-icons">balance</span>
+            Balanced
+          </button>
+          <button 
+            [class.active]="selectedMode() === 'performance'"
+            (click)="selectMode('performance')"
+            class="mode-btn speed-btn">
+            <span class="material-icons">speed</span>
+            Turbo
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Live Gauge / Metrics -->
+    <div class="bento-card card-metrics">
+      <div class="card-content">
+        <span class="category-tag">Metrics</span>
+        <h3>Real-time Scaling</h3>
+        <div class="metric-gauges">
+          <div class="gauge-item">
+            <span class="gauge-label">Speed</span>
+            <div class="progress-bar-bg">
+              <div class="progress-bar" [style.width]="metrics().speed"></div>
+            </div>
+            <span class="gauge-value">{{ metrics().speed }}</span>
+          </div>
+          <div class="gauge-item">
+            <span class="gauge-label">Power Draw</span>
+            <div class="progress-bar-bg">
+              <div class="progress-bar" [style.width]="metrics().power"></div>
+            </div>
+            <span class="gauge-value">{{ metrics().power }}</span>
+          </div>
+          <div class="gauge-item">
+            <span class="gauge-label">Temperature</span>
+            <span class="gauge-value temp-value">{{ metrics().temp }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Event Logs -->
+    <div class="bento-card card-logs">
+      <div class="card-content">
+        <span class="category-tag">Activity Log</span>
+        <h3>Recent Events</h3>
+        <ul class="logs-list">
+          @for (log of recentEvents(); track log) {
+            <li class="log-item">
+              <span class="log-bullet"></span>
+              <span class="log-text">{{ log }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Card 5: Visual Network / connectivity card -->
+    <div class="bento-card card-visual">
+      <div class="card-glow-network"></div>
+      <div class="card-content">
+        <span class="category-tag">Integrations</span>
+        <h3>Cloud Sync</h3>
+        <div class="floating-icons">
+          <div class="icon-node node-1"><span class="material-icons">cloud</span></div>
+          <div class="icon-node node-2"><span class="material-icons">hub</span></div>
+          <div class="icon-node node-3"><span class="material-icons">storage</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -5,3 +5,8 @@ allowBuilds:
   msgpackr-extract: true
   nice-napi: true
   nx: true
+
+overrides:
+  minimatch: ^9.0.7
+  esbuild: ^0.28.1
+  "@babel/core": ^7.29.1

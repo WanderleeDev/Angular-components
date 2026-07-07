@@ -1,0 +1,44 @@
+<div class="accordion-container">
+  <div class="accordion">
+    <!-- Entries -->
+    <div class="accordion-entries">
+      @for (item of items(); track item.title; let index = $index) {
+      <details
+        class="accordion-details"
+        [attr.name]="exclusive() ? 'demo-accordion' : null"
+        [attr.open]="index === 0 ? '' : null">
+        <summary>
+          <span>{{ item.title }}</span>
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path d="M12 5v14m-7-7h14" />
+          </svg>
+        </summary>
+        <p>{{ item.content }}</p>
+      </details>
+      }
+    </div>
+
+    <!-- Images -->
+    <div class="accordion-images">
+      @for (item of items(); track item.title; let index = $index) {
+      <img
+        class="accordion-image"
+        [src]="item.image"
+        [alt]="item.title"
+        (error)="onImageError($event)" />
+      }
+      <img
+        class="accordion-image image-default"
+        [src]="baseThumbnail()"
+        alt="Default Showcase"
+        loading="lazy" />
+    </div>
+  </div>
+</div>
