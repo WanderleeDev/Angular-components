@@ -1,0 +1,64 @@
+<div class="relative w-full rounded-3xl border border-app-border bg-app-card/40 overflow-hidden p-8 md:p-12 flex flex-col items-center text-center justify-center min-h-[400px]">
+  <div class="absolute -top-36 -right-36 w-80 h-80 rounded-full bg-linear-to-tr from-cyan-500/10 to-blue-500/10 blur-3xl"></div>
+  <div class="absolute -bottom-36 -left-36 w-80 h-80 rounded-full bg-linear-to-tr from-purple-500/10 to-pink-500/10 blur-3xl"></div>
+
+  <div class="relative z-10 max-w-2xl flex flex-col items-center">
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-6 uppercase tracking-wider">
+      Newsletter
+    </span>
+    <h1 class="text-3xl md:text-5xl font-black tracking-tight text-app-text font-krona leading-tight mb-4">
+      Keep up with releases
+    </h1>
+    <p class="text-sm md:text-base text-app-text/70 leading-relaxed max-w-lg mb-8">
+      Join our mailing list to receive notifications about new standalone component components, visual style themes, and direct GitHub updates.
+    </p>
+
+    <div class="w-full max-w-md flex flex-col gap-2">
+      <form (submit)="$event.preventDefault(); subscribe()" class="w-full flex flex-col sm:flex-row gap-3">
+        <div class="relative flex-grow">
+          <input 
+            type="email" 
+            [value]="email()"
+            (input)="setEmail($any($event.target).value)"
+            placeholder="Enter your email address" 
+            [disabled]="status() === 'loading' || status() === 'success'"
+            class="w-full px-4 h-12 rounded-xl bg-app-text/3 border border-app-border text-app-text placeholder-app-text/40 text-sm focus:outline-none focus:ring-2 focus:ring-app-accent/50 focus:border-app-accent transition-all"
+            [class.border-red-500]="status() === 'error'"
+            [class.focus:ring-red-500/30]="status() === 'error'"
+            [class.focus:border-red-500]="status() === 'error'"
+            required>
+          @if (status() === 'success') {
+            <span class="absolute right-3 top-3.5 material-icons text-emerald-500 text-lg">check_circle</span>
+          }
+        </div>
+        <button 
+          type="submit"
+          [disabled]="status() === 'loading' || status() === 'success'"
+          class="h-12 px-6 rounded-xl bg-app-accent text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-app-accent/90 transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+          @if (status() === 'loading') {
+            <span class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+            Subscribing...
+          } @else if (status() === 'success') {
+            Subscribed
+          } @else {
+            Subscribe
+          }
+        </button>
+      </form>
+
+      @if (status() === 'error') {
+        <p class="text-left text-xs font-bold text-red-500 flex items-center gap-1 mt-1 pl-1">
+          <span class="material-icons text-sm">error</span>
+          {{ errorMessage() }}
+        </p>
+      }
+
+      @if (status() === 'success') {
+        <p class="text-left text-xs font-bold text-emerald-500 flex items-center gap-1 mt-1 pl-1">
+          <span class="material-icons text-sm">check_circle</span>
+          Thanks for subscribing! Check your inbox for confirmation.
+        </p>
+      }
+    </div>
+  </div>
+</div>
