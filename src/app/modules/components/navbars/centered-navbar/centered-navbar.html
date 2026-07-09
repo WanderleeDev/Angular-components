@@ -1,0 +1,42 @@
+<nav class="centered-nav">
+  <div class="nav-container">
+    <!-- Left Navigation Links (Desktop) -->
+    <div class="nav-links-left">
+      <a href="javascript:void(0)" class="nav-link active">Home</a>
+      <a href="javascript:void(0)" class="nav-link">Shop</a>
+      <a href="javascript:void(0)" class="nav-link">About</a>
+    </div>
+
+    <!-- Centered Brand -->
+    <div class="nav-brand">
+      <span class="material-icons brand-logo">bubble_chart</span>
+      <span class="brand-name">Aura</span>
+    </div>
+
+    <!-- Right Navigation Links + Actions (Desktop) -->
+    <div class="nav-links-right">
+      <a href="javascript:void(0)" class="nav-link">Blog</a>
+      <a href="javascript:void(0)" class="nav-link">Contact</a>
+      <button type="button" class="btn-outline">Cart (0)</button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button type="button" class="mobile-toggle" (click)="toggleMobile()" aria-label="Toggle menu">
+      <span class="material-icons">{{ isMobileOpen() ? 'close' : 'menu' }}</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  @if (isMobileOpen()) {
+  <div class="mobile-menu">
+    <a href="javascript:void(0)" class="mobile-link active">Home</a>
+    <a href="javascript:void(0)" class="mobile-link">Shop</a>
+    <a href="javascript:void(0)" class="mobile-link">About</a>
+    <a href="javascript:void(0)" class="mobile-link">Blog</a>
+    <a href="javascript:void(0)" class="mobile-link">Contact</a>
+    <div class="mobile-actions">
+      <button type="button" class="btn-outline w-full">Cart (0)</button>
+    </div>
+  </div>
+  }
+</nav>

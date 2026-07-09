@@ -1,0 +1,62 @@
+<header class="double-header">
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="top-container">
+      <div class="contact-info">
+        <span class="material-icons text-sm">phone</span>
+        <span>+1 (555) 019-2834</span>
+      </div>
+      <div class="utility-links">
+        <a href="javascript:void(0)" class="utility-link">Support</a>
+        <a href="javascript:void(0)" class="utility-link">Find a Store</a>
+        <div class="lang-selector">
+          <span class="material-icons text-sm">language</span>
+          <span>EN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Main Navbar -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <div class="brand-logo">
+          <span class="material-icons">architecture</span>
+        </div>
+        <span class="brand-name">Nexus</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="javascript:void(0)" class="nav-link active">Dashboard</a>
+        <a href="javascript:void(0)" class="nav-link">Projects</a>
+        <a href="javascript:void(0)" class="nav-link">Analytics</a>
+        <a href="javascript:void(0)" class="nav-link">Team</a>
+        <a href="javascript:void(0)" class="nav-link">Settings</a>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" class="btn-text">Log In</button>
+        <button type="button" class="btn-solid">Launch App</button>
+      </div>
+
+      <button type="button" class="mobile-toggle" (click)="toggleMobile()" aria-label="Toggle menu">
+        <span class="material-icons">{{ isMobileOpen() ? 'close' : 'menu' }}</span>
+      </button>
+    </div>
+
+    @if (isMobileOpen()) {
+    <div class="mobile-menu">
+      <a href="javascript:void(0)" class="mobile-link active">Dashboard</a>
+      <a href="javascript:void(0)" class="mobile-link">Projects</a>
+      <a href="javascript:void(0)" class="mobile-link">Analytics</a>
+      <a href="javascript:void(0)" class="mobile-link">Team</a>
+      <a href="javascript:void(0)" class="mobile-link">Settings</a>
+      <div class="mobile-actions">
+        <button type="button" class="btn-text w-full">Log In</button>
+        <button type="button" class="btn-solid w-full">Launch App</button>
+      </div>
+    </div>
+    }
+  </nav>
+</header>
