@@ -1,5 +1,4 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
-import { getPrerenderPagesForCategory } from 'app/modules/catalog/const/index';
 import { Catalog, categories } from './modules/components/loader';
 
 export const serverRoutes: ServerRoute[] = [
