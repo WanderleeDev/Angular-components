@@ -1,3 +1,7 @@
+:host {
+ display: contents;
+}
+
 .accordion-container {
   container-type: inline-size;
   interpolate-size: allow-keywords;

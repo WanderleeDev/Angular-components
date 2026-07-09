@@ -29,3 +29,7 @@ export function pagination(section: Catalog, page = 1, limit = 4) {
 export function getMetadataSection(section: Catalog) {
   return ALL_METADATA[section];
 }
+
+export function getNavigationList() {
+  return Object.entries(ALL_METADATA).map(([key, value]) => value);
+}

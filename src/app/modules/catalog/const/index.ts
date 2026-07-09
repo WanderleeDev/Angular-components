@@ -1,4 +1,5 @@
 import { INavList } from 'app/interfaces/IDataCard.interface';
+import { Type } from '@angular/core';
 
 export interface RegistryComponent {
   id: string;
@@ -44,6 +45,26 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     cssFiles: ['active-users.ts', 'active-users.html', 'active-users.css'],
   },
   {
+    id: 'product-card',
+    name: 'Interactive Product Card',
+    description:
+      'A customizable e-commerce product card featuring dynamic signal-based size and color selection, rating display, and animated cart interaction.',
+    category: 'cards',
+    icon: 'shopping_bag',
+    cssPath: 'product-card/css',
+    cssFiles: ['product-card.ts', 'product-card.html', 'product-card.css'],
+  },
+  {
+    id: 'profile-card',
+    name: 'Interactive Profile Card',
+    description:
+      'A premium glassmorphic user profile card featuring a live digital clock, dynamic followers telemetry, expertise tag highlights, and micro-animations.',
+    category: 'cards',
+    icon: 'badge',
+    cssPath: 'profile-card/css',
+    cssFiles: ['profile-card.ts', 'profile-card.html', 'profile-card.css'],
+  },
+  {
     id: 'simple-navbar',
     name: 'Simple Navbar',
     description:
@@ -62,6 +83,92 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     icon: 'tab',
     cssPath: 'tabs-navbar/css',
     cssFiles: ['tabs-navbar.ts', 'tabs-navbar.html', 'tabs-navbar.css'],
+  },
+  {
+    id: 'floating-navbar',
+    name: 'Floating Navbar',
+    description:
+      'A centered glassmorphic floating header layout with rounded active pill navigations and backdrop blur.',
+    category: 'navbars',
+    icon: 'tab_unselected',
+    cssPath: 'floating-navbar/css',
+    cssFiles: [
+      'floating-navbar.ts',
+      'floating-navbar.html',
+      'floating-navbar.css',
+    ],
+  },
+  {
+    id: 'search-navbar',
+    name: 'Search Navbar',
+    description:
+      'An e-commerce and search-focused navbar with profile dropdown icons, search bar layout, and item count badges.',
+    category: 'navbars',
+    icon: 'search',
+    cssPath: 'search-navbar/css',
+    cssFiles: ['search-navbar.ts', 'search-navbar.html', 'search-navbar.css'],
+  },
+  {
+    id: 'double-navbar',
+    name: 'Double Navbar',
+    description:
+      'A professional dual-row layout headers displaying secondary metadata links at the top and main navigation at the bottom.',
+    category: 'navbars',
+    icon: 'table_rows',
+    cssPath: 'double-navbar/css',
+    cssFiles: ['double-navbar.ts', 'double-navbar.html', 'double-navbar.css'],
+  },
+  {
+    id: 'overlay-navbar',
+    name: 'Overlay Navbar',
+    description:
+      'A minimal header layout with a fullscreen glassmorphic overlay menu triggered by a custom animated hamburger button.',
+    category: 'navbars',
+    icon: 'fullscreen',
+    cssPath: 'overlay-navbar/css',
+    cssFiles: [
+      'overlay-navbar.ts',
+      'overlay-navbar.html',
+      'overlay-navbar.css',
+    ],
+  },
+  {
+    id: 'banner-navbar',
+    name: 'Banner Navbar',
+    description:
+      'A top promotional announcement banner layout combined with a clean secondary responsive header navigation.',
+    category: 'navbars',
+    icon: 'assistant_navigation',
+    cssPath: 'banner-navbar/css',
+    cssFiles: ['banner-navbar.ts', 'banner-navbar.html', 'banner-navbar.css'],
+  },
+  {
+    id: 'centered-navbar',
+    name: 'Centered Navbar',
+    description:
+      'A centered branding logo layout with split navigation menus on the left and right sides and utility actions.',
+    category: 'navbars',
+    icon: 'center_focus_strong',
+    cssPath: 'centered-navbar/css',
+    cssFiles: [
+      'centered-navbar.ts',
+      'centered-navbar.html',
+      'centered-navbar.css',
+    ],
+  },
+  {
+    id: 'floating-sidebar',
+    name: 'Floating Sidebar',
+    description:
+      'A modern floating dashboard sidebar navigation mockup with vertical link lists, collapsible drawer controls, and active states.',
+    category: 'navbars',
+    icon: 'menu_open',
+    cssPath: 'floating-sidebar/css',
+    cssFiles: [
+      'floating-sidebar.ts',
+      'floating-sidebar.html',
+      'floating-sidebar.css',
+    ],
   },
   {
     id: 'range-slider',
@@ -101,7 +208,53 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'footers',
     icon: 'view_column',
     cssPath: 'columns-footer/css',
-    cssFiles: ['columns-footer.ts', 'columns-footer.html', 'columns-footer.css'],
+    cssFiles: [
+      'columns-footer.ts',
+      'columns-footer.html',
+      'columns-footer.css',
+    ],
+  },
+  {
+    id: 'newsletter-footer',
+    name: 'Newsletter Footer',
+    description:
+      'A minimal responsive footer featuring a clean interactive newsletter subscription input field and visual social links.',
+    category: 'footers',
+    icon: 'mail_outline',
+    cssPath: 'newsletter-footer/css',
+    cssFiles: [
+      'newsletter-footer.ts',
+      'newsletter-footer.html',
+      'newsletter-footer.css',
+    ],
+  },
+  {
+    id: 'bento-footer',
+    name: 'Bento Grid Footer',
+    description:
+      'A structured bento-style footer detailing multi-column resource link lists and a dynamic platform uptime status indicator.',
+    category: 'footers',
+    icon: 'grid_on',
+    cssPath: 'bento-footer/css',
+    cssFiles: [
+      'bento-footer.ts',
+      'bento-footer.html',
+      'bento-footer.css',
+    ],
+  },
+  {
+    id: 'localized-footer',
+    name: 'Localized Footer',
+    description:
+      'An interactive platform footer featuring custom signal-based dropdown menus for currency and language select localization options.',
+    category: 'footers',
+    icon: 'public',
+    cssPath: 'localized-footer/css',
+    cssFiles: [
+      'localized-footer.ts',
+      'localized-footer.html',
+      'localized-footer.css',
+    ],
   },
   {
     id: 'split-hero',
@@ -124,6 +277,48 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     cssFiles: ['centered-hero.ts', 'centered-hero.html', 'centered-hero.css'],
   },
   {
+    id: 'glass-hero',
+    name: 'Glassmorphic Mockup Hero',
+    description:
+      'A high-end glassmorphic hero header showcasing decorative blur radial glow graphics and an animated code terminal simulation widget.',
+    category: 'headers',
+    icon: 'terminal',
+    cssPath: 'glass-hero/css',
+    cssFiles: [
+      'glass-hero.ts',
+      'glass-hero.html',
+      'glass-hero.css',
+    ],
+  },
+  {
+    id: 'newsletter-hero',
+    name: 'Newsletter Signup Hero',
+    description:
+      'A subscription-centric marketing landing page hero featuring a validation form with animated progress loading and success confirmation signals.',
+    category: 'headers',
+    icon: 'mark_email_read',
+    cssPath: 'newsletter-hero/css',
+    cssFiles: [
+      'newsletter-hero.ts',
+      'newsletter-hero.html',
+      'newsletter-hero.css',
+    ],
+  },
+  {
+    id: 'feature-hero',
+    name: 'Interactive Feature Hero',
+    description:
+      'A split-screen features landing hero header with a signal-based side tab list switcher toggling interactive product metric cards.',
+    category: 'headers',
+    icon: 'view_list',
+    cssPath: 'feature-hero/css',
+    cssFiles: [
+      'feature-hero.ts',
+      'feature-hero.html',
+      'feature-hero.css',
+    ],
+  },
+  {
     id: 'interactive-list',
     name: 'Interactive List',
     description:
@@ -131,7 +326,11 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'lists',
     icon: 'list',
     cssPath: 'interactive-list/css',
-    cssFiles: ['interactive-list.ts', 'interactive-list.html', 'interactive-list.css'],
+    cssFiles: [
+      'interactive-list.ts',
+      'interactive-list.html',
+      'interactive-list.css',
+    ],
   },
   {
     id: 'description-list',
@@ -141,7 +340,39 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'lists',
     icon: 'view_list',
     cssPath: 'description-list/css',
-    cssFiles: ['description-list.ts', 'description-list.html', 'description-list.css'],
+    cssFiles: [
+      'description-list.ts',
+      'description-list.html',
+      'description-list.css',
+    ],
+  },
+  {
+    id: 'task-list',
+    name: 'Interactive Task List',
+    description:
+      'An interactive checkable task checklist featuring dynamic completion states, priority badges, and reactively calculated counts using Signals.',
+    category: 'lists',
+    icon: 'rule',
+    cssPath: 'task-list/css',
+    cssFiles: [
+      'task-list.ts',
+      'task-list.html',
+      'task-list.css',
+    ],
+  },
+  {
+    id: 'collapsible-list',
+    name: 'Expandable Accordion List',
+    description:
+      'A collapsible accordion content list featuring smooth height grid transitions and interactive state selectors using Signals.',
+    category: 'lists',
+    icon: 'expand',
+    cssPath: 'collapsible-list/css',
+    cssFiles: [
+      'collapsible-list.ts',
+      'collapsible-list.html',
+      'collapsible-list.css',
+    ],
   },
   {
     id: 'star-rating',
@@ -207,7 +438,11 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'blocks',
     icon: 'route',
     cssPath: 'timeline-block/css',
-    cssFiles: ['timeline-block.ts', 'timeline-block.html', 'timeline-block.css'],
+    cssFiles: [
+      'timeline-block.ts',
+      'timeline-block.html',
+      'timeline-block.css',
+    ],
   },
   {
     id: 'stats-grid',
@@ -227,7 +462,11 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'blocks',
     icon: 'table_chart',
     cssPath: 'comparison-table/css',
-    cssFiles: ['comparison-table.ts', 'comparison-table.html', 'comparison-table.css'],
+    cssFiles: [
+      'comparison-table.ts',
+      'comparison-table.html',
+      'comparison-table.css',
+    ],
   },
   {
     id: 'tabs-showcase',
@@ -247,7 +486,11 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'blocks',
     icon: 'format_quote',
     cssPath: 'testimonials-grid/css',
-    cssFiles: ['testimonials-grid.ts', 'testimonials-grid.html', 'testimonials-grid.css'],
+    cssFiles: [
+      'testimonials-grid.ts',
+      'testimonials-grid.html',
+      'testimonials-grid.css',
+    ],
   },
   {
     id: 'feature-spotlight',
@@ -257,7 +500,11 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'blocks',
     icon: 'highlight',
     cssPath: 'feature-spotlight/css',
-    cssFiles: ['feature-spotlight.ts', 'feature-spotlight.html', 'feature-spotlight.css'],
+    cssFiles: [
+      'feature-spotlight.ts',
+      'feature-spotlight.html',
+      'feature-spotlight.css',
+    ],
   },
   {
     id: 'team-grid',
@@ -297,7 +544,11 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'blocks',
     icon: 'smart_toy',
     cssPath: 'onboarding-steps/css',
-    cssFiles: ['onboarding-steps.ts', 'onboarding-steps.html', 'onboarding-steps.css'],
+    cssFiles: [
+      'onboarding-steps.ts',
+      'onboarding-steps.html',
+      'onboarding-steps.css',
+    ],
   },
   {
     id: 'partner-marquee',
@@ -307,7 +558,11 @@ export const COMPONENTS_REGISTRY: RegistryComponent[] = [
     category: 'blocks',
     icon: 'handshake',
     cssPath: 'partner-marquee/css',
-    cssFiles: ['partner-marquee.ts', 'partner-marquee.html', 'partner-marquee.css'],
+    cssFiles: [
+      'partner-marquee.ts',
+      'partner-marquee.html',
+      'partner-marquee.css',
+    ],
   },
   {
     id: 'hero-banner',
@@ -391,3 +646,58 @@ export const COMPONENTS_DATA: INavList[] = RAW_COMPONENTS_DATA.map(item => ({
   numberComponents: COMPONENTS_REGISTRY.filter(c => c.category === item.title)
     .length,
 }));
+
+export const DEFAULT_PAGE_SIZE = 4;
+
+export const COMPONENT_LOADERS: Record<string, () => Promise<Type<unknown>>> = {
+  'simple-navbar': () =>
+    import('app/modules/components/navbars/simple-navbar/simple-navbar').then(
+      m => m.SimpleNavbar
+    ),
+  'tabs-navbar': () =>
+    import('app/modules/components/navbars/tabs-navbar/tabs-navbar').then(
+      m => m.TabsNavbar
+    ),
+  'floating-navbar': () =>
+    import('app/modules/components/navbars/floating-navbar/floating-navbar').then(
+      m => m.FloatingNavbar
+    ),
+  'search-navbar': () =>
+    import('app/modules/components/navbars/search-navbar/search-navbar').then(
+      m => m.SearchNavbar
+    ),
+  'double-navbar': () =>
+    import('app/modules/components/navbars/double-navbar/double-navbar').then(
+      m => m.DoubleNavbar
+    ),
+  'overlay-navbar': () =>
+    import('app/modules/components/navbars/overlay-navbar/overlay-navbar').then(
+      m => m.OverlayNavbar
+    ),
+  'banner-navbar': () =>
+    import('app/modules/components/navbars/banner-navbar/banner-navbar').then(
+      m => m.BannerNavbar
+    ),
+  'centered-navbar': () =>
+    import('app/modules/components/navbars/centered-navbar/centered-navbar').then(
+      m => m.CenteredNavbar
+    ),
+  'floating-sidebar': () =>
+    import('app/modules/components/navbars/floating-sidebar/floating-sidebar').then(
+      m => m.FloatingSidebar
+    ),
+};
+
+export function getPagesForCategory(category: string, pageSize: number = DEFAULT_PAGE_SIZE): number {
+  const count = COMPONENTS_REGISTRY.filter(c => c.category === category).length;
+  return Math.ceil(count / pageSize);
+}
+
+export function getPrerenderPagesForCategory(category: string, pageSize: number = DEFAULT_PAGE_SIZE): Array<{ page: string }> {
+  const pages = getPagesForCategory(category, pageSize);
+  const params = [];
+  for (let i = 1; i <= pages; i++) {
+    params.push({ page: i.toString() });
+  }
+  return params;
+}

@@ -8,7 +8,7 @@ import { HeroDescriptionComponent } from '../components/hero-description/hero-de
   imports: [HeroVideoComponent, HeroTitleComponent, HeroDescriptionComponent],
   template: `
     <section
-      class="relative overflow-hidden min-h-screen w-full flex flex-col justify-between bg-app-bg text-app-text transition-colors duration-300 p-8">
+      class="relative overflow-hidden min-h-screen w-full flex flex-col justify-between bg-app-bg text-app-text transition-colors duration-300 p-4 sm:p-8">
       <app-hero-video />
       <app-hero-title />
       <app-hero-description />
