@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ThemeSelectComponent } from 'app/modules/shared/presentation/components/theme-select/theme-select.component';
-import { COMPONENTS_DATA } from 'app/modules/catalog/const';
+import { getCategoryNavigationLinks } from 'app/modules/shared/utils';
 
 @Component({
   selector: 'app-catalog-layout',
@@ -13,8 +13,9 @@ import { COMPONENTS_DATA } from 'app/modules/catalog/const';
   },
 })
 export default class CatalogLayout {
-  navList = signal(COMPONENTS_DATA);
-  isMobileMenuOpen = signal<boolean>(false);
+  readonly navLinks = signal(getCategoryNavigationLinks());
+
+  readonly isMobileMenuOpen = signal<boolean>(false);
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen.update(state => !state);

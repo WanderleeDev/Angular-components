@@ -6,7 +6,7 @@ import {
   viewChild,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { COMPONENTS_DATA } from '../../const';
+import { getCategoryNavigationLinks } from 'app/modules/shared/utils';
 
 @Component({
   selector: 'app-nav-mobile',
@@ -25,7 +25,7 @@ import { COMPONENTS_DATA } from '../../const';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavMobile {
-  navList = signal(COMPONENTS_DATA);
+  readonly navLinks = signal(getCategoryNavigationLinks());
   menuMobile = viewChild<ElementRef<HTMLDialogElement>>('menuMobile');
   isOpen = signal(false);
 
