@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { INavList } from 'app/interfaces/IDataCard.interface';
+import { NavList } from 'app/modules/components/loader/types';
 
 @Component({
   selector: 'app-animated-card',
@@ -12,5 +12,5 @@ import { INavList } from 'app/interfaces/IDataCard.interface';
   },
 })
 export class AnimatedCard {
-  cardData = input.required<INavList>();
+  cardData = input.required<NavList>();
 }

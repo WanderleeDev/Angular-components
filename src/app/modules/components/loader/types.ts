@@ -9,3 +9,11 @@ export type SectionMetadata = {
   color: string;
   isDoubleColumn?: boolean;
 };
+
+export type NavList = {
+  title: string;
+  numberComponents: number;
+  icon: string;
+  description: string;
+  color: string;
+};

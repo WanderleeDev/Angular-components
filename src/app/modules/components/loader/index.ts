@@ -7,7 +7,7 @@ import { LISTS_LOADERS, LIST_METADATA } from './lists.loader';
 import { BLOCKS_LOADERS, BLOCK_METADATA } from './blocks.loader';
 import { OTHERS_LOADERS, OTHER_METADATA } from './others.loader';
 import { ComponentsLoader, SectionMetadata } from './types';
-import { SERVICES_METADATA } from './services.loader';
+import { SERVICES_LOADERS, SERVICES_METADATA } from './services.loader';
 
 export const ALL_LOADERS: Readonly<Record<string, ComponentsLoader>> = {
   navbars: NAVBARS_LOADERS,
@@ -18,6 +18,7 @@ export const ALL_LOADERS: Readonly<Record<string, ComponentsLoader>> = {
   lists: LISTS_LOADERS,
   blocks: BLOCKS_LOADERS,
   others: OTHERS_LOADERS,
+  services: SERVICES_LOADERS,
 } as const;
 
 export const ALL_METADATA: Readonly<Record<string, SectionMetadata>> = {
