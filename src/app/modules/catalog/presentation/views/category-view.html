@@ -1,0 +1,74 @@
+@let data = componets.value();
+<div class="flex flex-col gap-8 max-w-7xl mx-auto w-full">
+  <header
+    class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-app-border">
+    <div class="flex flex-col gap-2">
+      <h1
+        class="flex flex-wrap items-center gap-3 text-2xl sm:text-3xl font-extrabold tracking-tight font-krona leading-none py-1">
+        <span class="material-icons text-app-accent text-2xl">
+          {{metadata().icon}}
+        </span>
+        <span
+          class="bg-linear-to-r from-app-accent to-purple-500 bg-clip-text text-transparent capitalize"
+          >{{ metadata().title }}</span
+        >
+        @if (data?.totalElements; as totalElements) {
+        <span
+          class="inline-flex items-center justify-center text-xs font-bold px-2.5 py-0.5 rounded-full bg-app-accent/10 border border-app-accent/20 text-app-accent shadow-xs shadow-app-accent/10 font-sans align-middle -translate-y-px">
+          {{ totalElements }}
+        </span>
+        }
+      </h1>
+      <p
+        class="text-app-text/60 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed">
+        {{ metadata().description }}
+      </p>
+    </div>
+
+    <div class="flex items-center gap-4 flex-wrap">
+      <a
+        routerLink="/catalog"
+        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-app-card border border-app-border text-app-text/80 hover:text-app-accent hover:border-app-accent/30 hover:bg-app-accent/5 transition-all duration-200 text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50 cursor-pointer">
+        <span class="material-icons text-lg">arrow_back</span>
+        Back to Catalog
+      </a>
+
+      @if (data?.totalPages && data.totalPages > 1) {
+      <div
+        class="flex items-center gap-2 bg-app-card border border-app-border p-1.5 rounded-xl">
+        <a
+          [routerLink]="data?.hastPrevPage ? ['/catalog', categoryParam(), 'page', pageParam() - 1] : null"
+          [class.opacity-40]="!data?.hastPrevPage"
+          [class.cursor-not-allowed]="!data?.hastPrevPage"
+          class="flex items-center justify-center w-9 h-9 rounded-lg bg-app-accent/10 text-app-accent hover:bg-app-accent hover:text-white transition-all duration-200">
+          <span class="material-icons text-sm">chevron_left</span>
+        </a>
+        <span class="text-xs font-bold text-app-text/70 px-2 font-sans">
+          {{ pageParam() }} / {{ data.totalPages }}
+        </span>
+        <a
+          [routerLink]="data?.hastNextPage ? ['/catalog', categoryParam(), 'page', pageParam() + 1] : null"
+          [class.opacity-40]="!data?.hastNextPage"
+          [class.cursor-not-allowed]="!data?.hastNextPage"
+          class="flex items-center justify-center w-9 h-9 rounded-lg bg-app-accent/10 text-app-accent hover:bg-app-accent hover:text-white transition-all duration-200">
+          <span class="material-icons text-sm">chevron_right</span>
+        </a>
+      </div>
+      }
+    </div>
+  </header>
+
+  <div
+    class="grid gap-8 grid-cols-1"
+    [class.md:grid-cols-2]="metadata().isDoubleColumn">
+    @if (componets.isLoading()) {
+    <app-loading-state />
+    } @else if (componets.error()) {
+    <app-error-state (retry)="componets.reload()" />
+    } @else { @for (c of data?.components; track c.name) {
+    <app-window [nameComponent]="c.name">
+      <ng-container *ngComponentOutlet="c.compClass" />
+    </app-window>
+    } }
+  </div>
+</div>
