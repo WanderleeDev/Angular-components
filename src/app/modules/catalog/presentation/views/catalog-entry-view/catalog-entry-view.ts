@@ -7,8 +7,8 @@ import {
 import { RouterLink } from '@angular/router';
 import { CatalogHeader } from 'app/modules/catalog/presentation/components/catalog-header/catalog-header';
 import { CatalogCta } from 'app/modules/catalog/presentation/components/catalog-cta/catalog-cta';
-import { COMPONENTS_DATA } from 'app/modules/catalog/const';
-import { INavList } from 'app/interfaces/IDataCard.interface';
+import { getCatalogCategoriesData } from 'app/modules/shared/utils';
+import { NavList } from 'app/modules/components/loader/types';
 import { AnimatedCard } from '../../components/animated-card/animated-card';
 
 @Component({
@@ -18,8 +18,16 @@ import { AnimatedCard } from '../../components/animated-card/animated-card';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class CatalogEntryView {
-  componentsData = signal<INavList[]>(COMPONENTS_DATA);
+  componentsData = signal<NavList[]>(getCatalogCategoriesData());
   searchQuery = signal('');
+
+  readonly themeCardData: NavList = {
+    title: 'themes',
+    icon: 'palette',
+    description: "Explore and configure the application's themes and visual palettes. Choose between light, dark, and specialized retro/cyberpunk options.",
+    color: '#3b82f6',
+    numberComponents: 15,
+  };
 
   filteredComponents = computed(() => {
     const query = this.searchQuery().toLowerCase().trim();
