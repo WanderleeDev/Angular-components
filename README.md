@@ -1,27 +1,55 @@
 # MiAngularComponents
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+Biblioteca de componentes UI reutilizables construida con **Angular 22**, **Tailwind CSS v4** y *server-side rendering* (SSR/prerender), con un sitio-catálogo para explorar, configurar y copiar el código de cada componente.
 
-## Development server
+## Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Angular 22** (componentes standalone, signals, lazy loading)
+- **@angular/ssr** + Express (SSR y prerender)
+- **Tailwind CSS v4** (vía PostCSS) y `tailwind-animations`
+- **ngx-theme-stack** para theming (se sincroniza en el `prebuild`)
+- **ngx-highlightjs** + **highlight.js** para el visor de código
+- **ESLint** + **Prettier** y tests con **Karma/Jasmine**
+- Gestor de paquetes: **pnpm**
 
-## Code scaffolding
+## Scripts
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+pnpm start      # servidor de desarrollo (ng serve)
+pnpm build      # build de producción (ejecuta prebuild de ngx-theme-stack)
+pnpm watch      # build en modo desarrollo con watch
+pnpm test       # tests unitarios (Karma)
+pnpm lint       # ESLint
+```
 
-## Build
+> El script `prebuild` ejecuta `ng generate ngx-theme-stack:sync` antes de cada build.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Estructura
 
-## Running unit tests
+```
+src/app/
+├── modules/
+│   ├── components/        # Componentes de la librería (blocks, cards, footers,
+│   │                      #   headers, lists, navbars, sliders, others, loader)
+│   ├── catalog/           # Sitio-catálogo (layout, views, panel de propiedades,
+│   │                      #   visor de código, header, etc.)
+│   ├── home/              # Landing (home-view)
+│   └── shared/            # Vistas/utilidades compartidas (p. ej. not-found)
+├── app.config.ts          # Configuración de la app
+├── app.routes.ts          # Rutas (home, catalog, **)
+└── app.ts                 # Componente raíz
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Rutas
 
-## Running end-to-end tests
+- `/home` — landing
+- `/catalog` — catálogo (entrada, `themes`, y `:category/page/:page` con paginación lazy)
+- `**` — vista *not found*
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Componentes
 
-## Further help
+La librería agrupa ~109 componentes en categorías: `blocks` (15), `loader` (11), `navbars` (11), `cards` (5), `footers` (5), `headers` (5), `lists` (4), `sliders` (2) y `others` (native-picker, star-rating).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Servidor de desarrollo
+
+Ejecuta `pnpm start` y abre `http://localhost:4200/`. La app recarga automáticamente al modificar los archivos fuente.

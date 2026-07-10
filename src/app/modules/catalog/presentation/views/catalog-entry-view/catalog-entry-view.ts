@@ -13,7 +13,7 @@ import { AnimatedCard } from '../../components/animated-card/animated-card';
 
 @Component({
   selector: 'app-catalog-entry-view',
-  imports: [AnimatedCard, CatalogHeader, CatalogCta, RouterLink],
+  imports: [AnimatedCard, CatalogHeader, CatalogCta],
   templateUrl: './catalog-entry-view.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -24,7 +24,8 @@ export default class CatalogEntryView {
   readonly themeCardData: NavList = {
     title: 'themes',
     icon: 'palette',
-    description: "Explore and configure the application's themes and visual palettes. Choose between light, dark, and specialized retro/cyberpunk options.",
+    description:
+      "Explore and configure the application's themes and visual palettes. Choose between light, dark, and specialized retro/cyberpunk options.",
     color: '#3b82f6',
     numberComponents: 15,
   };
