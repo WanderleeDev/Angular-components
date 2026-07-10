@@ -18,4 +18,18 @@ export const OTHER_METADATA: SectionMetadata = {
     'Miscellaneous custom UI elements, interactive rating gauges, and sandbox testing components.',
   color: '#64748b',
   isDoubleColumn: true,
+  filePaths: {
+    'star-rating': {
+      tailwind: {
+        ts: 'assets/registry/others/star-rating/star-rating.ts',
+        html: 'assets/registry/others/star-rating/star-rating.html',
+      },
+    },
+    'native-picker': {
+      tailwind: {
+        ts: 'assets/registry/others/native-picker/native-picker.ts',
+        html: 'assets/registry/others/native-picker/native-picker.html',
+      },
+    },
+  },
 };

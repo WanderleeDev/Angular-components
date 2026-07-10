@@ -29,4 +29,41 @@ export const FOOTER_METADATA: SectionMetadata = {
   description:
     'Elegant and responsive footer sections configured with quick links, social lists, and badges.',
   color: '#8b5cf6',
+  filePaths: {
+    'simple-footer': {
+      css: {
+        ts: 'assets/registry/footers/simple-footer/simple-footer.ts',
+        html: 'assets/registry/footers/simple-footer/simple-footer.html',
+        css: 'assets/registry/footers/simple-footer/simple-footer.css',
+      },
+    },
+    'columns-footer': {
+      css: {
+        ts: 'assets/registry/footers/columns-footer/columns-footer.ts',
+        html: 'assets/registry/footers/columns-footer/columns-footer.html',
+        css: 'assets/registry/footers/columns-footer/columns-footer.css',
+      },
+    },
+    'newsletter-footer': {
+      css: {
+        ts: 'assets/registry/footers/newsletter-footer/newsletter-footer.ts',
+        html: 'assets/registry/footers/newsletter-footer/newsletter-footer.html',
+        css: 'assets/registry/footers/newsletter-footer/newsletter-footer.css',
+      },
+    },
+    'bento-footer': {
+      css: {
+        ts: 'assets/registry/footers/bento-footer/bento-footer.ts',
+        html: 'assets/registry/footers/bento-footer/bento-footer.html',
+        css: 'assets/registry/footers/bento-footer/bento-footer.css',
+      },
+    },
+    'localized-footer': {
+      css: {
+        ts: 'assets/registry/footers/localized-footer/localized-footer.ts',
+        html: 'assets/registry/footers/localized-footer/localized-footer.html',
+        css: 'assets/registry/footers/localized-footer/localized-footer.css',
+      },
+    },
+  },
 };

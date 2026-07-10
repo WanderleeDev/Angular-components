@@ -18,4 +18,20 @@ export const SLIDER_METADATA: SectionMetadata = {
     'Swipers, carousels, and dual-point slider controls engineered for highly interactive layouts.',
   color: '#10b981',
   isDoubleColumn: true,
+  filePaths: {
+    'range-slider': {
+      css: {
+        ts: 'assets/registry/sliders/range-slider/range-slider.ts',
+        html: 'assets/registry/sliders/range-slider/range-slider.html',
+        css: 'assets/registry/sliders/range-slider/range-slider.css',
+      },
+    },
+    'dual-slider': {
+      css: {
+        ts: 'assets/registry/sliders/dual-slider/dual-slider.ts',
+        html: 'assets/registry/sliders/dual-slider/dual-slider.html',
+        css: 'assets/registry/sliders/dual-slider/dual-slider.css',
+      },
+    },
+  },
 };

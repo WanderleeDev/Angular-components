@@ -30,4 +30,41 @@ export const CARD_METADATA: SectionMetadata = {
     'Flexible content grouping blocks and bento cards with customizable layouts, imagery, and footers.',
   color: '#ec4899',
   isDoubleColumn: true,
+  filePaths: {
+    'category-card': {
+      css: {
+        ts: 'assets/registry/cards/category-card/category-card.ts',
+        html: 'assets/registry/cards/category-card/category-card.html',
+        css: 'assets/registry/cards/category-card/category-card.css',
+      },
+    },
+    'theme-card': {
+      css: {
+        ts: 'assets/registry/cards/theme-card/theme-card.ts',
+        html: 'assets/registry/cards/theme-card/theme-card.html',
+        css: 'assets/registry/cards/theme-card/theme-card.css',
+      },
+    },
+    'active-users': {
+      css: {
+        ts: 'assets/registry/cards/active-users/active-users.ts',
+        html: 'assets/registry/cards/active-users/active-users.html',
+        css: 'assets/registry/cards/active-users/active-users.css',
+      },
+    },
+    'product-card': {
+      css: {
+        ts: 'assets/registry/cards/product-card/product-card.ts',
+        html: 'assets/registry/cards/product-card/product-card.html',
+        css: 'assets/registry/cards/product-card/product-card.css',
+      },
+    },
+    'profile-card': {
+      css: {
+        ts: 'assets/registry/cards/profile-card/profile-card.ts',
+        html: 'assets/registry/cards/profile-card/profile-card.html',
+        css: 'assets/registry/cards/profile-card/profile-card.css',
+      },
+    },
+  },
 };
