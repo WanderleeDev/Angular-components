@@ -1,4 +1,5 @@
-@let data = componets.value();
+@let data = components.value(); @let meta = metadata();
+
 <div class="flex flex-col gap-8 max-w-7xl mx-auto w-full">
   <header
     class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-app-border">
@@ -6,11 +7,11 @@
       <h1
         class="flex flex-wrap items-center gap-3 text-2xl sm:text-3xl font-extrabold tracking-tight font-krona leading-none py-1">
         <span class="material-icons text-app-accent text-2xl">
-          {{metadata().icon}}
+          {{meta.icon}}
         </span>
         <span
           class="bg-linear-to-r from-app-accent to-purple-500 bg-clip-text text-transparent capitalize"
-          >{{ metadata().title }}</span
+          >{{ meta.title }}</span
         >
         @if (data?.totalElements; as totalElements) {
         <span
@@ -21,7 +22,7 @@
       </h1>
       <p
         class="text-app-text/60 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed">
-        {{ metadata().description }}
+        {{ meta.description }}
       </p>
     </div>
 
@@ -61,12 +62,29 @@
   <div
     class="grid gap-8 grid-cols-1"
     [class.md:grid-cols-2]="metadata().isDoubleColumn">
-    @if (componets.isLoading()) {
+    @if (components.isLoading()) {
     <app-loading-state />
-    } @else if (componets.error()) {
-    <app-error-state (retry)="componets.reload()" />
+    } @else if (components.error()) {
+    <app-error-state (retry)="components.reload()" />
     } @else { @for (c of data?.components; track c.name) {
     <app-window [nameComponent]="c.name">
+      @if (meta.filePaths?.[c.name]; as path) {
+      <ng-container ngProjectAs="header-options">
+        <app-btn-base
+          class="text-app-text/60 hover:text-[#38bdf8] transition-all duration-200"
+          (click)="showCodeModal(path.tailwind!)"
+          label="View Tailwind version">
+          <app-tailwind-icon />
+        </app-btn-base>
+
+        <app-btn-base
+          class="text-app-text/60 transition-all duration-200"
+          (click)="showCodeModal(path.css!)"
+          label="View CSS version">
+          <app-css-icon class="w-5 h-5" />
+        </app-btn-base>
+      </ng-container>
+      }
       <ng-container *ngComponentOutlet="c.compClass" />
     </app-window>
     } }
