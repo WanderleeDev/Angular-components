@@ -1,0 +1,79 @@
+<div class="timeline-container">
+  <!-- Header Area -->
+  <div class="timeline-header">
+    <span class="category-tag">Roadmap</span>
+    <h2>Milestones & Phases</h2>
+    <p>Follow our development timeline as we roll out advanced standalone UI modules.</p>
+
+    <!-- Filters -->
+    <div class="timeline-filters">
+      <button 
+        [class.active]="selectedFilter() === 'all'" 
+        (click)="setFilter('all')" 
+        class="filter-btn">
+        All
+      </button>
+      <button 
+        [class.active]="selectedFilter() === 'completed'" 
+        (click)="setFilter('completed')" 
+        class="filter-btn">
+        Completed
+      </button>
+      <button 
+        [class.active]="selectedFilter() === 'active'" 
+        (click)="setFilter('active')" 
+        class="filter-btn">
+        In Progress
+      </button>
+      <button 
+        [class.active]="selectedFilter() === 'planned'" 
+        (click)="setFilter('planned')" 
+        class="filter-btn">
+        Planned
+      </button>
+    </div>
+  </div>
+
+  <!-- Timeline Flow -->
+  <div class="timeline-flow">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-items">
+      @for (item of filteredMilestones(); track item.title; let index = $index) {
+        <div 
+          class="timeline-item" 
+          [class.item-completed]="item.status === 'completed'"
+          [class.item-active]="item.status === 'in-progress'"
+          [class.item-planned]="item.status === 'planned'">
+          
+          <!-- Date indicator -->
+          <div class="timeline-date">{{ item.date }}</div>
+
+          <!-- Icon / Indicator Node -->
+          <div class="timeline-node">
+            @if (item.status === 'completed') {
+              <svg viewBox="0 0 20 20" fill="currentColor" class="node-icon check">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/>
+              </svg>
+            } @else if (item.status === 'in-progress') {
+              <span class="node-dot pulsing"></span>
+            } @else {
+              <span class="node-dot-hollow"></span>
+            }
+          </div>
+
+          <!-- Content Panel -->
+          <div class="timeline-panel">
+            <div class="panel-header">
+              <span class="phase-tag">{{ item.phase }}</span>
+              <span class="status-badge">{{ item.status.replace('-', ' ') }}</span>
+            </div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+
+        </div>
+      }
+    </div>
+  </div>
+</div>

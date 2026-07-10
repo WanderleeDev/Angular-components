@@ -1,0 +1,135 @@
+.faq-container {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+/* Header */
+.faq-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.faq-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0.5rem 0 1rem;
+  letter-spacing: -0.03em;
+}
+
+.faq-header p {
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.7;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.category-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+/* FAQs Grid */
+.faq-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* FAQ Card Styling */
+.faq-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  height: fit-content;
+}
+
+.faq-card:hover {
+  border-color: rgba(56, 189, 248, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.faq-question-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.faq-question {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.faq-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  opacity: 0.4;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+}
+
+.faq-card:hover .faq-toggle-btn {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* Expanding Answer Grid Trick */
+.faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-open .faq-answer-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.faq-open .toggle-icon {
+  transform: rotate(45deg);
+  color: var(--accent);
+  opacity: 1;
+}
+
+.faq-answer {
+  overflow: hidden;
+}
+
+.faq-answer p {
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.7;
+  line-height: 1.6;
+  margin: 1rem 0 0 0;
+  padding-right: 1.5rem;
+}

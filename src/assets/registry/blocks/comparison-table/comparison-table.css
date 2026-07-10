@@ -1,0 +1,233 @@
+.table-container {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+/* Header & Toggle */
+.table-header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.table-header-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0.5rem 0 1rem;
+  letter-spacing: -0.03em;
+}
+
+.table-header-section p {
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.7;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.category-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+/* Differences Switch Toggle */
+.diff-toggle-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  user-select: none;
+}
+
+.diff-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.diff-toggle-slider {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 9999px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+.diff-toggle-slider::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.diff-checkbox:checked + .diff-toggle-slider {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.diff-checkbox:checked + .diff-toggle-slider::after {
+  transform: translateX(18px);
+  background: var(--accent-text);
+}
+
+.diff-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+/* Table Wrapper for Horizontal Scroll */
+.comparison-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card-bg);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Styles */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 600px;
+}
+
+/* Table Head Headers */
+.comparison-table th {
+  padding: 1.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.feature-col {
+  width: 40%;
+}
+
+.tier-col {
+  width: 20%;
+  text-align: center;
+  position: relative;
+}
+
+.tier-col.popular-col {
+  color: var(--accent);
+}
+
+.popular-indicator {
+  position: absolute;
+  top: 0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.55rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 0.1rem 0.4rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 6px rgba(56, 189, 248, 0.2);
+}
+
+/* Category Row headers */
+.category-header-row td {
+  padding: 1rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+}
+
+.category-header-row:first-child td {
+  border-top: none;
+}
+
+/* Data Rows */
+.feature-row {
+  transition: background-color 0.2s ease;
+}
+
+.feature-row:hover {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.comparison-table td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.feature-name {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Cell Values alignment */
+.tier-val {
+  text-align: center;
+}
+
+.val-text {
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Icons */
+.val-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.val-icon.positive {
+  color: #10b981;
+}
+
+.val-icon.negative {
+  color: var(--text);
+  opacity: 0.15;
+}
+
+/* Pro Cell Highlight (Popular) */
+.popular-cell {
+  background: rgba(56, 189, 248, 0.015);
+  font-weight: 700;
+}
+
+.comparison-table th.popular-col {
+  background: rgba(56, 189, 248, 0.025);
+  border-bottom: 2px solid var(--accent);
+}
+@media (max-width: 768px) {
+  .comparison-table td, .comparison-table th {
+    padding: 1rem 0.75rem;
+  }
+}
