@@ -1,24 +1,24 @@
 <div class="tabs-container">
-  <!-- Header Area -->
   <div class="tabs-header-section">
     <span class="category-tag">Feature Showcase</span>
     <h2>Explore advanced systems</h2>
-    <p>Switch between tabs below to view detailed features, layouts, and system capabilities.</p>
+    <p>
+      Switch between tabs below to view detailed features, layouts, and system
+      capabilities.
+    </p>
 
-    <!-- Tab Triggers -->
     <div class="tabs-nav">
       @for (tab of tabs(); track tab.id) {
-        <button 
-          [class.active]="activeTabId() === tab.id"
-          (click)="setActiveTab(tab.id)"
-          class="tab-btn">
-          {{ tab.title }}
-        </button>
+      <button
+        [class.active]="activeTabId() === tab.id"
+        (click)="setActiveTab(tab.id)"
+        class="tab-btn">
+        {{ tab.title }}
+      </button>
       }
     </div>
   </div>
 
-  <!-- Tab Panel Content -->
   <div class="tabs-content-panel">
     <div class="panel-left">
       <span class="panel-tagline">{{ activeTab().tagline }}</span>
@@ -27,21 +27,24 @@
 
       <ul class="features-list">
         @for (feature of activeTab().features; track feature) {
-          <li>
-            <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/>
-            </svg>
-            <span>{{ feature }}</span>
-          </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon">
+            <path
+              fill-rule="evenodd"
+              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+              clip-rule="evenodd" />
+          </svg>
+          <span>{{ feature }}</span>
+        </li>
         }
       </ul>
     </div>
 
     <div class="panel-right">
       <div class="image-wrapper">
-        <img 
-          [src]="activeTab().image" 
-          [alt]="activeTab().title" 
+        <img
+          [src]="activeTab().image"
+          [alt]="activeTab().title"
           class="panel-img" />
       </div>
     </div>

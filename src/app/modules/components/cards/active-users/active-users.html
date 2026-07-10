@@ -21,14 +21,11 @@
     </div>
   </div>
 
-  <!-- Mini Sparkline SVG -->
   <div class="sparkline-wrapper">
     <svg viewBox="0 0 120 30" class="sparkline-svg" preserveAspectRatio="none">
-      <!-- Sparkline fill area -->
       <path
         [attr.d]="'M 0,30 L ' + polylinePoints() + ' L 120,30 Z'"
         class="sparkline-fill" />
-      <!-- Sparkline outline path -->
       <polyline
         fill="none"
         [attr.points]="polylinePoints()"

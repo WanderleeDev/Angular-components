@@ -18,7 +18,6 @@
   }
 }
 
-/* Left Column */
 .hero-left {
   display: flex;
   flex-direction: column;
@@ -50,8 +49,13 @@
 }
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .hero-left h1 {
@@ -129,7 +133,6 @@
   opacity: 0.5;
 }
 
-/* Metrics Section */
 .hero-metrics {
   display: flex;
   align-items: center;
@@ -170,7 +173,6 @@
   background: var(--border);
 }
 
-/* Right Column (Abstract Window) */
 .hero-right {
   position: relative;
   display: flex;
@@ -196,7 +198,11 @@
   right: -60px;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.08) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -220,9 +226,15 @@
   border-radius: 50%;
 }
 
-.dot.red { background: #ef4444; }
-.dot.yellow { background: #f59e0b; }
-.dot.green { background: #10b981; }
+.dot.red {
+  background: #ef4444;
+}
+.dot.yellow {
+  background: #f59e0b;
+}
+.dot.green {
+  background: #10b981;
+}
 
 .compiler-title {
   font-size: 0.75rem;
@@ -241,14 +253,23 @@
   opacity: 0.85;
 }
 
-/* Code Syntax Colors */
-.c-pink { color: #f43f5e; }
-.c-blue { color: #38bdf8; }
-.c-green { color: #10b981; }
-.c-yellow { color: #fb923c; }
-.c-grey { color: var(--text); opacity: 0.4; }
+.c-pink {
+  color: #f43f5e;
+}
+.c-blue {
+  color: #38bdf8;
+}
+.c-green {
+  color: #10b981;
+}
+.c-yellow {
+  color: #fb923c;
+}
+.c-grey {
+  color: var(--text);
+  opacity: 0.4;
+}
 
-/* Floating Telemetry Widget overlay */
 .floating-telemetry-widget {
   position: absolute;
   bottom: 1.5rem;
@@ -267,8 +288,13 @@
 }
 
 @keyframes floatWidget {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .widget-title {
@@ -304,7 +330,9 @@
 }
 
 @keyframes spinSlow {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .widget-status {

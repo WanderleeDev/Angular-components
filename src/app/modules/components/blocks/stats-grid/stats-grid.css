@@ -5,7 +5,6 @@
   padding: 1.5rem 0;
 }
 
-/* Header & Timeframes */
 .stats-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -59,7 +58,6 @@
   box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
 }
 
-/* Grid Layout */
 .stats-grid {
   display: grid;
   gap: 1.25rem;
@@ -78,7 +76,6 @@
   }
 }
 
-/* Stat Cards */
 .stat-card {
   position: relative;
   background: var(--card-bg);
@@ -91,7 +88,10 @@
   justify-content: space-between;
   min-height: 160px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .stat-card:hover {
@@ -106,16 +106,23 @@
   right: -50px;
   width: 140px;
   height: 140px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.06) 0%,
+    transparent 70%
+  );
   pointer-events: none;
   z-index: 1;
 }
 
 .stat-card:hover .card-glow {
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.1) 0%,
+    transparent 70%
+  );
 }
 
-/* Header inside Card */
 .stat-card-header {
   display: flex;
   justify-content: space-between;
@@ -139,7 +146,6 @@
   opacity: 0.3;
 }
 
-/* Body & Values */
 .stat-card-body {
   z-index: 2;
   margin-bottom: auto;
@@ -184,7 +190,6 @@
   opacity: 1;
 }
 
-/* Sparklines SVG styling */
 .sparkline-wrapper {
   position: absolute;
   bottom: 0;
@@ -211,7 +216,6 @@
   transition: all 0.4s ease;
 }
 
-/* Color trends for sparklines */
 .stat-card .sparkline-stroke {
   stroke: #10b981;
 }
@@ -219,7 +223,6 @@
   fill: rgba(16, 185, 129, 0.03);
 }
 
-/* Negative trends */
 .stat-card.negative-trend .sparkline-stroke {
   stroke: #f43f5e;
 }
@@ -227,7 +230,11 @@
   fill: rgba(244, 63, 94, 0.03);
 }
 .stat-card.negative-trend .card-glow {
-  background: radial-gradient(circle, rgba(244, 63, 94, 0.04) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(244, 63, 94, 0.04) 0%,
+    transparent 70%
+  );
 }
 .stat-card.negative-trend:hover {
   border-color: rgba(244, 63, 94, 0.2);

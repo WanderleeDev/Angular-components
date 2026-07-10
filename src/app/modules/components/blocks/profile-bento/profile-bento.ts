@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy, signal, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  signal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-profile-bento',
@@ -9,8 +15,15 @@ import { Component, OnInit, OnDestroy, signal, ChangeDetectionStrategy } from '@
 })
 export class ProfileBento implements OnInit, OnDestroy {
   protected readonly currentTime = signal<string>('');
-  protected readonly stack = signal<string[]>(['TypeScript', 'Angular 20', 'RxJS', 'CSS Grid', 'Signals', 'A11y']);
-  
+  protected readonly stack = signal<string[]>([
+    'TypeScript',
+    'Angular 20',
+    'RxJS',
+    'CSS Grid',
+    'Signals',
+    'A11y',
+  ]);
+
   private timerInterval?: any;
 
   ngOnInit(): void {
@@ -26,6 +39,12 @@ export class ProfileBento implements OnInit, OnDestroy {
 
   private updateTime(): void {
     const now = new Date();
-    this.currentTime.set(now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }));
+    this.currentTime.set(
+      now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      })
+    );
   }
 }

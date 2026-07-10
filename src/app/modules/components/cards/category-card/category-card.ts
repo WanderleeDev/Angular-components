@@ -11,7 +11,9 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class CategoryCardComp {
   title = input<string>('Cards');
-  description = input<string>('Flexible content grouping blocks and bento cards with customizable layouts.');
+  description = input<string>(
+    'Flexible content grouping blocks and bento cards with customizable layouts.'
+  );
   icon = input<string>('view_agenda');
   accentColor = input<string>('#ec4899');
   count = input<number>(12);

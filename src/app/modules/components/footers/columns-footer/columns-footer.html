@@ -1,6 +1,5 @@
 <footer class="col-footer-wrapper">
   <div class="col-footer-grid">
-    <!-- Brand Col -->
     <div class="brand-col">
       <div class="brand-header">
         <span class="material-icons brand-icon">all_out</span>
@@ -9,39 +8,46 @@
       <p class="brand-text">{{ brandDesc() }}</p>
     </div>
 
-    <!-- Links Col 1 -->
     <div class="links-col">
       <span class="links-header">Products</span>
       <ul class="links-list">
-        <li><a href="javascript:void(0)" class="col-footer-link">Components</a></li>
-        <li><a href="javascript:void(0)" class="col-footer-link">Templates</a></li>
-        <li><a href="javascript:void(0)" class="col-footer-link">Pro Kit</a></li>
+        <li>
+          <a href="javascript:void(0)" class="col-footer-link">Components</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="col-footer-link">Templates</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="col-footer-link">Pro Kit</a>
+        </li>
       </ul>
     </div>
 
-    <!-- Newsletter Col -->
     <div class="newsletter-col">
       <span class="links-header">Stay Updated</span>
       @if (isSubscribed()) {
-        <div class="subscribe-success animate-fade-in">
-          <span class="material-icons">check_circle</span>
-          <span>Subscribed successfully!</span>
-        </div>
+      <div class="subscribe-success animate-fade-in">
+        <span class="material-icons">check_circle</span>
+        <span>Subscribed successfully!</span>
+      </div>
       } @else {
-        <form (submit)="subscribeNewsletter($event)" class="subscribe-form">
-          <input 
-            type="email" 
-            required 
-            placeholder="Enter your email" 
-            class="subscribe-input"
-            aria-label="Email address for newsletter" />
-          <button type="submit" class="btn-subscribe">Join</button>
-        </form>
+      <form (submit)="subscribeNewsletter($event)" class="subscribe-form">
+        <input
+          type="email"
+          required
+          placeholder="Enter your email"
+          class="subscribe-input"
+          aria-label="Email address for newsletter" />
+        <button type="submit" class="btn-subscribe">Join</button>
+      </form>
       }
     </div>
   </div>
 
   <div class="col-footer-bottom">
-    <span>&copy; {{ year() }} {{ brandName() }} Inc. Built with love in English.</span>
+    <span
+      >&copy; {{ year() }} {{ brandName() }} Inc. Built with love in
+      English.</span
+    >
   </div>
 </footer>

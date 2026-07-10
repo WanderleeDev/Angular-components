@@ -16,7 +16,9 @@ interface ListField {
 })
 export class DescriptionList {
   title = input<string>('Developer Profile');
-  description = input<string>('System credentials and metadata details for developer telemetry.');
+  description = input<string>(
+    'System credentials and metadata details for developer telemetry.'
+  );
   fields = input<ListField[]>([
     { key: 'Full Name', val: 'Max Wanderlee' },
     { key: 'Role', val: 'Senior Frontend Architect' },

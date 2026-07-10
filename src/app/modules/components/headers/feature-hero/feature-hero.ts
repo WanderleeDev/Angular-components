@@ -25,29 +25,32 @@ export class FeatureHero {
       id: 'performance',
       tabLabel: 'Performance',
       title: 'Built for extreme speed',
-      description: 'Our components compile directly to clean standalone modules, achieving 100/100 Lighthouse performance metrics out of the box.',
+      description:
+        'Our components compile directly to clean standalone modules, achieving 100/100 Lighthouse performance metrics out of the box.',
       icon: 'speed',
       metric: '0.2ms',
-      metricLabel: 'Render Time'
+      metricLabel: 'Render Time',
     },
     {
       id: 'accessibility',
       tabLabel: 'Accessibility',
       title: 'Inclusive by design',
-      description: 'Fully WCAG 2.1 AA compliant. Every component undergoes rigorous AXE audits to ensure keyboard navigation and ARIA specs work flawlessly.',
+      description:
+        'Fully WCAG 2.1 AA compliant. Every component undergoes rigorous AXE audits to ensure keyboard navigation and ARIA specs work flawlessly.',
       icon: 'accessibility',
       metric: '100%',
-      metricLabel: 'A11y Score'
+      metricLabel: 'A11y Score',
     },
     {
       id: 'reactivity',
       tabLabel: 'Reactivity',
       title: 'Fine-grained updates',
-      description: 'Powered exclusively by Angular Signals. No zone.js overhead, resulting in highly deterministic view updates and optimal memory usage.',
+      description:
+        'Powered exclusively by Angular Signals. No zone.js overhead, resulting in highly deterministic view updates and optimal memory usage.',
       icon: 'bolt',
       metric: '0 KB',
-      metricLabel: 'Zone overhead'
-    }
+      metricLabel: 'Zone overhead',
+    },
   ];
 
   readonly activeFeature = signal<HeroFeature>(this.features[0]);

@@ -1,44 +1,45 @@
 <div class="steps-container">
-  <!-- Header Area -->
   <div class="steps-header-section">
     <span class="category-tag">Setup Flow</span>
     <h2>Step-by-step Onboarding</h2>
-    <p>Follow the interactive wizard steps below to see the computed progress scale and panel actions.</p>
+    <p>
+      Follow the interactive wizard steps below to see the computed progress
+      scale and panel actions.
+    </p>
   </div>
 
-  <!-- Wizard Card -->
   <div class="wizard-card">
-    
-    <!-- Progress Indicator Header -->
     <div class="wizard-timeline">
-      <!-- Background Connecting Progress Line -->
       <div class="progress-track">
-        <div class="progress-bar" [style.width.%]="progressPercent() - 15"></div>
+        <div
+          class="progress-bar"
+          [style.width.%]="progressPercent() - 15"></div>
       </div>
 
-      <!-- Nodes -->
       <div class="timeline-nodes">
         @for (step of steps(); track step.title; let index = $index) {
-          <button 
-            (click)="setStep(index)"
-            class="timeline-node" 
-            [class.node-completed]="index < currentStep()"
-            [class.node-active]="index === currentStep()"
-            [class.node-planned]="index > currentStep()"
-            [attr.aria-label]="'Go to step ' + (index + 1)">
-            @if (index < currentStep()) {
-              <svg viewBox="0 0 20 20" fill="currentColor" class="node-check">
-                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/>
-              </svg>
-            } @else {
-              <span>{{ index + 1 }}</span>
-            }
-          </button>
+        <button
+          (click)="setStep(index)"
+          class="timeline-node"
+          [class.node-completed]="index < currentStep()"
+          [class.node-active]="index === currentStep()"
+          [class.node-planned]="index > currentStep()"
+          [attr.aria-label]="'Go to step ' + (index + 1)">
+          @if (index < currentStep()) {
+          <svg viewBox="0 0 20 20" fill="currentColor" class="node-check">
+            <path
+              fill-rule="evenodd"
+              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+              clip-rule="evenodd" />
+          </svg>
+          } @else {
+          <span>{{ index + 1 }}</span>
+          }
+        </button>
         }
       </div>
     </div>
 
-    <!-- Active Step Content Panel -->
     <div class="step-panel-content">
       <div class="panel-left">
         <div class="icon-frame">
@@ -52,22 +53,20 @@
       </div>
     </div>
 
-    <!-- Panel Actions Navigation -->
     <div class="wizard-actions">
-      <button 
+      <button
         [disabled]="currentStep() === 0"
         (click)="prevStep()"
         class="action-btn back-btn">
         Back
       </button>
 
-      <button 
+      <button
         (click)="nextStep()"
         [class.finish-btn]="currentStep() === steps().length - 1"
         class="action-btn next-btn">
         {{ currentStep() === steps().length - 1 ? 'Finish' : 'Next' }}
       </button>
     </div>
-
   </div>
 </div>

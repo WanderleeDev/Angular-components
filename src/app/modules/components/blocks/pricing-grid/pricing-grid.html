@@ -1,75 +1,77 @@
 <div class="pricing-container">
-  <!-- Toggle billing section -->
   <div class="pricing-header">
     <span class="category-tag">Plans & Pricing</span>
     <h2>Transparent, scaling plans</h2>
-    <p>Choose the level that fits your scale. Save up to 20% with yearly billing.</p>
-    
+    <p>
+      Choose the level that fits your scale. Save up to 20% with yearly billing.
+    </p>
+
     <div class="pricing-toggle-wrapper">
-      <span [class.active-label]="billingCycle() === 'monthly'" class="cycle-label">Monthly</span>
-      <button 
-        class="pricing-toggle-btn" 
+      <span
+        [class.active-label]="billingCycle() === 'monthly'"
+        class="cycle-label"
+        >Monthly</span
+      >
+      <button
+        class="pricing-toggle-btn"
         [class.yearly-active]="billingCycle() === 'yearly'"
         (click)="toggleBilling()"
         aria-label="Toggle Billing Cycle">
         <span class="toggle-slider"></span>
       </button>
-      <span [class.active-label]="billingCycle() === 'yearly'" class="cycle-label">
+      <span
+        [class.active-label]="billingCycle() === 'yearly'"
+        class="cycle-label">
         Yearly
         <span class="save-badge">Save ~20%</span>
       </span>
     </div>
   </div>
 
-  <!-- Plans Cards Grid -->
   <div class="pricing-grid">
     @for (plan of plans(); track plan.name) {
-      <div 
-        class="pricing-card" 
-        [class.popular-card]="plan.popular">
-        
-        @if (plan.popular) {
-          <div class="popular-glow"></div>
-          <span class="popular-tag">Most Popular</span>
-        }
-        
-        <div class="card-header">
-          <h3>{{ plan.name }}</h3>
-          <p class="plan-description">{{ plan.description }}</p>
-        </div>
+    <div class="pricing-card" [class.popular-card]="plan.popular">
+      @if (plan.popular) {
+      <div class="popular-glow"></div>
+      <span class="popular-tag">Most Popular</span>
+      }
 
-        <div class="price-section">
-          <div class="price-amount-wrapper">
-            <span class="currency">$</span>
-            <span class="price">
-              {{ billingCycle() === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice }}
-            </span>
-            <span class="period">/mo</span>
-          </div>
-          <span class="billing-hint">
-            @if (billingCycle() === 'yearly') {
-              Billed yearly (${{ plan.yearlyPrice * 12 }}/yr)
-            } @else {
-              Billed monthly
-            }
-          </span>
-        </div>
-
-        <ul class="features-list">
-          @for (feature of plan.features; track feature) {
-            <li>
-              <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon">
-                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/>
-              </svg>
-              <span>{{ feature }}</span>
-            </li>
-          }
-        </ul>
-
-        <button class="pricing-cta">
-          {{ plan.ctaText }}
-        </button>
+      <div class="card-header">
+        <h3>{{ plan.name }}</h3>
+        <p class="plan-description">{{ plan.description }}</p>
       </div>
+
+      <div class="price-section">
+        <div class="price-amount-wrapper">
+          <span class="currency">$</span>
+          <span class="price">
+            {{ billingCycle() === 'monthly' ? plan.monthlyPrice :
+            plan.yearlyPrice }}
+          </span>
+          <span class="period">/mo</span>
+        </div>
+        <span class="billing-hint">
+          @if (billingCycle() === 'yearly') { Billed yearly (${{
+          plan.yearlyPrice * 12 }}/yr) } @else { Billed monthly }
+        </span>
+      </div>
+
+      <ul class="features-list">
+        @for (feature of plan.features; track feature) {
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="check-icon">
+            <path
+              fill-rule="evenodd"
+              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+              clip-rule="evenodd" />
+          </svg>
+          <span>{{ feature }}</span>
+        </li>
+        }
+      </ul>
+
+      <button class="pricing-cta">{{ plan.ctaText }}</button>
+    </div>
     }
   </div>
 </div>

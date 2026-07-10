@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit, OnDestroy, signal, computed } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  OnDestroy,
+  signal,
+  computed,
+} from '@angular/core';
 
 @Component({
   selector: 'app-profile-card-comp',
@@ -13,7 +20,8 @@ export class ProfileCardComp implements OnInit, OnDestroy {
   readonly name = 'Alex Rivera';
   readonly role = 'Lead Frontend Architect';
   readonly location = 'San Francisco, CA';
-  readonly bio = 'Building high-performance UI systems, design frameworks, and interactive web animations with Angular & WebGL.';
+  readonly bio =
+    'Building high-performance UI systems, design frameworks, and interactive web animations with Angular & WebGL.';
 
   readonly skills = [
     { name: 'Angular v20', color: '#dd0031' },
@@ -25,8 +33,10 @@ export class ProfileCardComp implements OnInit, OnDestroy {
   readonly isFollowing = signal<boolean>(false);
   readonly baseFollowers = 1420;
   readonly extraFollowers = signal<number>(0);
-  readonly totalFollowers = computed(() => this.baseFollowers + this.extraFollowers());
-  
+  readonly totalFollowers = computed(
+    () => this.baseFollowers + this.extraFollowers()
+  );
+
   readonly localTime = signal<string>('00:00:00 AM');
 
   private timerId?: ReturnType<typeof setInterval>;

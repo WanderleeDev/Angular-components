@@ -1,35 +1,37 @@
 <div class="faq-container">
-  <!-- Header Area -->
   <div class="faq-header">
     <span class="category-tag">Support FAQ</span>
     <h2>Frequently Asked Questions</h2>
-    <p>Find answers to common questions about our standalone components, accessibility, and styles.</p>
+    <p>
+      Find answers to common questions about our standalone components,
+      accessibility, and styles.
+    </p>
   </div>
 
-  <!-- FAQs Grid -->
   <div class="faq-grid">
     @for (item of faqs(); track item.question; let index = $index) {
-      <div 
-        class="faq-card" 
-        [class.faq-open]="isFAQOpen(index)"
-        (click)="toggleFAQ(index)">
-        
-        <div class="faq-question-wrapper">
-          <span class="faq-question">{{ item.question }}</span>
-          <button class="faq-toggle-btn" [attr.aria-expanded]="isFAQOpen(index)">
-            <svg viewBox="0 0 20 20" fill="currentColor" class="toggle-icon">
-              <path fill-rule="evenodd" d="M10 5a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5h-3.5a.75.75 0 0 1 0-1.5h3.5v-3.5A.75.75 0 0 1 10 5Z" clip-rule="evenodd" />
-            </svg>
-          </button>
-        </div>
-
-        <div class="faq-answer-wrapper">
-          <div class="faq-answer">
-            <p>{{ item.answer }}</p>
-          </div>
-        </div>
-
+    <div
+      class="faq-card"
+      [class.faq-open]="isFAQOpen(index)"
+      (click)="toggleFAQ(index)">
+      <div class="faq-question-wrapper">
+        <span class="faq-question">{{ item.question }}</span>
+        <button class="faq-toggle-btn" [attr.aria-expanded]="isFAQOpen(index)">
+          <svg viewBox="0 0 20 20" fill="currentColor" class="toggle-icon">
+            <path
+              fill-rule="evenodd"
+              d="M10 5a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5h-3.5a.75.75 0 0 1 0-1.5h3.5v-3.5A.75.75 0 0 1 10 5Z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
       </div>
+
+      <div class="faq-answer-wrapper">
+        <div class="faq-answer">
+          <p>{{ item.answer }}</p>
+        </div>
+      </div>
+    </div>
     }
   </div>
 </div>

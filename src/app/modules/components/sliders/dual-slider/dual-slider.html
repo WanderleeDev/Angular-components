@@ -1,19 +1,19 @@
 <div class="dual-slider-wrapper">
   <div class="dual-slider-info">
     <span class="dual-slider-label">{{ label() }}</span>
-    <span class="dual-slider-value-display">${{ lowerValue() }} - ${{ upperValue() }}</span>
+    <span class="dual-slider-value-display"
+      >${{ lowerValue() }} - ${{ upperValue() }}</span
+    >
   </div>
 
   <div class="dual-slider-control-container">
-    <!-- Visual background track -->
     <div class="slider-track-base"></div>
-    <div 
-      class="slider-track-range" 
-      [style.left.%]="lowerPercent()" 
+    <div
+      class="slider-track-range"
+      [style.left.%]="lowerPercent()"
       [style.right.%]="100 - upperPercent()"></div>
 
-    <!-- Inputs -->
-    <input 
+    <input
       type="range"
       [min]="min()"
       [max]="max()"
@@ -21,7 +21,7 @@
       (input)="onLowerChange($event)"
       class="thumb-input lower-thumb" />
 
-    <input 
+    <input
       type="range"
       [min]="min()"
       [max]="max()"

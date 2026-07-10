@@ -32,10 +32,8 @@ const MONTH_NAMES = [
   },
 })
 export class NativePicker {
-  // Model for two-way binding
   value = model<string>();
 
-  // Configurable inputs
   type = input<'date' | 'time' | 'month' | 'color' | 'week' | 'datetime-local'>(
     'date'
   );
@@ -48,15 +46,12 @@ export class NativePicker {
   variant = input<'glass' | 'solid' | 'bordered'>('glass');
   colorScheme = input<'primary' | 'accent' | 'success' | 'warn'>('primary');
 
-  // Hidden native input reference
   private nativeInputRef =
     viewChild<ElementRef<HTMLInputElement>>('nativeInput');
 
-  // Computed classes based on variant & color scheme
   containerClasses = computed(() => {
     const classes: string[] = [];
 
-    // Variant styles
     switch (this.variant()) {
       case 'solid':
         classes.push(
@@ -76,7 +71,6 @@ export class NativePicker {
         break;
     }
 
-    // Focus ring styles based on color scheme
     switch (this.colorScheme()) {
       case 'accent':
         classes.push('focus-within:ring-2 focus-within:ring-[#EC4899]/30');
@@ -124,7 +118,6 @@ export class NativePicker {
     }
   });
 
-  // Computed resolved icon
   resolvedIcon = computed(() => {
     const customIcon = this.icon();
     if (customIcon) return customIcon;
@@ -146,7 +139,6 @@ export class NativePicker {
     }
   });
 
-  // Computed formatted display text (pure logic, SSR safe)
   formattedValue = computed(() => {
     const rawValue = this.value();
     if (!rawValue) {
@@ -170,11 +162,9 @@ export class NativePicker {
     }
   });
 
-  // Action to programmatically open the browser's native picker dialog
   triggerPicker(event: MouseEvent | TouchEvent): void {
     if (this.disabled()) return;
 
-    // Prevent default to avoid side-effects or double triggers
     event.preventDefault();
 
     const inputEl = this.nativeInputRef()?.nativeElement;
@@ -195,7 +185,6 @@ export class NativePicker {
     }
   }
 
-  // Handle value change from the native input
   onInputChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     if (target) {
@@ -221,7 +210,6 @@ export class NativePicker {
     }
   }
 
-  // Parses YYYY-MM-DD -> e.g. "May 28, 2026"
   private formatDate(dateStr: string): string {
     const parts = dateStr.split('-');
     if (parts.length !== 3) return dateStr;
@@ -236,7 +224,6 @@ export class NativePicker {
     return dateStr;
   }
 
-  // Parses YYYY-MM -> e.g. "May 2026"
   private formatMonth(monthStr: string): string {
     const parts = monthStr.split('-');
     if (parts.length !== 2) return monthStr;
@@ -250,7 +237,6 @@ export class NativePicker {
     return monthStr;
   }
 
-  // Parses HH:MM -> e.g. "02:30 PM"
   private formatTime(timeStr: string): string {
     const parts = timeStr.split(':');
     if (parts.length < 2) return timeStr;
@@ -260,20 +246,18 @@ export class NativePicker {
 
     const ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
+    hours = hours ? hours : 12;
 
     const formattedHours = hours < 10 ? `0${hours}` : hours;
     return `${formattedHours}:${minutes} ${ampm}`;
   }
 
-  // Parses YYYY-Www -> e.g. "Week 27, 2026"
   private formatWeek(weekStr: string): string {
     const parts = weekStr.split('-W');
     if (parts.length !== 2) return weekStr;
     return `Week ${parts[1]}, ${parts[0]}`;
   }
 
-  // Parses YYYY-MM-DDTHH:MM -> e.g. "Jul 6, 2026 - 02:30 PM"
   private formatDateTimeLocal(dtStr: string): string {
     const parts = dtStr.split('T');
     if (parts.length !== 2) return dtStr;

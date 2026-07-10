@@ -5,7 +5,6 @@
   padding: 1.5rem 0;
 }
 
-/* Header */
 .testimonials-header {
   text-align: center;
   margin-bottom: 3.5rem;
@@ -36,7 +35,6 @@
   letter-spacing: 0.1em;
 }
 
-/* Testimonials Bento Grid */
 .testimonials-grid {
   display: grid;
   gap: 1.25rem;
@@ -53,7 +51,6 @@
   }
 }
 
-/* Card Base Styling */
 .testimonial-card {
   position: relative;
   background: var(--card-bg);
@@ -65,7 +62,10 @@
   justify-content: space-between;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
@@ -74,7 +74,6 @@
   box-shadow: 0 8px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Star Rating */
 .rating-stars {
   display: flex;
   gap: 0.2rem;
@@ -87,7 +86,6 @@
   color: #fb923c;
 }
 
-/* Quote */
 .quote-text {
   font-size: 0.9rem;
   font-style: italic;
@@ -99,7 +97,6 @@
   border-left: none;
 }
 
-/* User Info */
 .user-info {
   display: flex;
   align-items: center;
@@ -142,9 +139,12 @@
   font-weight: 500;
 }
 
-/* Featured Card Accent */
 .featured-card {
-  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(56, 189, 248, 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--card-bg) 0%,
+    rgba(56, 189, 248, 0.02) 100%
+  );
   border-color: var(--accent);
 }
 
@@ -159,6 +159,10 @@
   right: -50px;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.12) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }

@@ -1,4 +1,9 @@
-import { Component, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  signal,
+  computed,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 interface StepDetail {
   title: string;
@@ -21,24 +26,26 @@ export class OnboardingSteps {
     {
       title: 'Initialize Module',
       subtitle: 'Step 01',
-      description: 'Choose your desired template category and run the schematic sync command inside your workspace directory to download assets.',
+      description:
+        'Choose your desired template category and run the schematic sync command inside your workspace directory to download assets.',
       icon: 'downloading',
     },
     {
       title: 'Theme Customization',
       subtitle: 'Step 02',
-      description: 'Configure standard CSS variables matching your design system. We support dynamic light, dark, and custom custom themes.',
+      description:
+        'Configure standard CSS variables matching your design system. We support dynamic light, dark, and custom custom themes.',
       icon: 'palette',
     },
     {
       title: 'Deploy to Edge',
       subtitle: 'Step 03',
-      description: 'Build your bundles and distribute them across edge node locations. Experience lightning-fast load times and full hydration caching.',
+      description:
+        'Build your bundles and distribute them across edge node locations. Experience lightning-fast load times and full hydration caching.',
       icon: 'rocket_launch',
     },
   ]);
 
-  // Derived progress percentage
   protected readonly progressPercent = computed(() => {
     return ((this.currentStep() + 1) / this.steps().length) * 100;
   });

@@ -1,4 +1,9 @@
-import { Component, input, computed, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  input,
+  computed,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-active-users-card',
@@ -17,7 +22,6 @@ export class ActiveUsersCard {
   icon = input<string>('people');
   points = input<number[]>([40, 55, 45, 70, 65, 85, 90]);
 
-  // Derived polyline points for the sparkline
   polylinePoints = computed(() => {
     const pts = this.points();
     if (!pts || pts.length === 0) return '';

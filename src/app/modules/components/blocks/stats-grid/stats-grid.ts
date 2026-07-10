@@ -132,7 +132,6 @@ export class StatsGrid {
     },
   ]);
 
-  // Derived current metrics based on active timeframe selection
   protected readonly currentMetrics = computed(() => {
     const timeframe = this.selectedTimeframe();
     return this.stats().map(stat => {
@@ -153,7 +152,6 @@ export class StatsGrid {
     this.selectedTimeframe.set(timeframe);
   }
 
-  // Generates SVG coordinates for the sparklines
   private generatePolyline(points: number[]): string {
     const width = 120;
     const height = 30;

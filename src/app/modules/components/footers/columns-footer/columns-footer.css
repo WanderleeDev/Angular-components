@@ -25,7 +25,6 @@
   }
 }
 
-/* Brand Column */
 .brand-col {
   display: flex;
   flex-direction: column;
@@ -59,7 +58,6 @@
   max-width: 20rem;
 }
 
-/* Links Columns */
 .links-col {
   display: flex;
   flex-direction: column;
@@ -101,7 +99,6 @@
   padding-left: 0.25rem;
 }
 
-/* Newsletter Column */
 .newsletter-col {
   display: flex;
   flex-direction: column;
@@ -162,7 +159,6 @@
   font-size: 1.25rem;
 }
 
-/* Bottom bar */
 .col-footer-bottom {
   border-top: 1px solid var(--border, rgba(255, 255, 255, 0.08));
   padding-top: 1.5rem;
@@ -174,8 +170,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {

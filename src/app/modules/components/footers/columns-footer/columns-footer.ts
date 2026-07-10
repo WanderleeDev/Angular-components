@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  signal,
+} from '@angular/core';
 
 @Component({
   selector: 'app-columns-footer',
@@ -11,9 +16,11 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
 })
 export class ColumnsFooter {
   brandName = input<string>('Antigravity');
-  brandDesc = input<string>('Premium modular interface elements and UI utility layers built for next-generation developer tooling.');
+  brandDesc = input<string>(
+    'Premium modular interface elements and UI utility layers built for next-generation developer tooling.'
+  );
   year = input<number>(2026);
-  
+
   protected readonly isSubscribed = signal<boolean>(false);
 
   protected subscribeNewsletter(event: Event): void {

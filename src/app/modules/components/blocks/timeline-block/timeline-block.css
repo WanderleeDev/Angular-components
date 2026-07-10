@@ -5,7 +5,6 @@
   padding: 1.5rem 0;
 }
 
-/* Header & Filters */
 .timeline-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -60,7 +59,6 @@
   box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
 }
 
-/* Timeline Flow */
 .timeline-flow {
   position: relative;
   width: 100%;
@@ -83,7 +81,6 @@
   gap: 2rem;
 }
 
-/* Timeline Item Layout */
 .timeline-item {
   position: relative;
   display: flex;
@@ -137,7 +134,6 @@
   background: transparent;
 }
 
-/* Timeline Panel */
 .timeline-panel {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -177,7 +173,6 @@
   border: 1px solid transparent;
 }
 
-/* Status Badges & Colors */
 .item-completed .timeline-node {
   border-color: #10b981;
   background: rgba(16, 185, 129, 0.05);
@@ -223,7 +218,6 @@
   line-height: 1.5;
 }
 
-/* Active pulsing animation */
 .pulsing {
   animation: nodePulse 2s infinite;
 }
@@ -240,7 +234,6 @@
   }
 }
 
-/* Desktop Styles (Centered Timeline) */
 @media (min-width: 768px) {
   .timeline-line {
     left: 50%;
@@ -275,7 +268,6 @@
     margin-left: auto;
   }
 
-  /* Alternate items */
   .timeline-items .timeline-item:nth-child(even) {
     flex-direction: row-reverse;
   }

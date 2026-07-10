@@ -1,18 +1,23 @@
 <div class="banner-nav-wrapper">
-  <!-- Promo Announcement Banner -->
   @if (isBannerVisible()) {
   <div class="promo-banner">
     <div class="banner-text-container">
       <span class="banner-tag">NEW</span>
-      <span class="banner-msg">Aether Pro templates are now live! Use code <strong>AETHER10</strong> for 10% off.</span>
+      <span class="banner-msg"
+        >Aether Pro templates are now live! Use code
+        <strong>AETHER10</strong> for 10% off.</span
+      >
     </div>
-    <button type="button" class="close-banner-btn" (click)="closeBanner()" aria-label="Close banner">
+    <button
+      type="button"
+      class="close-banner-btn"
+      (click)="closeBanner()"
+      aria-label="Close banner">
       <span class="material-icons">close</span>
     </button>
   </div>
   }
 
-  <!-- Main Navigation -->
   <nav class="main-navbar">
     <div class="navbar-container">
       <div class="brand">
@@ -31,8 +36,14 @@
         <button type="button" class="btn-primary">Get Astra</button>
       </div>
 
-      <button type="button" class="mobile-toggle" (click)="toggleMobile()" aria-label="Toggle menu">
-        <span class="material-icons">{{ isMobileOpen() ? 'close' : 'menu' }}</span>
+      <button
+        type="button"
+        class="mobile-toggle"
+        (click)="toggleMobile()"
+        aria-label="Toggle menu">
+        <span class="material-icons"
+          >{{ isMobileOpen() ? 'close' : 'menu' }}</span
+        >
       </button>
     </div>
 

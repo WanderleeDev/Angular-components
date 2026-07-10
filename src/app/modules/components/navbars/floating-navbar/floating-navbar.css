@@ -4,7 +4,10 @@
   margin: 0 auto;
   padding: 0.75rem 1rem;
   position: relative;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   --accent: #38bdf8;
   --accent-glow: rgba(56, 189, 248, 0.15);
   --border: rgba(255, 255, 255, 0.08);
@@ -22,15 +25,17 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: 9999px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3), 
-              0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
+  box-shadow:
+    0 10px 30px -10px rgba(0, 0, 0, 0.3),
+    0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .floating-nav:hover {
   border-color: rgba(56, 189, 248, 0.25);
-  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.4),
-              0 0 15px 0 var(--accent-glow);
+  box-shadow:
+    0 12px 35px -8px rgba(0, 0, 0, 0.4),
+    0 0 15px 0 var(--accent-glow);
 }
 
 .nav-brand {
@@ -52,8 +57,13 @@
 }
 
 @keyframes logo-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-2px) rotate(5deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(5deg);
+  }
 }
 
 .brand-name {
@@ -191,8 +201,14 @@
 }
 
 @keyframes slide-down {
-  from { opacity: 0; transform: scaleY(0.95) translateY(-5px); }
-  to { opacity: 1; transform: scaleY(1) translateY(0); }
+  from {
+    opacity: 0;
+    transform: scaleY(0.95) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
 }
 
 .mobile-link {

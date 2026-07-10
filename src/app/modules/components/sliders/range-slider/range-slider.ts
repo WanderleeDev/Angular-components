@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  model,
+} from '@angular/core';
 
 @Component({
   selector: 'app-range-slider',
@@ -16,7 +22,6 @@ export class RangeSlider {
   step = input<number>(1);
   value = model<number>(50);
 
-  // Calculate percentage of current value for styling the slider track gradient
   percentage = computed(() => {
     const minVal = this.min();
     const maxVal = this.max();

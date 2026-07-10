@@ -1,5 +1,4 @@
 <header class="double-header">
-  <!-- Top Utility Bar -->
   <div class="top-bar">
     <div class="top-container">
       <div class="contact-info">
@@ -17,7 +16,6 @@
     </div>
   </div>
 
-  <!-- Bottom Main Navbar -->
   <nav class="main-nav">
     <div class="nav-container">
       <div class="nav-brand">
@@ -40,8 +38,14 @@
         <button type="button" class="btn-solid">Launch App</button>
       </div>
 
-      <button type="button" class="mobile-toggle" (click)="toggleMobile()" aria-label="Toggle menu">
-        <span class="material-icons">{{ isMobileOpen() ? 'close' : 'menu' }}</span>
+      <button
+        type="button"
+        class="mobile-toggle"
+        (click)="toggleMobile()"
+        aria-label="Toggle menu">
+        <span class="material-icons"
+          >{{ isMobileOpen() ? 'close' : 'menu' }}</span
+        >
       </button>
     </div>
 

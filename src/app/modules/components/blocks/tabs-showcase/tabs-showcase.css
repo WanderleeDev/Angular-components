@@ -5,7 +5,6 @@
   padding: 1.5rem 0;
 }
 
-/* Header & Nav */
 .tabs-header-section {
   text-align: center;
   margin-bottom: 3.5rem;
@@ -63,7 +62,6 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Content Panel Layout */
 .tabs-content-panel {
   display: flex;
   flex-direction: column-reverse;
@@ -84,7 +82,6 @@
   }
 }
 
-/* Left panel content */
 .panel-left {
   display: flex;
   flex-direction: column;
@@ -141,7 +138,6 @@
   flex-shrink: 0;
 }
 
-/* Right panel media */
 .panel-right {
   position: relative;
   width: 100%;

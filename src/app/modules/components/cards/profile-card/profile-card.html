@@ -1,69 +1,97 @@
-<div class="h-full bg-app-card border border-app-border rounded-2xl p-6 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-app-accent/20 flex flex-col justify-between">
-  <div class="absolute -top-16 -right-16 w-36 h-36 rounded-full bg-linear-to-tr from-purple-600/10 to-indigo-500/10 blur-xl"></div>
-  <div class="absolute -bottom-16 -left-16 w-36 h-36 rounded-full bg-linear-to-tr from-cyan-500/10 to-teal-500/10 blur-xl"></div>
+<div
+  class="h-full bg-app-card border border-app-border rounded-2xl p-6 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-app-accent/20 flex flex-col justify-between">
+  <div
+    class="absolute -top-16 -right-16 w-36 h-36 rounded-full bg-linear-to-tr from-purple-600/10 to-indigo-500/10 blur-xl"></div>
+  <div
+    class="absolute -bottom-16 -left-16 w-36 h-36 rounded-full bg-linear-to-tr from-cyan-500/10 to-teal-500/10 blur-xl"></div>
 
   <div class="relative z-10">
     <div class="flex justify-between items-center mb-6">
-      <span class="inline-flex items-center gap-1.5 text-xs font-bold text-app-text/60">
+      <span
+        class="inline-flex items-center gap-1.5 text-xs font-bold text-app-text/60">
         <span class="material-icons text-sm text-app-accent">location_on</span>
         {{ location }}
       </span>
-      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-app-text/5 text-app-text/70 text-xs font-mono font-bold shadow-xs">
-        <span class="material-icons text-xs text-emerald-400 animate-pulse">schedule</span>
+      <span
+        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-app-text/5 text-app-text/70 text-xs font-mono font-bold shadow-xs">
+        <span class="material-icons text-xs text-emerald-400 animate-pulse"
+          >schedule</span
+        >
         {{ localTime() }}
       </span>
     </div>
 
     <div class="flex items-center gap-4 mb-5">
       <div class="relative">
-        <div class="w-16 h-16 rounded-2xl bg-linear-to-tr from-purple-500 via-pink-500 to-red-500 p-0.5 shadow-md">
-          <div class="w-full h-full rounded-[14px] bg-app-card flex items-center justify-center text-app-text">
-            <span class="material-icons text-3xl text-app-accent">account_circle</span>
+        <div
+          class="w-16 h-16 rounded-2xl bg-linear-to-tr from-purple-500 via-pink-500 to-red-500 p-0.5 shadow-md">
+          <div
+            class="w-full h-full rounded-[14px] bg-app-card flex items-center justify-center text-app-text">
+            <span class="material-icons text-3xl text-app-accent"
+              >account_circle</span
+            >
           </div>
         </div>
         <span class="absolute -bottom-1 -right-1 flex h-4 w-4">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-app-card"></span>
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span
+            class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-app-card"></span>
         </span>
       </div>
 
       <div>
-        <h3 class="text-lg font-extrabold text-app-text tracking-tight">{{ name }}</h3>
+        <h3 class="text-lg font-extrabold text-app-text tracking-tight">
+          {{ name }}
+        </h3>
         <p class="text-xs text-app-text/50 font-semibold">{{ role }}</p>
       </div>
     </div>
 
-    <p class="text-xs text-app-text/70 leading-relaxed mb-6">
-      {{ bio }}
-    </p>
+    <p class="text-xs text-app-text/70 leading-relaxed mb-6">{{ bio }}</p>
 
     <div class="mb-6">
-      <label class="block text-[10px] font-bold text-app-text/40 uppercase tracking-wider mb-2.5">Expertise</label>
+      <label
+        class="block text-[10px] font-bold text-app-text/40 uppercase tracking-wider mb-2.5"
+        >Expertise</label
+      >
       <div class="flex flex-wrap gap-1.5">
         @for (skill of skills; track skill.name) {
-          <span 
-            [style.setProperty('--skill-color', skill.color)]
-            class="px-2.5 py-1 rounded-lg bg-app-text/3 border border-app-border text-[11px] font-semibold text-app-text/80 transition-all duration-200 hover:border-[var(--skill-color)] hover:bg-[var(--skill-color)]/5 hover:text-[var(--skill-color)] cursor-default">
-            {{ skill.name }}
-          </span>
+        <span
+          [style.setProperty('--skill-color', skill.color)]
+          class="px-2.5 py-1 rounded-lg bg-app-text/3 border border-app-border text-[11px] font-semibold text-app-text/80 transition-all duration-200 hover:border-[var(--skill-color)] hover:bg-[var(--skill-color)]/5 hover:text-[var(--skill-color)] cursor-default">
+          {{ skill.name }}
+        </span>
         }
       </div>
     </div>
   </div>
 
-  <div class="relative z-10 border-t border-app-border/40 pt-4 flex items-center justify-between gap-4">
+  <div
+    class="relative z-10 border-t border-app-border/40 pt-4 flex items-center justify-between gap-4">
     <div class="flex gap-4">
       <div>
-        <span class="text-[10px] text-app-text/40 block leading-none font-bold uppercase tracking-wider">Followers</span>
-        <span class="text-base font-extrabold text-app-text mt-1 font-mono transition-all duration-300">{{ totalFollowers() }}</span>
+        <span
+          class="text-[10px] text-app-text/40 block leading-none font-bold uppercase tracking-wider"
+          >Followers</span
+        >
+        <span
+          class="text-base font-extrabold text-app-text mt-1 font-mono transition-all duration-300"
+          >{{ totalFollowers() }}</span
+        >
       </div>
       <div class="border-l border-app-border/40 pl-4">
-        <span class="text-[10px] text-app-text/40 block leading-none font-bold uppercase tracking-wider">Projects</span>
-        <span class="text-base font-extrabold text-app-text mt-1 font-mono">24</span>
+        <span
+          class="text-[10px] text-app-text/40 block leading-none font-bold uppercase tracking-wider"
+          >Projects</span
+        >
+        <span class="text-base font-extrabold text-app-text mt-1 font-mono"
+          >24</span
+        >
       </div>
     </div>
 
-    <button 
+    <button
       (click)="toggleFollow()"
       class="px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-1.5 cursor-pointer shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
       [class.bg-app-accent]="!isFollowing()"
@@ -75,12 +103,10 @@
       [class.border-app-border]="isFollowing()"
       [attr.aria-label]="isFollowing() ? 'Unfollow Alex Rivera' : 'Follow Alex Rivera'">
       @if (isFollowing()) {
-        <span class="material-icons text-xs text-emerald-500">done</span>
-        Following
-      } @else {
-        <span class="material-icons text-xs">person_add</span>
-        Follow
-      }
+      <span class="material-icons text-xs text-emerald-500">done</span>
+      Following } @else {
+      <span class="material-icons text-xs">person_add</span>
+      Follow }
     </button>
   </div>
 </div>

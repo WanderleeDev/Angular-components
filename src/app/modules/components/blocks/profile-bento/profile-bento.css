@@ -5,7 +5,6 @@
   padding: 1.5rem 0;
 }
 
-/* Header */
 .bento-header {
   text-align: center;
   margin-bottom: 3.5rem;
@@ -36,7 +35,6 @@
   letter-spacing: 0.1em;
 }
 
-/* Bento Profile Grid */
 .bento-profile-grid {
   display: grid;
   gap: 1.25rem;
@@ -73,7 +71,6 @@
   }
 }
 
-/* Bento Box Base Styling */
 .bento-box {
   position: relative;
   background: var(--card-bg);
@@ -82,7 +79,10 @@
   padding: 1.5rem;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -113,9 +113,12 @@
   display: block;
 }
 
-/* Box 1: Main details */
 .box-main {
-  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(56, 189, 248, 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--card-bg) 0%,
+    rgba(56, 189, 248, 0.02) 100%
+  );
 }
 
 .box-main .box-content {
@@ -130,7 +133,11 @@
   right: -40px;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.1) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -165,7 +172,6 @@
   opacity: 0.65;
 }
 
-/* Box 2: Clock */
 .clock-display {
   font-size: 2.25rem;
   font-weight: 800;
@@ -183,7 +189,6 @@
   font-weight: 500;
 }
 
-/* Box 3: Stack Badges */
 .badges-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -206,7 +211,6 @@
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Box 4: Bio */
 .box-bio p.bio-text {
   font-size: 0.95rem;
   color: var(--text);
@@ -215,7 +219,6 @@
   margin: 0;
 }
 
-/* Box 5: Social */
 .social-grid {
   display: flex;
   flex-direction: column;

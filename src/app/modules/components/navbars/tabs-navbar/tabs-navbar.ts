@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  signal,
+} from '@angular/core';
 
 @Component({
   selector: 'app-tabs-navbar',
@@ -11,7 +16,13 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
 })
 export class TabsNavbar {
   logoText = input<string>('Console');
-  tabs = input<string[]>(['Overview', 'Deployments', 'Analytics', 'Logs', 'Settings']);
+  tabs = input<string[]>([
+    'Overview',
+    'Deployments',
+    'Analytics',
+    'Logs',
+    'Settings',
+  ]);
 
   protected readonly activeTab = signal<string>('Overview');
 

@@ -19,8 +19,14 @@
       <button type="button" class="btn-primary">Get Started</button>
     </div>
 
-    <button type="button" class="mobile-toggle" (click)="toggleMobile()" aria-label="Toggle menu">
-      <span class="material-icons">{{ isMobileOpen() ? 'close' : 'menu' }}</span>
+    <button
+      type="button"
+      class="mobile-toggle"
+      (click)="toggleMobile()"
+      aria-label="Toggle menu">
+      <span class="material-icons"
+        >{{ isMobileOpen() ? 'close' : 'menu' }}</span
+      >
     </button>
   </nav>
 

@@ -3,28 +3,25 @@
   [class.border-app-accent]="isActive()"
   [class.border-app-border/40]="!isActive()"
   [style.--theme-accent]="accent()">
-  <!-- Radial glow on hover -->
   <div
     class="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_center,var(--theme-accent),transparent_60%)]"></div>
 
   <div>
-    <!-- Card Header -->
     <div class="flex items-center justify-between mb-4">
       <span
         class="text-sm font-semibold tracking-wide capitalize text-app-text/90 group-hover:text-app-text transition-colors">
         {{ themeName() }}
       </span>
       @if (isActive()) {
+      <span
+        class="text-[0.65rem] font-bold uppercase tracking-wider text-app-accent bg-app-accent/15 px-2 py-0.5 rounded-full border border-app-accent/25 flex items-center gap-1">
         <span
-          class="text-[0.65rem] font-bold uppercase tracking-wider text-app-accent bg-app-accent/15 px-2 py-0.5 rounded-full border border-app-accent/25 flex items-center gap-1">
-          <span
-            class="w-1.5 h-1.5 rounded-full bg-app-accent animate-pulse"></span>
-          Active
-        </span>
+          class="w-1.5 h-1.5 rounded-full bg-app-accent animate-pulse"></span>
+        Active
+      </span>
       }
     </div>
 
-    <!-- Mini UI Preview Card -->
     <div
       class="w-full h-24 rounded-xl p-3 mb-4 flex flex-col justify-between border transition-all duration-300"
       [style.background]="background()"
@@ -50,9 +47,7 @@
           style="opacity: 0.15"></div>
       </div>
       <div class="flex justify-between items-center">
-        <div
-          class="w-8 h-3 rounded"
-          [style.background]="accent()"></div>
+        <div class="w-8 h-3 rounded" [style.background]="accent()"></div>
         <div
           class="w-3 h-3 rounded-full"
           [style.background]="text()"
@@ -61,10 +56,8 @@
     </div>
   </div>
 
-  <!-- Color Palette Indicator & Action -->
   <div
     class="flex items-center justify-between mt-2 pt-3 border-t border-app-border/20">
-    <!-- Swatches -->
     <div class="flex gap-1.5">
       <div
         class="w-5 h-5 rounded-full border border-black/10 shadow-sm relative group/swatch"
@@ -92,7 +85,6 @@
       </div>
     </div>
 
-    <!-- Apply button -->
     <button
       type="button"
       class="text-xs font-semibold px-3 py-1.5 rounded-lg border transition-all duration-200 focus:outline-none"

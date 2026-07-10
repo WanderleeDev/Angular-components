@@ -11,7 +11,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 })
 export class LocalizedFooter {
   readonly year = new Date().getFullYear();
-  
+
   readonly languages = ['English', 'Español', 'Français', 'Deutsch'];
   readonly currencies = ['USD ($)', 'EUR (€)', 'GBP (£)', 'ARS ($)'];
 

@@ -36,8 +36,12 @@
 }
 
 @keyframes floatBlob {
-  0% { transform: translateY(0) scale(0.9); }
-  100% { transform: translateY(20px) scale(1.1); }
+  0% {
+    transform: translateY(0) scale(0.9);
+  }
+  100% {
+    transform: translateY(20px) scale(1.1);
+  }
 }
 
 .centered-hero-container {
@@ -80,8 +84,14 @@
 }
 
 @keyframes badgeBlink {
-  0% { opacity: 0.3; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1.2); }
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 
 .hero-title {
@@ -152,7 +162,6 @@
   transform: translateY(-1px);
 }
 
-/* Social Proof */
 .hero-social-proof {
   display: flex;
   flex-direction: column;

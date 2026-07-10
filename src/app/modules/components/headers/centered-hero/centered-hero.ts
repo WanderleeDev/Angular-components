@@ -12,5 +12,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class CenteredHero {
   badgeText = input<string>('Deploy instantly');
   title = input<string>('Scale your applications without limits');
-  description = input<string>('Deploy static sites, serverless APIs, or container workloads directly from Git to a globally distributed platform.');
+  description = input<string>(
+    'Deploy static sites, serverless APIs, or container workloads directly from Git to a globally distributed platform.'
+  );
 }

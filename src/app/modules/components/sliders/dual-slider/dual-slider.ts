@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  model,
+} from '@angular/core';
 
 @Component({
   selector: 'app-dual-slider',
@@ -16,7 +22,6 @@ export class DualSlider {
   lowerValue = model<number>(100);
   upperValue = model<number>(400);
 
-  // Calculate percentage values for the range styling
   lowerPercent = computed(() => {
     const minVal = this.min();
     const maxVal = this.max();
@@ -36,7 +41,6 @@ export class DualSlider {
       if (val <= this.upperValue()) {
         this.lowerValue.set(val);
       } else {
-        // Prevent handles from crossing
         target.value = String(this.upperValue());
       }
     }
@@ -49,7 +53,6 @@ export class DualSlider {
       if (val >= this.lowerValue()) {
         this.upperValue.set(val);
       } else {
-        // Prevent handles from crossing
         target.value = String(this.lowerValue());
       }
     }

@@ -1,4 +1,9 @@
-import { Component, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  signal,
+  computed,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 interface PricingPlan {
   name: string;
@@ -18,7 +23,6 @@ interface PricingPlan {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PricingGrid {
-  // Billing cycle state
   protected readonly billingCycle = signal<'monthly' | 'yearly'>('monthly');
 
   protected readonly plans = signal<PricingPlan[]>([
@@ -27,7 +31,12 @@ export class PricingGrid {
       description: 'Ideal for individuals and small side projects.',
       monthlyPrice: 19,
       yearlyPrice: 15,
-      features: ['Up to 5 Projects', 'Basic Analytics', 'Community Support', '24h Sync Interval'],
+      features: [
+        'Up to 5 Projects',
+        'Basic Analytics',
+        'Community Support',
+        '24h Sync Interval',
+      ],
       ctaText: 'Get Started',
     },
     {
@@ -61,8 +70,9 @@ export class PricingGrid {
     },
   ]);
 
-  // Reactive price calculator
   protected toggleBilling(): void {
-    this.billingCycle.update(cycle => (cycle === 'monthly' ? 'yearly' : 'monthly'));
+    this.billingCycle.update(cycle =>
+      cycle === 'monthly' ? 'yearly' : 'monthly'
+    );
   }
 }

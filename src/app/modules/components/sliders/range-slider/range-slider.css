@@ -47,7 +47,6 @@
   transition: background 0.1s ease;
 }
 
-/* Slider Thumb styling */
 .slider-input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -58,7 +57,9 @@
   border: 2px solid var(--accent, #38bdf8);
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
   cursor: pointer;
-  transition: transform 0.1s ease, background 0.1s ease;
+  transition:
+    transform 0.1s ease,
+    background 0.1s ease;
 }
 
 .slider-input::-webkit-slider-thumb:hover {
@@ -74,7 +75,9 @@
   border: 2px solid var(--accent, #38bdf8);
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
   cursor: pointer;
-  transition: transform 0.1s ease, background 0.1s ease;
+  transition:
+    transform 0.1s ease,
+    background 0.1s ease;
 }
 
 .slider-input::-moz-range-thumb:hover {

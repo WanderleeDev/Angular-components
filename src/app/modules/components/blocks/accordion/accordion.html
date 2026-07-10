@@ -1,6 +1,5 @@
 <div class="accordion-container">
   <div class="accordion">
-    <!-- Entries -->
     <div class="accordion-entries">
       @for (item of items(); track item.title; let index = $index) {
       <details
@@ -25,7 +24,6 @@
       }
     </div>
 
-    <!-- Images -->
     <div class="accordion-images">
       @for (item of items(); track item.title; let index = $index) {
       <img

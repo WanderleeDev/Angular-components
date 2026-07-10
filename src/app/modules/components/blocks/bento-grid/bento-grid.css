@@ -43,7 +43,6 @@
   }
 }
 
-/* Bento Card Base Styling */
 .bento-card {
   position: relative;
   background: var(--card-bg);
@@ -55,7 +54,9 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .bento-card:hover {
@@ -73,7 +74,6 @@
   justify-content: flex-start;
 }
 
-/* Tags and Typography */
 .category-tag {
   font-size: 0.65rem;
   font-weight: 800;
@@ -100,9 +100,12 @@
   line-height: 1.5;
 }
 
-/* Card 1: Hero Glow & Status */
 .card-hero {
-  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(56, 189, 248, 0.03) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--card-bg) 0%,
+    rgba(56, 189, 248, 0.03) 100%
+  );
 }
 
 .card-glow {
@@ -111,7 +114,11 @@
   right: -50px;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.15) 0%,
+    transparent 70%
+  );
   z-index: 1;
   pointer-events: none;
 }
@@ -157,7 +164,6 @@
   color: var(--text);
 }
 
-/* Card 2: Interactive Controls */
 .mode-actions {
   display: flex;
   flex-direction: column;
@@ -213,7 +219,6 @@
   border-color: #f43f5e;
 }
 
-/* Card 3: Metrics Gauges */
 .metric-gauges {
   display: flex;
   flex-direction: column;
@@ -261,7 +266,6 @@
   color: #f43f5e;
 }
 
-/* Card 4: Activity Logs */
 .logs-list {
   list-style: none;
   padding: 0;
@@ -295,9 +299,12 @@
   text-overflow: ellipsis;
 }
 
-/* Card 5: Cloud Sync Network */
 .card-visual {
-  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(139, 92, 246, 0.03) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--card-bg) 0%,
+    rgba(139, 92, 246, 0.03) 100%
+  );
 }
 
 .card-glow-network {
@@ -306,7 +313,11 @@
   left: -40px;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.12) 0%,
+    transparent 70%
+  );
   z-index: 1;
   pointer-events: none;
 }

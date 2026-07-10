@@ -23,7 +23,6 @@
   width: 100%;
 }
 
-/* Brand */
 .glass-brand {
   display: flex;
   align-items: center;
@@ -64,7 +63,6 @@
   font-family: 'Comfortaa', sans-serif;
 }
 
-/* Desktop Links */
 .glass-links {
   display: none;
   gap: 0.25rem;
@@ -93,7 +91,6 @@
   color: var(--accent, #38bdf8);
 }
 
-/* Actions */
 .glass-actions {
   display: flex;
   align-items: center;
@@ -131,12 +128,14 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 12px color-mix(in srgb, var(--accent, #38bdf8) 25%, transparent);
+  box-shadow: 0 2px 12px
+    color-mix(in srgb, var(--accent, #38bdf8) 25%, transparent);
 }
 
 .glass-btn-solid:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent, #38bdf8) 35%, transparent);
+  box-shadow: 0 4px 20px
+    color-mix(in srgb, var(--accent, #38bdf8) 35%, transparent);
 }
 
 @media (min-width: 640px) {
@@ -170,7 +169,6 @@
   }
 }
 
-/* Mobile Menu */
 .glass-mobile {
   position: absolute;
   top: 100%;
@@ -227,8 +225,14 @@
 }
 
 @keyframes glassIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-glass-in {

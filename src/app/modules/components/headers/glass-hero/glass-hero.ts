@@ -11,11 +11,12 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 })
 export class GlassHero {
   readonly title = 'Next-Gen UI Components';
-  readonly subtitle = 'Build stunning, fast, and accessible interfaces with our modern design library built from the ground up.';
+  readonly subtitle =
+    'Build stunning, fast, and accessible interfaces with our modern design library built from the ground up.';
   readonly terminalLogs = signal<string[]>([
     'Initializing setup...',
     'Installing angular-components...',
     'Resolving dependencies...',
-    'Ready: Server listening on port 4200'
+    'Ready: Server listening on port 4200',
   ]);
 }

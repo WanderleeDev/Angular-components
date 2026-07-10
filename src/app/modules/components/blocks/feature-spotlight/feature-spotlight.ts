@@ -17,22 +17,24 @@ export class FeatureSpotlight {
   protected readonly features = signal<Feature[]>([
     {
       title: 'Global Database scaling',
-      description: 'Distribute write and read workloads globally with zero setup, built-in replicas, and automatic regional scaling.',
+      description:
+        'Distribute write and read workloads globally with zero setup, built-in replicas, and automatic regional scaling.',
       icon: 'public',
     },
     {
       title: 'Serverless Functions',
-      description: 'Deploy code instantly, scale from zero to millions of requests automatically, and only pay for computing time.',
+      description:
+        'Deploy code instantly, scale from zero to millions of requests automatically, and only pay for computing time.',
       icon: 'bolt',
     },
     {
       title: 'Edge Caching Network',
-      description: 'Store database queries and static files at the network edge with custom headers and latency-free retrieval.',
+      description:
+        'Store database queries and static files at the network edge with custom headers and latency-free retrieval.',
       icon: 'cloud',
     },
   ]);
 
-  // Track mouse coordinates on hover to drive the spotlight overlay
   protected onMouseMove(event: MouseEvent): void {
     const card = event.currentTarget as HTMLElement;
     const rect = card.getBoundingClientRect();

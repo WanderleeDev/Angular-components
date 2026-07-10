@@ -20,7 +20,6 @@ export class HeroBanner implements OnInit, OnDestroy {
   private countInterval?: NodeJS.Timeout;
 
   ngOnInit(): void {
-    // Dynamic simulated metrics counter
     this.countInterval = setInterval(() => {
       this.requestCount.update(c => c + Math.floor(Math.random() * 5) + 1);
     }, 1500);
@@ -33,7 +32,6 @@ export class HeroBanner implements OnInit, OnDestroy {
   }
 
   protected triggerAction(): void {
-    // Interactive highlight feedback helper
     alert(
       'Quick installation script copied to clipboard: npm i @novgorod/standalone-ui'
     );
