@@ -12,11 +12,11 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
   selector: 'app-code',
   imports: [HighlightModule, HighlightLineNumbers, ClipboardModule],
   template: `
-    <div class="relative group w-full">
-      <div class="sticky top-3 z-10 h-0 flex justify-end pr-3">
+    <div class="relative group min-w-full">
+      <div class="sticky top-3 right-0 float-right z-10 w-0 h-0">
         <button
           type="button"
-          class="flex items-center justify-center w-8 h-8 rounded-md bg-app-accent/90 backdrop-blur text-white hover:bg-app-accent border border-app-accent/50 shadow-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer disabled:opacity-100 disabled:cursor-default"
+          class="absolute right-3 top-2 flex items-center justify-center gap-2 w-max h-8 px-3 rounded-md bg-app-accent/90 backdrop-blur text-white hover:bg-app-accent border border-app-accent/50 shadow-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer disabled:opacity-100 disabled:cursor-default"
           [class.cursor-not-allowed]="isCopied()"
           [disabled]="isCopied()"
           [cdkCopyToClipboard]="code() || ''"
@@ -26,6 +26,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
           <span class="material-icons scale-75">{{
             isCopied() ? 'check' : 'content_copy'
           }}</span>
+          {{ isCopied() ? 'Copied!' : 'Copy' }}
         </button>
       </div>
       <pre
