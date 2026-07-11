@@ -25,7 +25,7 @@ export const SLIDER_METADATA: SectionMetadata = {
   description:
     'Swipers, carousels, and dual-point slider controls engineered for highly interactive layouts.',
   color: '#10b981',
-  isResponsiveColumn: true,
+  isMasonryLayout: true,
   filePaths: {
     'range-slider': {
       css: {

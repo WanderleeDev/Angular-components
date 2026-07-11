@@ -61,32 +61,34 @@
   </header>
 
   <div
-    class="grid gap-8 {{ metadata().isResponsiveColumn ? 'min-[350px]:grid-cols-[repeat(auto-fill,minmax(min(100%,330px),1fr))]' : 'grid-cols-1' }}">
+    [class]="metadata().isMasonryLayout ? 'columns-1 md:columns-2 xl:columns-3 gap-8' : 'grid grid-cols-1 gap-8'">
     @if (components.isLoading()) {
     <app-loading-state />
     } @else if (components.error()) {
     <app-error-state (retry)="components.reload()" />
     } @else { @for (c of data?.components; track c.name) {
-    <app-window [nameComponent]="c.name">
-      @if (meta.filePaths?.[c.name]; as path) {
-      <ng-container ngProjectAs="header-options">
-        <app-btn-base
-          class="text-app-text/60 hover:text-[#38bdf8] transition-all duration-200"
-          (click)="showCodeModal(path.tailwind!)"
-          label="View Tailwind version">
-          <app-tailwind-icon />
-        </app-btn-base>
+    <div [class.break-inside-avoid]="metadata().isMasonryLayout" [class.mb-8]="metadata().isMasonryLayout" class="block">
+      <app-window [nameComponent]="c.name">
+        @if (meta.filePaths?.[c.name]; as path) {
+        <ng-container ngProjectAs="header-options">
+          <app-btn-base
+            class="text-app-text/60 hover:text-[#38bdf8] transition-all duration-200"
+            (click)="showCodeModal(path.tailwind!)"
+            label="View Tailwind version">
+            <app-tailwind-icon />
+          </app-btn-base>
 
-        <app-btn-base
-          class="text-app-text/60 transition-all duration-200"
-          (click)="showCodeModal(path.css!)"
-          label="View CSS version">
-          <app-css-icon class="w-5 h-5" />
-        </app-btn-base>
-      </ng-container>
-      }
-      <ng-container *ngComponentOutlet="c.compClass" />
-    </app-window>
+          <app-btn-base
+            class="text-app-text/60 transition-all duration-200"
+            (click)="showCodeModal(path.css!)"
+            label="View CSS version">
+            <app-css-icon class="w-5 h-5" />
+          </app-btn-base>
+        </ng-container>
+        }
+        <ng-container *ngComponentOutlet="c.compClass" />
+      </app-window>
+    </div>
     }@empty {
     <div
       class="col-span-full flex flex-col items-center justify-center p-16 text-center border-2 border-dashed border-app-border/60 rounded-2xl bg-app-card/30">

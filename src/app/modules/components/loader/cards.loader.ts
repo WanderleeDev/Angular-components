@@ -26,7 +26,7 @@ export const CARD_METADATA: SectionMetadata = {
   description:
     'Flexible content grouping blocks and bento cards with customizable layouts, imagery, and footers.',
   color: '#ec4899',
-  isResponsiveColumn: true,
+  isMasonryLayout: true,
   filePaths: {
     'category-card': {
       css: {
