@@ -4,7 +4,6 @@ import {
   signal,
   computed,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { CatalogHeader } from 'app/modules/catalog/presentation/components/catalog-header/catalog-header';
 import { CatalogCta } from 'app/modules/catalog/presentation/components/catalog-cta/catalog-cta';
 import { getCatalogCategoriesData } from 'app/modules/shared/utils';
@@ -12,12 +11,12 @@ import { NavList } from 'app/modules/components/loader/types';
 import { AnimatedCard } from '../../components/animated-card/animated-card';
 
 @Component({
-  selector: 'app-catalog-entry-view',
+  selector: 'app-entry-view',
   imports: [AnimatedCard, CatalogHeader, CatalogCta],
-  templateUrl: './catalog-entry-view.html',
+  templateUrl: './entry-view.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class CatalogEntryView {
+export default class EntryView {
   componentsData = signal<NavList[]>(getCatalogCategoriesData());
   searchQuery = signal('');
 

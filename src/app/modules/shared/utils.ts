@@ -1,4 +1,9 @@
-import { ALL_LOADERS, ALL_METADATA, Catalog } from '../components/loader';
+import {
+  ALL_LOADERS,
+  ALL_METADATA,
+  Catalog,
+  categories,
+} from '../components/loader';
 import { ComponentsLoader, NavList } from '../components/loader/types';
 
 export function pagination(section: Catalog, page = 1, limit = 4) {
@@ -6,8 +11,10 @@ export function pagination(section: Catalog, page = 1, limit = 4) {
 
   if (!loader) throw new Error('Section not found');
 
-  const totalElements = Object.keys(loader).length;
-  const totalPages = Math.ceil(totalElements / limit);
+  const { totalElements, totalPages } = calculateBaseMetadataSection(
+    section,
+    limit
+  );
   const startIndex = (page - 1) * limit;
   const endIndex = startIndex + limit;
   const components = Object.entries(loader).slice(startIndex, endIndex);
@@ -28,6 +35,19 @@ export function pagination(section: Catalog, page = 1, limit = 4) {
 
 export function getMetadataSection(section: Catalog) {
   return ALL_METADATA[section];
+}
+
+export function calculateBaseMetadataSection(section: Catalog, limit = 4) {
+  if (!categories.includes(section)) {
+    throw new Error('');
+  }
+  const totalElements = Object.keys(ALL_LOADERS[section]).length;
+  const totalPages = Math.ceil(totalElements / limit);
+
+  return {
+    totalElements,
+    totalPages,
+  };
 }
 
 export function getCategoryNavigationLinks() {

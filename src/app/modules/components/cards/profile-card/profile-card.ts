@@ -5,6 +5,7 @@ import {
   OnDestroy,
   signal,
   computed,
+  afterNextRender,
 } from '@angular/core';
 
 @Component({
@@ -16,7 +17,7 @@ import {
     class: 'block h-full',
   },
 })
-export class ProfileCardComp implements OnInit, OnDestroy {
+export class ProfileCardComp implements OnDestroy {
   readonly name = 'Alex Rivera';
   readonly role = 'Lead Frontend Architect';
   readonly location = 'San Francisco, CA';
@@ -41,9 +42,11 @@ export class ProfileCardComp implements OnInit, OnDestroy {
 
   private timerId?: ReturnType<typeof setInterval>;
 
-  ngOnInit(): void {
-    this.updateClock();
-    this.timerId = setInterval(() => this.updateClock(), 1000);
+  constructor() {
+    afterNextRender(() => {
+      this.updateClock();
+      this.timerId = setInterval(() => this.updateClock(), 1000);
+    });
   }
 
   ngOnDestroy(): void {

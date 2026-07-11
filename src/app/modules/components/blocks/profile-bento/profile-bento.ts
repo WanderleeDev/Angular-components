@@ -4,6 +4,7 @@ import {
   OnDestroy,
   signal,
   ChangeDetectionStrategy,
+  afterNextRender,
 } from '@angular/core';
 
 @Component({
@@ -13,7 +14,7 @@ import {
   styleUrl: './profile-bento.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProfileBento implements OnInit, OnDestroy {
+export class ProfileBento implements OnDestroy {
   protected readonly currentTime = signal<string>('');
   protected readonly stack = signal<string[]>([
     'TypeScript',
@@ -24,11 +25,13 @@ export class ProfileBento implements OnInit, OnDestroy {
     'A11y',
   ]);
 
-  private timerInterval?: any;
+  private timerInterval?: ReturnType<typeof setInterval>;
 
-  ngOnInit(): void {
-    this.updateTime();
-    this.timerInterval = setInterval(() => this.updateTime(), 1000);
+  constructor() {
+    afterNextRender(() => {
+      this.updateTime();
+      this.timerInterval = setInterval(() => this.updateTime(), 1000);
+    });
   }
 
   ngOnDestroy(): void {

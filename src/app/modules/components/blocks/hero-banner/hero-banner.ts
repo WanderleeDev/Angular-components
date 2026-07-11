@@ -4,6 +4,7 @@ import {
   OnDestroy,
   signal,
   ChangeDetectionStrategy,
+  afterNextRender,
 } from '@angular/core';
 
 @Component({
@@ -13,16 +14,18 @@ import {
   styleUrl: './hero-banner.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeroBanner implements OnInit, OnDestroy {
+export class HeroBanner implements OnDestroy {
   protected readonly requestCount = signal<number>(1043250);
   protected readonly currentUptime = signal<string>('99.98%');
 
   private countInterval?: NodeJS.Timeout;
 
-  ngOnInit(): void {
-    this.countInterval = setInterval(() => {
-      this.requestCount.update(c => c + Math.floor(Math.random() * 5) + 1);
-    }, 1500);
+  constructor() {
+    afterNextRender(() => {
+      this.countInterval = setInterval(() => {
+        this.requestCount.update(c => c + Math.floor(Math.random() * 5) + 1);
+      }, 1500);
+    });
   }
 
   ngOnDestroy(): void {
