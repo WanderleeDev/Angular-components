@@ -1,0 +1,60 @@
+<div class="banner-nav-wrapper">
+  @if (isBannerVisible()) {
+  <div class="promo-banner">
+    <div class="banner-text-container">
+      <span class="banner-tag">NEW</span>
+      <span class="banner-msg"
+        >Aether Pro templates are now live! Use code
+        <strong>AETHER10</strong> for 10% off.</span
+      >
+    </div>
+    <button
+      type="button"
+      class="close-banner-btn"
+      (click)="closeBanner()"
+      aria-label="Close banner">
+      <span class="material-icons">close</span>
+    </button>
+  </div>
+  }
+
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <div class="brand">
+        <span class="material-icons brand-icon">rocket_launch</span>
+        <span class="brand-text">Astra</span>
+      </div>
+
+      <div class="nav-links">
+        @for (link of navLinks; track link) {
+        <a href="#" (click)="$event.preventDefault(); activeLink.set(link)" class="nav-link" [class.active]="activeLink() === link">{{ link }}</a>
+        }
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" class="btn-primary">Get Astra</button>
+      </div>
+
+      <button
+        type="button"
+        class="mobile-toggle"
+        (click)="toggleMobile()"
+        aria-label="Toggle menu">
+        <span class="material-icons"
+          >{{ isMobileOpen() ? 'close' : 'menu' }}</span
+        >
+      </button>
+    </div>
+
+    @if (isMobileOpen()) {
+    <div class="mobile-menu">
+      @for (link of navLinks; track link) {
+      <a href="#" (click)="$event.preventDefault(); activeLink.set(link)" class="mobile-link" [class.active]="activeLink() === link">{{ link }}</a>
+      }
+      <div class="mobile-actions">
+        <button type="button" class="btn-primary w-full">Get Astra</button>
+      </div>
+    </div>
+    }
+  </nav>
+</div>

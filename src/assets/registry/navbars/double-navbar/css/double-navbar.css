@@ -4,18 +4,20 @@
   border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
   border-radius: 12px;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.15);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   overflow: hidden;
   --accent: #8b5cf6;
   --accent-glow: rgba(139, 92, 246, 0.15);
 }
 
-/* Top Utility Bar */
 .top-bar {
-  background: rgba(255, 255, 255, 0.02);
+  background: color-mix(in srgb, var(--text) 2%, transparent);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   font-size: 0.725rem;
-  color: rgba(248, 252, 255, 0.55);
+  color: color-mix(in srgb, var(--text) 55.00000000000001%, transparent);
 }
 
 .top-container {
@@ -63,7 +65,6 @@
   color: var(--text, #f8fafc);
 }
 
-/* Bottom Main Navbar */
 .main-nav {
   position: relative;
 }
@@ -115,7 +116,7 @@
   text-decoration: none;
   font-size: 0.825rem;
   font-weight: 550;
-  color: rgba(248, 252, 255, 0.65);
+  color: color-mix(in srgb, var(--text) 65%, transparent);
   padding: 0.45rem 0.85rem;
   border-radius: 8px;
   transition: all 0.2s ease;
@@ -123,7 +124,7 @@
 
 .nav-link:hover {
   color: var(--text, #f8fafc);
-  background: rgba(255, 255, 255, 0.04);
+  background: color-mix(in srgb, var(--text) 4%, transparent);
 }
 
 .nav-link.active {
@@ -147,7 +148,7 @@
 .btn-text {
   background: transparent;
   border: none;
-  color: rgba(248, 252, 255, 0.7);
+  color: color-mix(in srgb, var(--text) 70%, transparent);
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.5rem 1rem;
@@ -158,13 +159,13 @@
 
 .btn-text:hover {
   color: var(--text, #f8fafc);
-  background: rgba(255, 255, 255, 0.04);
+  background: color-mix(in srgb, var(--text) 4%, transparent);
 }
 
 .btn-solid {
   background: var(--accent);
   border: none;
-  color: white;
+  color: var(--text);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.5rem 1.15rem;
@@ -195,7 +196,7 @@
 }
 
 .mobile-toggle:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: color-mix(in srgb, var(--text) 5%, transparent);
   opacity: 1;
 }
 
@@ -206,7 +207,7 @@
 }
 
 .mobile-menu {
-  background: rgba(255, 255, 255, 0.01);
+  background: color-mix(in srgb, var(--text) 1%, transparent);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 0.75rem;
   display: flex;
@@ -216,15 +217,21 @@
 }
 
 @keyframes slide-in {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile-link {
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 550;
-  color: rgba(248, 252, 255, 0.7);
+  color: color-mix(in srgb, var(--text) 70%, transparent);
   padding: 0.55rem 0.75rem;
   border-radius: 8px;
   transition: all 0.2s;
@@ -232,7 +239,7 @@
 
 .mobile-link:hover {
   color: var(--text, #f8fafc);
-  background: rgba(255, 255, 255, 0.04);
+  background: color-mix(in srgb, var(--text) 4%, transparent);
 }
 
 .mobile-link.active {

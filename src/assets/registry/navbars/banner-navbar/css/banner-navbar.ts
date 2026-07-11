@@ -4,6 +4,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
   selector: 'app-banner-navbar',
   imports: [],
   templateUrl: './banner-navbar.html',
+  styleUrl: './banner-navbar.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BannerNavbar {

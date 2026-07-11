@@ -24,23 +24,35 @@ export const NAVBAR_METADATA: SectionMetadata = {
   filePaths: {
     'search-navbar': {
       css: {
-        ts: 'assets/registry/navbars/search-navbar/search-navbar.ts',
-        html: 'assets/registry/navbars/search-navbar/search-navbar.html',
-        css: 'assets/registry/navbars/search-navbar/search-navbar.css',
+        ts: 'assets/registry/navbars/search-navbar/css/search-navbar.ts',
+        html: 'assets/registry/navbars/search-navbar/css/search-navbar.html',
+        css: 'assets/registry/navbars/search-navbar/css/search-navbar.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/navbars/search-navbar/tailwind/search-navbar.ts',
+        html: 'assets/registry/navbars/search-navbar/tailwind/search-navbar.html',
       },
     },
     'double-navbar': {
       css: {
-        ts: 'assets/registry/navbars/double-navbar/double-navbar.ts',
-        html: 'assets/registry/navbars/double-navbar/double-navbar.html',
-        css: 'assets/registry/navbars/double-navbar/double-navbar.css',
+        ts: 'assets/registry/navbars/double-navbar/css/double-navbar.ts',
+        html: 'assets/registry/navbars/double-navbar/css/double-navbar.html',
+        css: 'assets/registry/navbars/double-navbar/css/double-navbar.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/navbars/double-navbar/tailwind/double-navbar.ts',
+        html: 'assets/registry/navbars/double-navbar/tailwind/double-navbar.html',
       },
     },
     'banner-navbar': {
       css: {
-        ts: 'assets/registry/navbars/banner-navbar/banner-navbar.ts',
-        html: 'assets/registry/navbars/banner-navbar/banner-navbar.html',
-        css: 'assets/registry/navbars/banner-navbar/banner-navbar.css',
+        ts: 'assets/registry/navbars/banner-navbar/css/banner-navbar.ts',
+        html: 'assets/registry/navbars/banner-navbar/css/banner-navbar.html',
+        css: 'assets/registry/navbars/banner-navbar/css/banner-navbar.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/navbars/banner-navbar/tailwind/banner-navbar.ts',
+        html: 'assets/registry/navbars/banner-navbar/tailwind/banner-navbar.html',
       },
     },
   },
