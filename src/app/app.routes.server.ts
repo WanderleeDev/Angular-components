@@ -4,6 +4,10 @@ import { calculateBaseMetadataSection } from './modules/shared/utils';
 
 export const serverRoutes: ServerRoute[] = [
   {
+    path: 'catalog/themes',
+    renderMode: RenderMode.Prerender,
+  },
+  {
     path: 'catalog/:category',
     renderMode: RenderMode.Server,
   },
