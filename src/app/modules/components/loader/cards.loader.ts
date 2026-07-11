@@ -29,7 +29,7 @@ export const CARD_METADATA: SectionMetadata = {
   description:
     'Flexible content grouping blocks and bento cards with customizable layouts, imagery, and footers.',
   color: '#ec4899',
-  isDoubleColumn: true,
+  isResponsiveColumn: true,
   filePaths: {
     'category-card': {
       css: {

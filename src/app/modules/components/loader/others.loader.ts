@@ -17,7 +17,7 @@ export const OTHER_METADATA: SectionMetadata = {
   description:
     'Miscellaneous custom UI elements, interactive rating gauges, and sandbox testing components.',
   color: '#64748b',
-  isDoubleColumn: true,
+  isResponsiveColumn: true,
   filePaths: {
     'star-rating': {
       tailwind: {

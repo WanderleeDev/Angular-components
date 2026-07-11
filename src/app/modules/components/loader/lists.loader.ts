@@ -24,7 +24,7 @@ export const LIST_METADATA: SectionMetadata = {
   description:
     'Highly optimized lists, hierarchical tree structures, and expandable panels for data listing.',
   color: '#06b6d4',
-  isDoubleColumn: true,
+  isResponsiveColumn: true,
   filePaths: {
     'interactive-list': {
       css: {

@@ -60,8 +60,7 @@
   </header>
 
   <div
-    class="grid gap-8 grid-cols-1"
-    [class.md:grid-cols-2]="metadata().isDoubleColumn">
+    class="grid gap-8 {{ metadata().isResponsiveColumn ? 'min-[350px]:grid-cols-[repeat(auto-fill,minmax(min(100%,330px),1fr))]' : 'grid-cols-1' }}">
     @if (components.isLoading()) {
     <app-loading-state />
     } @else if (components.error()) {
@@ -88,11 +87,16 @@
       <ng-container *ngComponentOutlet="c.compClass" />
     </app-window>
     }@empty {
-      <div class="col-span-full flex flex-col items-center justify-center p-16 text-center border-2 border-dashed border-app-border/60 rounded-2xl bg-app-card/30">
-        <span class="material-icons text-5xl text-app-text/30 mb-4">inventory_2</span>
-        <h3 class="text-xl font-medium text-app-text/80">No hay componentes</h3>
-        <p class="text-app-text/50 mt-2 max-w-sm">Aún no hay componentes disponibles para esta categoría.</p>
-      </div>
+    <div
+      class="col-span-full flex flex-col items-center justify-center p-16 text-center border-2 border-dashed border-app-border/60 rounded-2xl bg-app-card/30">
+      <span class="material-icons text-5xl text-app-text/30 mb-4"
+        >inventory_2</span
+      >
+      <h3 class="text-xl font-medium text-app-text/80">No hay componentes</h3>
+      <p class="text-app-text/50 mt-2 max-w-sm">
+        Aún no hay componentes disponibles para esta categoría.
+      </p>
+    </div>
     } }
   </div>
 </div>

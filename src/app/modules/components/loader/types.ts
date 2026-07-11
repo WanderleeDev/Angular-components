@@ -21,7 +21,7 @@ export type SectionMetadata = {
   icon: string;
   description: string;
   color: string;
-  isDoubleColumn?: boolean;
+  isResponsiveColumn?: boolean;
   filePaths?: Partial<Record<string, PathToFile>>;
 };
 
