@@ -10,6 +10,7 @@ export interface CollapsibleItem {
 @Component({
   selector: 'app-collapsible-list-comp',
   templateUrl: './collapsible-list.html',
+  styleUrl: './collapsible-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'block h-full',

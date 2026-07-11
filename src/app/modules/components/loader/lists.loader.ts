@@ -28,30 +28,46 @@ export const LIST_METADATA: SectionMetadata = {
   filePaths: {
     'interactive-list': {
       css: {
-        ts: 'assets/registry/lists/interactive-list/interactive-list.ts',
-        html: 'assets/registry/lists/interactive-list/interactive-list.html',
-        css: 'assets/registry/lists/interactive-list/interactive-list.css',
+        ts: 'assets/registry/lists/interactive-list/css/interactive-list.ts',
+        html: 'assets/registry/lists/interactive-list/css/interactive-list.html',
+        css: 'assets/registry/lists/interactive-list/css/interactive-list.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/lists/interactive-list/tailwind/interactive-list.ts',
+        html: 'assets/registry/lists/interactive-list/tailwind/interactive-list.html',
       },
     },
     'description-list': {
       css: {
-        ts: 'assets/registry/lists/description-list/description-list.ts',
-        html: 'assets/registry/lists/description-list/description-list.html',
-        css: 'assets/registry/lists/description-list/description-list.css',
+        ts: 'assets/registry/lists/description-list/css/description-list.ts',
+        html: 'assets/registry/lists/description-list/css/description-list.html',
+        css: 'assets/registry/lists/description-list/css/description-list.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/lists/description-list/tailwind/description-list.ts',
+        html: 'assets/registry/lists/description-list/tailwind/description-list.html',
       },
     },
     'task-list': {
       css: {
-        ts: 'assets/registry/lists/task-list/task-list.ts',
-        html: 'assets/registry/lists/task-list/task-list.html',
-        css: 'assets/registry/lists/task-list/task-list.css',
+        ts: 'assets/registry/lists/task-list/css/task-list.ts',
+        html: 'assets/registry/lists/task-list/css/task-list.html',
+        css: 'assets/registry/lists/task-list/css/task-list.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/lists/task-list/tailwind/task-list.ts',
+        html: 'assets/registry/lists/task-list/tailwind/task-list.html',
       },
     },
     'collapsible-list': {
       css: {
-        ts: 'assets/registry/lists/collapsible-list/collapsible-list.ts',
-        html: 'assets/registry/lists/collapsible-list/collapsible-list.html',
-        css: 'assets/registry/lists/collapsible-list/collapsible-list.css',
+        ts: 'assets/registry/lists/collapsible-list/css/collapsible-list.ts',
+        html: 'assets/registry/lists/collapsible-list/css/collapsible-list.html',
+        css: 'assets/registry/lists/collapsible-list/css/collapsible-list.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/lists/collapsible-list/tailwind/collapsible-list.ts',
+        html: 'assets/registry/lists/collapsible-list/tailwind/collapsible-list.html',
       },
     },
   },

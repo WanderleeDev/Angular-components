@@ -15,6 +15,7 @@ export interface TaskItem {
 @Component({
   selector: 'app-task-list-comp',
   templateUrl: './task-list.html',
+  styleUrl: './task-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'block h-full',

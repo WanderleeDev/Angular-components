@@ -1,0 +1,62 @@
+<div
+  class="h-full bg-app-card border border-app-border rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+  <div class="relative z-10 flex-grow">
+    <div
+      class="flex justify-between items-center mb-5 pb-3 border-b border-app-border/40">
+      <div>
+        <h3 class="text-base font-bold text-app-text tracking-tight">
+          Project Tasks
+        </h3>
+        <p
+          class="text-[10px] text-app-text/40 font-bold uppercase tracking-wider mt-0.5">
+          Task Tracker
+        </p>
+      </div>
+      <span
+        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-app-accent/10 text-app-accent">
+        {{ completedCount() }} / {{ totalCount() }} DONE
+      </span>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      @for (task of tasks(); track task.id) {
+      <button
+        (click)="toggleTask(task.id)"
+        class="w-full flex items-center justify-between p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50"
+        [class.bg-app-text/2]="task.completed"
+        [class.border-app-border/40]="task.completed"
+        [class.opacity-60]="task.completed"
+        [class.bg-transparent]="!task.completed"
+        [class.border-app-border]="!task.completed"
+        [class.hover:border-app-text/20]="!task.completed"
+        [attr.aria-label]="'Toggle completion for: ' + task.text">
+        <div class="flex items-center gap-3">
+          <span
+            class="material-icons text-xl select-none"
+            [class.text-app-accent]="!task.completed"
+            [class.text-emerald-500]="task.completed">
+            {{ task.completed ? 'check_box' : 'check_box_outline_blank' }}
+          </span>
+          <span
+            class="text-xs font-bold text-app-text transition-all duration-200"
+            [class.line-through]="task.completed"
+            [class.text-app-text/50]="task.completed">
+            {{ task.text }}
+          </span>
+        </div>
+
+        <span
+          class="text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-md"
+          [class.bg-red-500/10]="task.priority === 'high' && !task.completed"
+          [class.text-red-500]="task.priority === 'high' && !task.completed"
+          [class.bg-amber-500/10]="task.priority === 'medium' && !task.completed"
+          [class.text-amber-500]="task.priority === 'medium' && !task.completed"
+          [class.bg-slate-500/10]="task.priority === 'low' || task.completed"
+          [class.text-slate-500]="task.priority === 'low' || task.completed">
+          {{ task.priority }}
+        </span>
+      </button>
+      }
+    </div>
+  </div>
+</div>

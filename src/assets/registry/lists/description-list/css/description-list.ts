@@ -8,6 +8,7 @@ interface ListField {
 @Component({
   selector: 'app-description-list',
   templateUrl: './description-list.html',
+  styleUrl: './description-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'block w-full',

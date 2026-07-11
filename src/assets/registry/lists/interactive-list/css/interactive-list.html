@@ -1,0 +1,25 @@
+<div class="list-wrapper">
+  <h3 class="list-title">{{ title() }}</h3>
+
+  <ul class="list-container">
+    @for (item of items(); track item.label) {
+    <li class="list-item">
+      <div class="item-icon-wrapper">
+        <span class="material-icons item-icon">{{ item.icon }}</span>
+      </div>
+
+      <span class="item-label">{{ item.label }}</span>
+
+      @if (item.badge) {
+      <span
+        class="item-badge"
+        [class.badge-primary]="item.badgeType === 'primary'"
+        [class.badge-success]="item.badgeType === 'success'"
+        [class.badge-warn]="item.badgeType === 'warn'">
+        {{ item.badge }}
+      </span>
+      }
+    </li>
+    }
+  </ul>
+</div>

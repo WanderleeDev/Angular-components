@@ -16,9 +16,13 @@ export const HEADER_METADATA: SectionMetadata = {
   filePaths: {
     'split-hero': {
       css: {
-        ts: 'assets/registry/headers/split-hero/split-hero.ts',
-        html: 'assets/registry/headers/split-hero/split-hero.html',
-        css: 'assets/registry/headers/split-hero/split-hero.css',
+        ts: 'assets/registry/headers/split-hero/css/split-hero.ts',
+        html: 'assets/registry/headers/split-hero/css/split-hero.html',
+        css: 'assets/registry/headers/split-hero/css/split-hero.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/headers/split-hero/tailwind/split-hero.ts',
+        html: 'assets/registry/headers/split-hero/tailwind/split-hero.html',
       },
     },
   },

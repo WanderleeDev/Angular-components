@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 @Component({
   selector: 'app-split-hero',
   templateUrl: './split-hero.html',
+  styleUrl: './split-hero.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'block w-full',

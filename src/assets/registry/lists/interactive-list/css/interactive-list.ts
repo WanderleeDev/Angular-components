@@ -10,6 +10,7 @@ interface ListItem {
 @Component({
   selector: 'app-interactive-list',
   templateUrl: './interactive-list.html',
+  styleUrl: './interactive-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'block w-full',
