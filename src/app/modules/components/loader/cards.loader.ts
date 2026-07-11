@@ -9,10 +9,7 @@ export const CARDS_LOADERS: ComponentsLoader = {
     import('app/modules/components/cards/theme-card/theme-card').then(
       m => m.ThemeCardComp
     ),
-  'active-users':
-    import('app/modules/components/cards/active-users/active-users').then(
-      m => m.ActiveUsersCard
-    ),
+
   'product-card':
     import('app/modules/components/cards/product-card/product-card').then(
       m => m.ProductCardComp
@@ -45,13 +42,7 @@ export const CARD_METADATA: SectionMetadata = {
         css: 'assets/registry/cards/theme-card/theme-card.css',
       },
     },
-    'active-users': {
-      css: {
-        ts: 'assets/registry/cards/active-users/active-users.ts',
-        html: 'assets/registry/cards/active-users/active-users.html',
-        css: 'assets/registry/cards/active-users/active-users.css',
-      },
-    },
+
     'product-card': {
       css: {
         ts: 'assets/registry/cards/product-card/product-card.ts',
