@@ -1,15 +1,15 @@
-import { Routes, ActivatedRouteSnapshot } from '@angular/router';
+import {
+  Routes,
+  ActivatedRouteSnapshot,
+  PartialMatchRouteSnapshot,
+} from '@angular/router';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
-    path: 'home',
     title: 'home',
     loadComponent: () => import('./modules/home/presentation/views/home-view'),
+    pathMatch: 'full',
   },
   {
     path: 'catalog',
@@ -20,7 +20,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        title: 'catalog | entry',
+        title: 'catalog',
         loadComponent: () =>
           import('./modules/catalog/presentation/views/entry-view/entry-view'),
       },
@@ -32,12 +32,14 @@ export const routes: Routes = [
       },
       {
         path: ':category',
-        redirectTo: ':category/page/1',
+        redirectTo: (route: PartialMatchRouteSnapshot) =>
+          `${route.paramMap.get('category')}/page/1`,
         pathMatch: 'full',
       },
       {
         path: ':category/page/:page',
-        title: (route: ActivatedRouteSnapshot) => `catalog | ${route.paramMap.get('category')}`,
+        title: (route: ActivatedRouteSnapshot) =>
+          `catalog | ${route.paramMap.get('category')}`,
         loadComponent: () =>
           import('./modules/catalog/presentation/views/category-view'),
       },
