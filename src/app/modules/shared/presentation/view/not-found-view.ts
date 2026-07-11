@@ -2,15 +2,16 @@ import {
   ChangeDetectionStrategy,
   Component,
   afterNextRender,
+  inject,
   signal,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { BtnGradientComponent } from 'app/modules/shared/presentation/components/btn-gradient/btn-gradient.component';
 import { NotFoundSchematic } from 'app/modules/shared/presentation/components/not-found-schematic/not-found-schematic';
 
 @Component({
   selector: 'app-not-found-view',
-  imports: [RouterLink, BtnGradientComponent, NotFoundSchematic],
+  imports: [BtnGradientComponent, NotFoundSchematic],
   template: `
     <section
       class="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-6 font-sans">
@@ -32,8 +33,8 @@ import { NotFoundSchematic } from 'app/modules/shared/presentation/components/no
         </p>
 
         <div class="mt-2">
-          <app-btn-gradient routerLink="/home"
-            >Return to Base Terminal</app-btn-gradient
+          <app-btn-gradient (click)="back()"
+            >Return to Catalog</app-btn-gradient
           >
         </div>
       </div>
@@ -42,9 +43,14 @@ import { NotFoundSchematic } from 'app/modules/shared/presentation/components/no
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class NotFoundView {
-  url = signal('');
+  protected readonly url = signal('');
+  protected readonly router = inject(Router);
 
   constructor() {
     afterNextRender(() => this.url.update(() => window.location.href));
+  }
+
+  back() {
+    this.router.navigate(['/catalog']);
   }
 }
