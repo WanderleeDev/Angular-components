@@ -19,6 +19,10 @@ export const BLOCKS_LOADERS: ComponentsLoader = {
     import('app/modules/components/blocks/tabs-showcase/tabs-showcase').then(
       m => m.TabsShowcase
     ),
+  'masonry-grid':
+    import('app/modules/components/blocks/masonry-grid/masonry-grid').then(
+      m => m.MasonryGrid
+    ),
 } as const;
 
 export const BLOCK_METADATA: SectionMetadata = {
@@ -61,6 +65,12 @@ export const BLOCK_METADATA: SectionMetadata = {
         ts: 'assets/registry/blocks/tabs-showcase/tabs-showcase.ts',
         html: 'assets/registry/blocks/tabs-showcase/tabs-showcase.html',
         css: 'assets/registry/blocks/tabs-showcase/tabs-showcase.css',
+      },
+    },
+    'masonry-grid': {
+      tailwind: {
+        ts: 'assets/registry/blocks/masonry-grid/masonry-grid.ts',
+        html: 'assets/registry/blocks/masonry-grid/masonry-grid.html',
       },
     },
   },

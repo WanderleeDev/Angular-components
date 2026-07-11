@@ -9,6 +9,14 @@ export const SLIDERS_LOADERS: ComponentsLoader = {
     import('app/modules/components/sliders/dual-slider/dual-slider').then(
       m => m.DualSlider
     ),
+  'volume-slider':
+    import('app/modules/components/sliders/volume-slider/volume-slider').then(
+      m => m.VolumeSlider
+    ),
+  'circular-slider':
+    import('app/modules/components/sliders/circular-slider/circular-slider').then(
+      m => m.CircularSlider
+    ),
 } as const;
 
 export const SLIDER_METADATA: SectionMetadata = {
@@ -31,6 +39,20 @@ export const SLIDER_METADATA: SectionMetadata = {
         ts: 'assets/registry/sliders/dual-slider/dual-slider.ts',
         html: 'assets/registry/sliders/dual-slider/dual-slider.html',
         css: 'assets/registry/sliders/dual-slider/dual-slider.css',
+      },
+    },
+    'volume-slider': {
+      css: {
+        ts: 'assets/registry/sliders/volume-slider/volume-slider.ts',
+        html: 'assets/registry/sliders/volume-slider/volume-slider.html',
+        css: 'assets/registry/sliders/volume-slider/volume-slider.css',
+      },
+    },
+    'circular-slider': {
+      css: {
+        ts: 'assets/registry/sliders/circular-slider/circular-slider.ts',
+        html: 'assets/registry/sliders/circular-slider/circular-slider.html',
+        css: 'assets/registry/sliders/circular-slider/circular-slider.css',
       },
     },
   },

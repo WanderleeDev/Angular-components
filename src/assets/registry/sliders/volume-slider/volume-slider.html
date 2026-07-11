@@ -1,0 +1,57 @@
+<div class="flex items-center gap-4 bg-app-card p-4 rounded-2xl border border-app-border shadow-sm max-w-sm mx-auto">
+  <!-- Icon -->
+  <button 
+    type="button" 
+    class="text-app-text/70 hover:text-app-accent transition-colors flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-app-accent rounded-full p-1"
+    (click)="volume.set(volume() === 0 ? 50 : 0)"
+    aria-label="Toggle mute"
+  >
+    <span class="material-icons text-2xl">{{ volumeIcon() }}</span>
+  </button>
+
+  <!-- Slider -->
+  <div class="relative w-full flex items-center group">
+    <!-- Background track -->
+    <div class="absolute w-full h-2 bg-app-text/10 rounded-full overflow-hidden pointer-events-none">
+      <!-- Fill track -->
+      <div 
+        class="h-full bg-app-accent transition-all duration-75"
+        [style.width.%]="volume()"
+      ></div>
+    </div>
+    
+    <!-- Actual Range Input -->
+    <input 
+      type="range" 
+      min="0" 
+      max="100" 
+      [value]="volume()"
+      (input)="updateVolume($event)"
+      aria-label="Volume control"
+      class="w-full h-2 appearance-none bg-transparent cursor-pointer z-10
+             focus:outline-none 
+             [&::-webkit-slider-thumb]:appearance-none 
+             [&::-webkit-slider-thumb]:w-4 
+             [&::-webkit-slider-thumb]:h-4 
+             [&::-webkit-slider-thumb]:bg-white 
+             [&::-webkit-slider-thumb]:rounded-full 
+             [&::-webkit-slider-thumb]:shadow-md 
+             [&::-webkit-slider-thumb]:border 
+             [&::-webkit-slider-thumb]:border-gray-200
+             [&::-webkit-slider-thumb]:transition-transform
+             [&::-webkit-slider-thumb]:hover:scale-125
+             [&::-moz-range-thumb]:appearance-none 
+             [&::-moz-range-thumb]:w-4 
+             [&::-moz-range-thumb]:h-4 
+             [&::-moz-range-thumb]:bg-white 
+             [&::-moz-range-thumb]:rounded-full 
+             [&::-moz-range-thumb]:border-none
+             [&::-moz-range-thumb]:shadow-md
+             [&::-moz-range-thumb]:transition-transform
+             [&::-moz-range-thumb]:hover:scale-125"
+    />
+  </div>
+  
+  <!-- Value Display -->
+  <span class="text-sm font-medium text-app-text/80 w-8 text-right font-mono">{{ volume() }}</span>
+</div>
