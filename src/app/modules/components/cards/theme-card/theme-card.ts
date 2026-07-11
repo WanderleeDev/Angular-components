@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, signal, inject } from '@angular/core';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-theme-card-comp',
@@ -10,6 +11,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   },
 })
 export class ThemeCardComp {
+  themeId = input<string>('cyberpunk-neon');
   themeName = input<string>('Cyberpunk Neon');
   background = input<string>('#0f051d');
   cardBg = input<string>('#1a0b2e');
@@ -18,4 +20,23 @@ export class ThemeCardComp {
   accent = input<string>('#ff007f');
   isActive = input<boolean>(false);
   buttonText = input<string>('Apply');
+
+  copied = signal(false);
+  private clipboard = inject(Clipboard);
+
+  copyTheme(event: Event) {
+    event.stopPropagation();
+    const css = `.${this.themeId()} {
+  --background: ${this.background()};
+  --text: ${this.text()};
+  --card-bg: ${this.cardBg()};
+  --border: ${this.border()};
+  --accent: ${this.accent()};
+}`;
+    
+    if (this.clipboard.copy(css)) {
+      this.copied.set(true);
+      setTimeout(() => this.copied.set(false), 2000);
+    }
+  }
 }

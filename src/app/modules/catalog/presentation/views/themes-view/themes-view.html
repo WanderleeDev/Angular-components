@@ -1,0 +1,78 @@
+<div class="flex flex-col gap-8 max-w-7xl mx-auto w-full">
+  <header
+    class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-app-border">
+    <div class="flex flex-col gap-2">
+      <h1
+        class="flex flex-wrap items-center gap-3 text-2xl sm:text-3xl font-extrabold tracking-tight font-krona leading-none py-1">
+        <span class="material-icons text-app-accent text-2xl"> palette </span>
+        <span
+          class="bg-linear-to-r from-app-accent to-purple-500 bg-clip-text text-transparent capitalize"
+          >Theme Gallery</span
+        >
+        <span
+          class="inline-flex items-center justify-center text-xs font-bold px-2.5 py-0.5 rounded-full bg-app-accent/10 border border-app-accent/20 text-app-accent shadow-xs shadow-app-accent/10 font-sans align-middle -translate-y-px">
+          {{ themesList.length }}
+        </span>
+      </h1>
+      <p
+        class="text-app-text/60 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed">
+        Explore and choose from our curated collection of custom visual
+        palettes. Each theme changes the typography, contrast, and overall
+        personality of the application.
+      </p>
+    </div>
+
+    <div class="flex items-center gap-4 flex-wrap">
+      <a
+        routerLink="/catalog"
+        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-app-card border border-app-border text-app-text/80 hover:text-app-accent hover:border-app-accent/30 hover:bg-app-accent/5 transition-all duration-200 text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-app-accent/50 cursor-pointer">
+        <span class="material-icons text-lg">arrow_back</span>
+        Back to Catalog
+      </a>
+    </div>
+  </header>
+
+  @if (theme.isHydrated()) {
+  <div
+    class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    @for (themeInfo of themesList; track themeInfo.id) {
+    <app-theme-card-comp
+      (click)="selectTheme(themeInfo.id)"
+      [themeId]="themeInfo.id"
+      [themeName]="themeInfo.name"
+      [background]="themeInfo.background"
+      [cardBg]="themeInfo.cardBg"
+      [text]="themeInfo.text"
+      [border]="themeInfo.border"
+      [accent]="themeInfo.accent"
+      [isActive]="theme.selectedTheme() === themeInfo.id"
+      [buttonText]="
+            theme.selectedTheme() === themeInfo.id ? 'Applied' : 'Apply'
+          " />
+    }
+  </div>
+  } @else {
+  <div
+    class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    @for (i of skeletons; track i) {
+    <div
+      class="h-[230px] rounded-2xl bg-app-card border border-app-border/20 p-5 flex flex-col justify-between animate-pulse">
+      <div>
+        <div class="h-4 bg-slate-800 rounded w-1/3 mb-4"></div>
+        <div
+          class="w-full h-24 bg-slate-800/50 rounded-xl mb-4 border border-slate-800"></div>
+      </div>
+      <div
+        class="flex items-center justify-between pt-3 border-t border-slate-800">
+        <div class="flex gap-1.5">
+          <div class="w-5 h-5 rounded-full bg-slate-800"></div>
+          <div class="w-5 h-5 rounded-full bg-slate-800"></div>
+          <div class="w-5 h-5 rounded-full bg-slate-800"></div>
+        </div>
+        <div class="w-16 h-7 bg-slate-800 rounded-lg"></div>
+      </div>
+    </div>
+    }
+  </div>
+  }
+</div>
