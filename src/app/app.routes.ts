@@ -32,9 +32,10 @@ export const routes: Routes = [
       },
       {
         path: ':category',
-        redirectTo: (route: PartialMatchRouteSnapshot) =>
-          `/catalog/${route.paramMap.get('category')}/page/1`,
-        pathMatch: 'full',
+        title: (route: ActivatedRouteSnapshot) =>
+          `catalog | ${route.paramMap.get('category')}`,
+        loadComponent: () =>
+          import('./modules/catalog/presentation/views/category-view'),
       },
       {
         path: ':category/page/:page',
