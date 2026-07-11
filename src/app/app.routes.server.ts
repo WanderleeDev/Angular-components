@@ -5,10 +5,7 @@ import { calculateBaseMetadataSection } from './modules/shared/utils';
 export const serverRoutes: ServerRoute[] = [
   {
     path: 'catalog/:category',
-    renderMode: RenderMode.Prerender,
-    getPrerenderParams: async () => {
-      return categories.map(category => ({ category }));
-    },
+    renderMode: RenderMode.Server,
   },
   {
     path: 'catalog/:category/page/:page',

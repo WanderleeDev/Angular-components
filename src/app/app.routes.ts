@@ -43,11 +43,6 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./modules/catalog/presentation/views/category-view'),
       },
-      {
-        path: '**',
-        redirectTo: '',
-        pathMatch: 'full',
-      },
     ],
   },
   {
