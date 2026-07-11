@@ -1,0 +1,33 @@
+<div class="circular-slider">
+  <svg 
+    #svgWrapper
+    class="circular-slider__svg"
+    viewBox="0 0 160 160"
+    (mousedown)="startDrag($event)"
+    (touchstart)="startDrag($event)"
+  >
+    <circle 
+      cx="80" 
+      cy="80" 
+      [attr.r]="radius" 
+      class="circular-slider__track" 
+      stroke-width="12"
+    ></circle>
+    
+    <circle 
+      cx="80" 
+      cy="80" 
+      [attr.r]="radius" 
+      class="circular-slider__progress" 
+      stroke-width="12"
+      stroke-linecap="round"
+      [attr.stroke-dasharray]="circumference"
+      [attr.stroke-dashoffset]="dashOffset()"
+    ></circle>
+  </svg>
+
+  <div class="circular-slider__content">
+    <span class="circular-slider__value">{{ value() }}<span class="circular-slider__unit">%</span></span>
+    <span class="circular-slider__label">Intensity</span>
+  </div>
+</div>

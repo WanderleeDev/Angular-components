@@ -1,0 +1,67 @@
+<div class="theme-card" [class.theme-card--active]="isActive()" [style.--theme-accent]="accent()">
+  <div class="theme-card__glow-bg"></div>
+
+  <div class="theme-card__body">
+    <div class="theme-card__header">
+      <div class="theme-card__title-row">
+        <span class="theme-card__name">{{ themeName() }}</span>
+        <button
+          type="button"
+          (click)="copyTheme($event)"
+          class="theme-card__copy-btn"
+          title="Copy theme CSS">
+          <span class="material-icons copy-icon">{{ copied() ? 'check' : 'content_copy' }}</span>
+        </button>
+      </div>
+      @if (isActive()) {
+      <span class="theme-card__active-badge">
+        <span class="active-badge-dot"></span>
+        Active
+      </span>
+      }
+    </div>
+
+    <div
+      class="theme-card__preview"
+      [style.background]="background()"
+      [style.borderColor]="border()"
+      [style.color]="text()">
+      <div class="theme-card__preview-header">
+        <div class="theme-card__preview-dot" [style.background]="accent()"></div>
+        <div class="theme-card__preview-line-short" [style.background]="text()"></div>
+      </div>
+      <div class="theme-card__preview-content">
+        <div class="theme-card__preview-line-full" [style.background]="text()"></div>
+        <div class="theme-card__preview-line-mid" [style.background]="text()"></div>
+      </div>
+      <div class="theme-card__preview-footer">
+        <div class="theme-card__preview-btn" [style.background]="accent()"></div>
+        <div class="theme-card__preview-dot-small" [style.background]="text()"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card__footer">
+    <div class="theme-card__swatches">
+      <div class="theme-card__swatch" [style.background]="accent()" title="Accent">
+        <span class="sr-only">Accent: {{ accent() }}</span>
+      </div>
+      <div class="theme-card__swatch" [style.background]="background()" title="Background">
+        <span class="sr-only">Background: {{ background() }}</span>
+      </div>
+      <div class="theme-card__swatch" [style.background]="cardBg()" title="Card">
+        <span class="sr-only">Card: {{ cardBg() }}</span>
+      </div>
+      <div class="theme-card__swatch" [style.background]="text()" title="Text">
+        <span class="sr-only">Text: {{ text() }}</span>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="theme-card__apply-btn"
+      [class.active]="isActive()">
+      {{ buttonText() }}
+    </button>
+  </div>
+</div>

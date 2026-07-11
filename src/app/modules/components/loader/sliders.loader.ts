@@ -29,30 +29,46 @@ export const SLIDER_METADATA: SectionMetadata = {
   filePaths: {
     'range-slider': {
       css: {
-        ts: 'assets/registry/sliders/range-slider/range-slider.ts',
-        html: 'assets/registry/sliders/range-slider/range-slider.html',
-        css: 'assets/registry/sliders/range-slider/range-slider.css',
+        ts: 'assets/registry/sliders/range-slider/css/range-slider.ts',
+        html: 'assets/registry/sliders/range-slider/css/range-slider.html',
+        css: 'assets/registry/sliders/range-slider/css/range-slider.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/sliders/range-slider/tailwind/range-slider.ts',
+        html: 'assets/registry/sliders/range-slider/tailwind/range-slider.html',
       },
     },
     'dual-slider': {
       css: {
-        ts: 'assets/registry/sliders/dual-slider/dual-slider.ts',
-        html: 'assets/registry/sliders/dual-slider/dual-slider.html',
-        css: 'assets/registry/sliders/dual-slider/dual-slider.css',
+        ts: 'assets/registry/sliders/dual-slider/css/dual-slider.ts',
+        html: 'assets/registry/sliders/dual-slider/css/dual-slider.html',
+        css: 'assets/registry/sliders/dual-slider/css/dual-slider.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/sliders/dual-slider/tailwind/dual-slider.ts',
+        html: 'assets/registry/sliders/dual-slider/tailwind/dual-slider.html',
       },
     },
     'volume-slider': {
       css: {
-        ts: 'assets/registry/sliders/volume-slider/volume-slider.ts',
-        html: 'assets/registry/sliders/volume-slider/volume-slider.html',
-        css: 'assets/registry/sliders/volume-slider/volume-slider.css',
+        ts: 'assets/registry/sliders/volume-slider/css/volume-slider.ts',
+        html: 'assets/registry/sliders/volume-slider/css/volume-slider.html',
+        css: 'assets/registry/sliders/volume-slider/css/volume-slider.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/sliders/volume-slider/tailwind/volume-slider.ts',
+        html: 'assets/registry/sliders/volume-slider/tailwind/volume-slider.html',
       },
     },
     'circular-slider': {
       css: {
-        ts: 'assets/registry/sliders/circular-slider/circular-slider.ts',
-        html: 'assets/registry/sliders/circular-slider/circular-slider.html',
-        css: 'assets/registry/sliders/circular-slider/circular-slider.css',
+        ts: 'assets/registry/sliders/circular-slider/css/circular-slider.ts',
+        html: 'assets/registry/sliders/circular-slider/css/circular-slider.html',
+        css: 'assets/registry/sliders/circular-slider/css/circular-slider.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/sliders/circular-slider/tailwind/circular-slider.ts',
+        html: 'assets/registry/sliders/circular-slider/tailwind/circular-slider.html',
       },
     },
   },

@@ -1,0 +1,76 @@
+<div class="profile-card">
+  <div class="profile-card__glow-top"></div>
+  <div class="profile-card__glow-bottom"></div>
+
+  <div class="profile-card__main-content">
+    <div class="profile-card__header">
+      <span class="profile-card__location">
+        <span class="material-icons location-icon">location_on</span>
+        {{ location }}
+      </span>
+      <span class="profile-card__clock">
+        <span class="material-icons clock-icon">schedule</span>
+        {{ localTime() }}
+      </span>
+    </div>
+
+    <div class="profile-card__user-info">
+      <div class="profile-card__avatar-container">
+        <div class="profile-card__avatar-gradient">
+          <div class="profile-card__avatar-inner">
+            <span class="material-icons avatar-icon">account_circle</span>
+          </div>
+        </div>
+        <span class="profile-card__status-dot">
+          <span class="ping-animation"></span>
+          <span class="dot"></span>
+        </span>
+      </div>
+
+      <div>
+        <h3 class="profile-card__name">{{ name }}</h3>
+        <p class="profile-card__role">{{ role }}</p>
+      </div>
+    </div>
+
+    <p class="profile-card__bio">{{ bio }}</p>
+
+    <div class="profile-card__section">
+      <label class="profile-card__section-label">Expertise</label>
+      <div class="profile-card__skills-list">
+        @for (skill of skills; track skill.name) {
+        <span
+          [style.setProperty('--skill-color', skill.color)]
+          class="profile-card__skill-badge">
+          {{ skill.name }}
+        </span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-card__footer">
+    <div class="profile-card__stats">
+      <div class="profile-card__stat-item">
+        <span class="profile-card__stat-label">Followers</span>
+        <span class="profile-card__stat-value">{{ totalFollowers() }}</span>
+      </div>
+      <div class="profile-card__stat-item divider-left">
+        <span class="profile-card__stat-label">Projects</span>
+        <span class="profile-card__stat-value">24</span>
+      </div>
+    </div>
+
+    <button
+      (click)="toggleFollow()"
+      class="profile-card__follow-btn"
+      [class.active]="isFollowing()"
+      [attr.aria-label]="isFollowing() ? 'Unfollow Alex Rivera' : 'Follow Alex Rivera'">
+      @if (isFollowing()) {
+      <span class="material-icons icon">done</span>
+      Following } @else {
+      <span class="material-icons icon">person_add</span>
+      Follow }
+    </button>
+  </div>
+</div>

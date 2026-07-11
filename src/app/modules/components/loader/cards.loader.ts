@@ -30,31 +30,47 @@ export const CARD_METADATA: SectionMetadata = {
   filePaths: {
     'category-card': {
       css: {
-        ts: 'assets/registry/cards/category-card/category-card.ts',
-        html: 'assets/registry/cards/category-card/category-card.html',
-        css: 'assets/registry/cards/category-card/category-card.css',
+        ts: 'assets/registry/cards/category-card/css/category-card.ts',
+        html: 'assets/registry/cards/category-card/css/category-card.html',
+        css: 'assets/registry/cards/category-card/css/category-card.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/cards/category-card/tailwind/category-card.ts',
+        html: 'assets/registry/cards/category-card/tailwind/category-card.html',
       },
     },
     'theme-card': {
       css: {
-        ts: 'assets/registry/cards/theme-card/theme-card.ts',
-        html: 'assets/registry/cards/theme-card/theme-card.html',
-        css: 'assets/registry/cards/theme-card/theme-card.css',
+        ts: 'assets/registry/cards/theme-card/css/theme-card.ts',
+        html: 'assets/registry/cards/theme-card/css/theme-card.html',
+        css: 'assets/registry/cards/theme-card/css/theme-card.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/cards/theme-card/tailwind/theme-card.ts',
+        html: 'assets/registry/cards/theme-card/tailwind/theme-card.html',
       },
     },
 
     'product-card': {
       css: {
-        ts: 'assets/registry/cards/product-card/product-card.ts',
-        html: 'assets/registry/cards/product-card/product-card.html',
-        css: 'assets/registry/cards/product-card/product-card.css',
+        ts: 'assets/registry/cards/product-card/css/product-card.ts',
+        html: 'assets/registry/cards/product-card/css/product-card.html',
+        css: 'assets/registry/cards/product-card/css/product-card.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/cards/product-card/tailwind/product-card.ts',
+        html: 'assets/registry/cards/product-card/tailwind/product-card.html',
       },
     },
     'profile-card': {
       css: {
-        ts: 'assets/registry/cards/profile-card/profile-card.ts',
-        html: 'assets/registry/cards/profile-card/profile-card.html',
-        css: 'assets/registry/cards/profile-card/profile-card.css',
+        ts: 'assets/registry/cards/profile-card/css/profile-card.ts',
+        html: 'assets/registry/cards/profile-card/css/profile-card.html',
+        css: 'assets/registry/cards/profile-card/css/profile-card.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/cards/profile-card/tailwind/profile-card.ts',
+        html: 'assets/registry/cards/profile-card/tailwind/profile-card.html',
       },
     },
   },

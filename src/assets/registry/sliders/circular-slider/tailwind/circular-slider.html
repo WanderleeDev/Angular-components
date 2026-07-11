@@ -1,0 +1,36 @@
+<div class="relative w-48 h-48 mx-auto flex items-center justify-center bg-app-card rounded-3xl shadow-sm border border-app-border">
+  <svg 
+    #svgWrapper
+    class="w-full h-full transform -rotate-90 cursor-pointer touch-none"
+    viewBox="0 0 160 160"
+    (mousedown)="startDrag($event)"
+    (touchstart)="startDrag($event)"
+  >
+    <!-- Background Track -->
+    <circle 
+      cx="80" 
+      cy="80" 
+      [attr.r]="radius" 
+      class="stroke-app-text/10 fill-none" 
+      stroke-width="12"
+    ></circle>
+    
+    <!-- Progress Track -->
+    <circle 
+      cx="80" 
+      cy="80" 
+      [attr.r]="radius" 
+      class="stroke-app-accent fill-none transition-all duration-75 ease-out" 
+      stroke-width="12"
+      stroke-linecap="round"
+      [attr.stroke-dasharray]="circumference"
+      [attr.stroke-dashoffset]="dashOffset()"
+    ></circle>
+  </svg>
+
+  <!-- Center Text -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+    <span class="text-3xl font-bold text-app-text tracking-tighter">{{ value() }}<span class="text-lg text-app-text/50 font-normal">%</span></span>
+    <span class="text-xs text-app-text/40 font-medium uppercase tracking-wider mt-1">Intensity</span>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+<footer
+  class="w-full bg-app-card border border-app-border rounded-3xl p-6 md:p-8 flex flex-col gap-8">
+  <div
+    class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-6 border-b border-app-border/40">
+    <div class="flex items-center gap-2">
+      <span class="material-icons text-app-accent text-xl">language</span>
+      <span
+        class="font-extrabold text-lg tracking-tight text-app-text font-sans"
+        >Global Platform</span
+      >
+    </div>
+
+    <div class="flex flex-wrap gap-4 w-full md:w-auto">
+      <div class="flex flex-col gap-1 w-full sm:w-40">
+        <label
+          class="text-[9px] font-black uppercase tracking-wider text-app-text/40"
+          >Language</label
+        >
+        <select
+          [value]="selectedLanguage()"
+          (change)="setLanguage($any($event.target).value)"
+          class="h-10 px-3 rounded-xl bg-app-text/3 border border-app-border text-app-text text-xs focus:outline-none focus:ring-2 focus:ring-app-accent/40 cursor-pointer">
+          @for (lang of languages; track lang) {
+          <option [value]="lang">{{ lang }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="flex flex-col gap-1 w-full sm:w-40">
+        <label
+          class="text-[9px] font-black uppercase tracking-wider text-app-text/40"
+          >Currency</label
+        >
+        <select
+          [value]="selectedCurrency()"
+          (change)="setCurrency($any($event.target).value)"
+          class="h-10 px-3 rounded-xl bg-app-text/3 border border-app-border text-app-text text-xs focus:outline-none focus:ring-2 focus:ring-app-accent/40 cursor-pointer">
+          @for (curr of currencies; track curr) {
+          <option [value]="curr">{{ curr }}</option>
+          }
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs">
+    <div class="flex flex-col gap-3">
+      <span class="font-black uppercase tracking-wider text-app-text/40"
+        >Developer</span
+      >
+      <a
+        class="text-app-text/75 hover:text-app-accent font-semibold transition-colors"
+        href="#"
+        >Quickstart</a
+      >
+      <a
+        class="text-app-text/75 hover:text-app-accent font-semibold transition-colors"
+        href="#"
+        >CLI Installation</a
+      >
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-black uppercase tracking-wider text-app-text/40"
+        >Company</span
+      >
+      <a
+        class="text-app-text/75 hover:text-app-accent font-semibold transition-colors"
+        href="#"
+        >About Us</a
+      >
+      <a
+        class="text-app-text/75 hover:text-app-accent font-semibold transition-colors"
+        href="#"
+        >Careers</a
+      >
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-black uppercase tracking-wider text-app-text/40"
+        >Legal</span
+      >
+      <a
+        class="text-app-text/75 hover:text-app-accent font-semibold transition-colors"
+        href="#"
+        >Privacy</a
+      >
+      <a
+        class="text-app-text/75 hover:text-app-accent font-semibold transition-colors"
+        href="#"
+        >Terms</a
+      >
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-black uppercase tracking-wider text-app-text/40"
+        >Status</span
+      >
+      <a
+        class="text-app-text/75 hover:text-app-accent font-semibold transition-colors"
+        href="#"
+        >Uptime Logs</a
+      >
+      <a
+        class="text-app-text/75 hover:text-app-accent font-semibold transition-colors"
+        href="#"
+        >API Status</a
+      >
+    </div>
+  </div>
+
+  <div
+    class="border-t border-app-border/30 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-app-text/40 font-bold">
+    <span
+      >© {{ year }} Wanderlee Platform. Language: {{ selectedLanguage() }} /
+      Currency: {{ selectedCurrency() }}</span
+    >
+    <span class="material-icons text-base text-app-accent">security</span>
+  </div>
+</footer>

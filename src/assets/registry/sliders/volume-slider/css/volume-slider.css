@@ -1,0 +1,112 @@
+.volume-slider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--card-bg, #0b0f19);
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+.volume-slider__mute-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s;
+  flex-shrink: 0;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50%;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volume-slider__mute-btn:hover {
+  color: var(--accent, #38bdf8);
+}
+
+.volume-slider__mute-btn:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent, #38bdf8);
+}
+
+.volume-icon {
+  font-size: 1.5rem;
+}
+
+.volume-slider__control {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.volume-slider__track {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.volume-slider__fill {
+  height: 100%;
+  background: var(--accent, #38bdf8);
+  transition: width 0.075s;
+}
+
+.volume-slider__input {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 10;
+  outline: none;
+}
+
+.volume-slider__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.1s;
+}
+
+.volume-slider__input::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+.volume-slider__input::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.1s;
+}
+
+.volume-slider__input::-moz-range-thumb:hover {
+  transform: scale(1.25);
+}
+
+.volume-slider__value {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  width: 2rem;
+  text-align: right;
+  font-family: monospace;
+}

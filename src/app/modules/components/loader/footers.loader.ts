@@ -20,16 +20,24 @@ export const FOOTER_METADATA: SectionMetadata = {
   filePaths: {
     'simple-footer': {
       css: {
-        ts: 'assets/registry/footers/simple-footer/simple-footer.ts',
-        html: 'assets/registry/footers/simple-footer/simple-footer.html',
-        css: 'assets/registry/footers/simple-footer/simple-footer.css',
+        ts: 'assets/registry/footers/simple-footer/css/simple-footer.ts',
+        html: 'assets/registry/footers/simple-footer/css/simple-footer.html',
+        css: 'assets/registry/footers/simple-footer/css/simple-footer.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/footers/simple-footer/tailwind/simple-footer.ts',
+        html: 'assets/registry/footers/simple-footer/tailwind/simple-footer.html',
       },
     },
     'localized-footer': {
       css: {
-        ts: 'assets/registry/footers/localized-footer/localized-footer.ts',
-        html: 'assets/registry/footers/localized-footer/localized-footer.html',
-        css: 'assets/registry/footers/localized-footer/localized-footer.css',
+        ts: 'assets/registry/footers/localized-footer/css/localized-footer.ts',
+        html: 'assets/registry/footers/localized-footer/css/localized-footer.html',
+        css: 'assets/registry/footers/localized-footer/css/localized-footer.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/footers/localized-footer/tailwind/localized-footer.ts',
+        html: 'assets/registry/footers/localized-footer/tailwind/localized-footer.html',
       },
     },
   },

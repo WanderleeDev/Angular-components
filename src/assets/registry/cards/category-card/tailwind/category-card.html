@@ -1,0 +1,47 @@
+<div class="h-full cursor-pointer select-none">
+  <div
+    class="group flex flex-col h-full bg-app-card border border-app-border rounded-2xl p-7 relative overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1.5 hover:bg-app-card hover:border-app-accent/30 hover:shadow-[0_15px_30px_rgba(15,23,42,0.08)] dark:hover:shadow-[0_15px_30px_rgba(0,0,0,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-accent"
+    [style.--accent-color]="accentColor()"
+    [attr.aria-label]="'Explore ' + title() + ' components'">
+    <div
+      class="absolute -top-20 -right-20 w-[200px] h-[200px] rounded-full bg-[radial-gradient(circle,var(--accent-color)_0%,transparent_70%)] opacity-5 blur-[10px] z-10 transition-all duration-400 ease-in-out group-hover:opacity-15 group-hover:scale-130 animate-pulse"></div>
+
+    <div class="flex justify-between items-start mb-6 relative z-20">
+      <div
+        class="w-12 h-12 rounded-xl bg-app-text/3 border border-app-text/8 flex items-center justify-center text-[var(--accent-color)] transition-all duration-300 group-hover:bg-app-text/6 group-hover:border-[var(--accent-color)]">
+        <span class="material-icons text-2xl">{{ icon() }}</span>
+      </div>
+      <div class="text-right flex flex-col">
+        <span class="text-xl font-extrabold text-app-text leading-none"
+          >{{ count() }}</span
+        >
+        <span
+          class="text-[0.65rem] font-bold uppercase text-app-text/50 tracking-wider mt-0.5"
+          >{{ countLabel() }}</span
+        >
+      </div>
+    </div>
+
+    <h2
+      class="text-xl font-bold text-app-text mb-2.5 capitalize tracking-tight relative z-20 transition-colors duration-200 group-hover:text-[var(--accent-color)]">
+      {{ title() }}
+    </h2>
+
+    <p
+      class="text-[0.85rem] text-app-text/70 leading-relaxed mb-7 relative z-20 flex-grow">
+      {{ description() }}
+    </p>
+
+    <div
+      class="flex items-center gap-2 relative z-20 mt-auto border-t border-app-border/40 pt-4">
+      <span
+        class="text-[0.75rem] font-bold uppercase tracking-wider text-app-text/70 transition-colors duration-200 group-hover:text-app-text"
+        >{{ actionText() }}</span
+      >
+      <span
+        class="material-icons text-base text-app-text/50 transition-all duration-200 ease-out group-hover:text-[var(--accent-color)] group-hover:translate-x-1"
+        >arrow_forward</span
+      >
+    </div>
+  </div>
+</div>

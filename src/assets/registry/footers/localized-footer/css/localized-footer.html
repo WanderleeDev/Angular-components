@@ -1,0 +1,64 @@
+<footer class="localized-footer">
+  <div class="localized-footer__top">
+    <div class="localized-footer__brand">
+      <span class="material-icons brand-icon">language</span>
+      <span class="brand-text">Global Platform</span>
+    </div>
+
+    <div class="localized-footer__selectors">
+      <div class="localized-footer__selector-box">
+        <label class="selector-label">Language</label>
+        <select
+          [value]="selectedLanguage()"
+          (change)="setLanguage($any($event.target).value)"
+          class="selector-select">
+          @for (lang of languages; track lang) {
+          <option [value]="lang">{{ lang }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="localized-footer__selector-box">
+        <label class="selector-label">Currency</label>
+        <select
+          [value]="selectedCurrency()"
+          (change)="setCurrency($any($event.target).value)"
+          class="selector-select">
+          @for (curr of currencies; track curr) {
+          <option [value]="curr">{{ curr }}</option>
+          }
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="localized-footer__grid">
+    <div class="localized-footer__col">
+      <span class="col-title">Developer</span>
+      <a class="col-link" href="#" (click)="$event.preventDefault()">Quickstart</a>
+      <a class="col-link" href="#" (click)="$event.preventDefault()">CLI Installation</a>
+    </div>
+    <div class="localized-footer__col">
+      <span class="col-title">Company</span>
+      <a class="col-link" href="#" (click)="$event.preventDefault()">About Us</a>
+      <a class="col-link" href="#" (click)="$event.preventDefault()">Careers</a>
+    </div>
+    <div class="localized-footer__col">
+      <span class="col-title">Legal</span>
+      <a class="col-link" href="#" (click)="$event.preventDefault()">Privacy</a>
+      <a class="col-link" href="#" (click)="$event.preventDefault()">Terms</a>
+    </div>
+    <div class="localized-footer__col">
+      <span class="col-title">Status</span>
+      <a class="col-link" href="#" (click)="$event.preventDefault()">Uptime Logs</a>
+      <a class="col-link" href="#" (click)="$event.preventDefault()">API Status</a>
+    </div>
+  </div>
+
+  <div class="localized-footer__bottom">
+    <span class="bottom-text">
+      © {{ year }} Wanderlee Platform. Language: {{ selectedLanguage() }} / Currency: {{ selectedCurrency() }}
+    </span>
+    <span class="material-icons security-icon">security</span>
+  </div>
+</footer>

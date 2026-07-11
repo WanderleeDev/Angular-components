@@ -1,0 +1,90 @@
+<div class="product-card">
+  <div class="product-card__glow-top" [style.backgroundColor]="selectedColor().value"></div>
+  <div class="product-card__glow-bottom" [style.backgroundColor]="selectedColor().value"></div>
+
+  <div class="product-card__main-content">
+    <div class="product-card__header">
+      <div>
+        <span class="product-card__category">{{ category }}</span>
+        <h3 class="product-card__title">{{ name }}</h3>
+      </div>
+      <span class="product-card__rating">
+        <span class="material-icons star-icon">star</span>
+        4.8
+      </span>
+    </div>
+
+    <div class="product-card__image-container">
+      <div class="product-card__image-ring-spin"></div>
+      <div class="product-card__image-ring-inner"></div>
+      <div class="product-card__image-gradient-bg" [class]="selectedColor().gradient" [style.boxShadow]="'0 8px 24px ' + selectedColor().value + '40'"></div>
+      
+      <svg class="product-card__svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.75V12a9 9 0 00-9-9h-.75M21 12.75a9 9 0 01-9 9M21 12.75H12a9 9 0 01-9-9V3m9 9v9.75M3 12h9.75"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 17.5c0 0 2-4 5-4.5s8 .5 10 2c1.5 1.1 2 2.5 2 2.5H4v-0.5z" fill="rgba(255,255,255,0.1)"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 15c-1-2.5-3-5.5-6-6.5S6.5 9 5 11l-1 2.5" fill="none"></path>
+      </svg>
+
+      @if (quantity() > 0) {
+      <span class="product-card__cart-badge">IN CART: {{ quantity() }}</span>
+      }
+    </div>
+
+    <div class="product-card__section">
+      <label class="product-card__section-label">Color: {{ selectedColor().name }}</label>
+      <div class="product-card__color-selectors">
+        @for (color of colors; track color.name) {
+        <button
+          (click)="selectColor(color)"
+          [style.backgroundColor]="color.value"
+          class="product-card__color-btn"
+          [class.active]="selectedColor().name === color.name"
+          [attr.aria-label]="'Select ' + color.name + ' color'">
+          @if (selectedColor().name === color.name) {
+          <span class="checkmark">✓</span>
+          }
+        </button>
+        }
+      </div>
+    </div>
+
+    <div class="product-card__section">
+      <label class="product-card__section-label">Size (US)</label>
+      <div class="product-card__size-selectors">
+        @for (size of sizes; track size) {
+        <button
+          (click)="selectSize(size)"
+          class="product-card__size-btn"
+          [class.active]="selectedSize() === size"
+          [attr.aria-label]="'Select size ' + size">
+          {{ size }}
+        </button>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="product-card__footer">
+    <div class="product-card__price-box">
+      <span class="product-card__price-label">Price</span>
+      <span class="product-card__price-value">${{ priceDisplay() }}</span>
+    </div>
+
+    <button
+      (click)="addToCart()"
+      class="product-card__add-btn"
+      [class]="!isAdded() && !isAdding() ? selectedColor().gradient : ''"
+      [class.adding]="isAdding()"
+      [class.added]="isAdded()"
+      [disabled]="isAdding()"
+      [attr.aria-label]="isAdding() ? 'Adding product to cart' : isAdded() ? 'Added to cart successfully' : 'Add ' + name + ' to cart'">
+      @if (isAdding()) {
+      <span class="spinner"></span>Adding...
+      } @else if (isAdded()) {
+      <span class="material-icons">check_circle</span>Added!
+      } @else {
+      <span class="material-icons">shopping_cart</span>Add to Cart
+      }
+    </button>
+  </div>
+</div>

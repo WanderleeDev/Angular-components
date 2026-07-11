@@ -19,13 +19,13 @@
   <!-- Main Navigation -->
   <nav class="relative">
     <div class="flex items-center justify-between px-5 py-3">
-      <!-- Brand Logo -->
+
       <div class="flex items-center gap-2 cursor-pointer">
         <span class="material-icons text-blue-500 text-2xl">rocket_launch</span>
         <span class="font-extrabold text-[1.15rem] tracking-[-0.025em] text-app-text">Astra</span>
       </div>
 
-      <!-- Desktop Links -->
+
       <div class="hidden md:flex items-center gap-2">
         @for (link of navLinks; track link) {
         <a href="#" (click)="$event.preventDefault(); activeLink.set(link)"
@@ -36,12 +36,12 @@
         }
       </div>
 
-      <!-- Desktop Actions -->
+
       <div class="hidden md:flex items-center">
         <button type="button" class="bg-blue-600 border-none text-app-text text-[0.8rem] font-bold px-[1.15rem] py-2 rounded-lg cursor-pointer shadow-[0_4px_12px_0_rgba(37,99,235,0.15)] hover:bg-blue-500 hover:-translate-y-px hover:shadow-[0_6px_15px_0_rgba(37,99,235,0.15)] transition-all duration-200">Get Astra</button>
       </div>
 
-      <!-- Mobile Menu Toggle -->
+
       <button
         type="button"
         class="flex md:hidden items-center justify-center bg-transparent border-none text-app-text/80 hover:bg-app-text/5 hover:opacity-100 cursor-pointer p-1 rounded-lg transition-all"
@@ -62,7 +62,7 @@
       </a>
       }
       
-      <!-- Mobile Actions -->
+
       <div class="mt-2 pt-2 border-t border-white/5 flex flex-col gap-2">
         <button type="button" class="w-full bg-blue-600 border-none text-app-text text-[0.8rem] font-bold px-[1.15rem] py-2 rounded-lg cursor-pointer shadow-[0_4px_12px_0_rgba(37,99,235,0.15)] hover:bg-blue-500 hover:-translate-y-px hover:shadow-[0_6px_15px_0_rgba(37,99,235,0.15)] transition-all duration-200">Get Astra</button>
       </div>

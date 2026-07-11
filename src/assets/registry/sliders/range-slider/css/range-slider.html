@@ -1,0 +1,23 @@
+<div class="slider-wrapper">
+  <div class="slider-info">
+    <span class="slider-label">{{ label() }}</span>
+    <span class="slider-value-display">{{ value() }}%</span>
+  </div>
+
+  <div class="slider-control-container">
+    <input
+      type="range"
+      [min]="min()"
+      [max]="max()"
+      [step]="step()"
+      [value]="value()"
+      (input)="onSliderChange($event)"
+      class="slider-input"
+      [style.background]="'linear-gradient(to right, var(--accent, #38bdf8) ' + percentage() + '%, var(--border, rgba(255, 255, 255, 0.08)) ' + percentage() + '%)'" />
+  </div>
+
+  <div class="slider-bounds">
+    <span>{{ min() }}%</span>
+    <span>{{ max() }}%</span>
+  </div>
+</div>

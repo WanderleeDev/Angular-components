@@ -1,0 +1,26 @@
+<div class="category-card-wrapper">
+  <div
+    class="category-card"
+    [style.--accent-color]="accentColor()"
+    [attr.aria-label]="'Explore ' + title() + ' components'">
+    <div class="category-card__glow"></div>
+
+    <div class="category-card__header">
+      <div class="category-card__icon-box">
+        <span class="material-icons">{{ icon() }}</span>
+      </div>
+      <div class="category-card__stats">
+        <span class="category-card__count">{{ count() }}</span>
+        <span class="category-card__count-label">{{ countLabel() }}</span>
+      </div>
+    </div>
+
+    <h2 class="category-card__title">{{ title() }}</h2>
+    <p class="category-card__description">{{ description() }}</p>
+
+    <div class="category-card__footer">
+      <span class="category-card__action-text">{{ actionText() }}</span>
+      <span class="material-icons category-card__arrow-icon">arrow_forward</span>
+    </div>
+  </div>
+</div>

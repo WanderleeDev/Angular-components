@@ -2,13 +2,13 @@
   <!-- Top Utility Bar -->
   <div class="bg-app-text/[0.02] border-b border-white/[0.04] text-[0.725rem] text-app-text/55">
     <div class="flex items-center justify-between px-5 py-[0.45rem]">
-      <!-- Contact Info -->
+
       <div class="flex items-center gap-1.5">
         <span class="material-icons text-sm">phone</span>
         <span class="text-[0.75rem]">+1 (555) 019-2834</span>
       </div>
       
-      <!-- Utility Links -->
+
       <div class="flex items-center gap-5">
         <a href="#" (click)="$event.preventDefault()" class="no-underline text-inherit hover:text-app-text transition-colors duration-200">Support</a>
         <a href="#" (click)="$event.preventDefault()" class="no-underline text-inherit hover:text-app-text transition-colors duration-200">Find a Store</a>
@@ -23,7 +23,7 @@
   <!-- Main Navigation -->
   <nav class="relative">
     <div class="flex items-center justify-between px-5 py-3">
-      <!-- Brand Logo -->
+
       <div class="flex items-center gap-2 cursor-pointer">
         <div class="text-purple-500 flex items-center">
           <span class="material-icons text-2xl">architecture</span>
@@ -31,7 +31,7 @@
         <span class="font-extrabold text-[1.15rem] tracking-[-0.025em] text-app-text">Nexus</span>
       </div>
 
-      <!-- Desktop Links -->
+
       <div class="hidden lg:flex items-center gap-2">
         @for (link of navLinks; track link) {
         <a href="#" (click)="$event.preventDefault(); activeLink.set(link)"
@@ -42,13 +42,13 @@
         }
       </div>
 
-      <!-- Desktop Actions -->
+
       <div class="hidden lg:flex items-center gap-2">
         <button type="button" class="bg-transparent border-none text-app-text/70 text-[0.8rem] font-semibold px-4 py-2 rounded-lg cursor-pointer hover:text-app-text hover:bg-app-text/[0.04] transition-all duration-200">Log In</button>
         <button type="button" class="bg-purple-500 border-none text-app-text text-[0.8rem] font-bold px-[1.15rem] py-2 rounded-lg cursor-pointer shadow-[0_4px_12px_0_rgba(139,92,246,0.15)] hover:bg-[#a78bfa] hover:-translate-y-px hover:shadow-[0_6px_15px_0_rgba(139,92,246,0.15)] transition-all duration-200">Launch App</button>
       </div>
 
-      <!-- Mobile Menu Toggle -->
+
       <button
         type="button"
         class="flex lg:hidden items-center justify-center bg-transparent border-none text-app-text/80 hover:bg-app-text/5 hover:opacity-100 cursor-pointer p-1 rounded-lg transition-all"
@@ -69,7 +69,7 @@
       </a>
       }
       
-      <!-- Mobile Actions -->
+
       <div class="mt-2 pt-2 border-t border-white/5 flex flex-col gap-2">
         <button type="button" class="w-full bg-transparent border-none text-app-text/70 text-[0.8rem] font-semibold px-4 py-2 rounded-lg cursor-pointer hover:text-app-text hover:bg-app-text/[0.04] transition-all duration-200">Log In</button>
         <button type="button" class="w-full bg-purple-500 border-none text-app-text text-[0.8rem] font-bold px-[1.15rem] py-2 rounded-lg cursor-pointer shadow-[0_4px_12px_0_rgba(139,92,246,0.15)] hover:bg-[#a78bfa] hover:-translate-y-px hover:shadow-[0_6px_15px_0_rgba(139,92,246,0.15)] transition-all duration-200">Launch App</button>

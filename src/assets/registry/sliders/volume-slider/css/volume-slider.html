@@ -1,0 +1,31 @@
+<div class="volume-slider">
+  <!-- Icon Button -->
+  <button 
+    type="button" 
+    class="volume-slider__mute-btn"
+    (click)="volume.set(volume() === 0 ? 50 : 0)"
+    aria-label="Toggle mute"
+  >
+    <span class="material-icons volume-icon">{{ volumeIcon() }}</span>
+  </button>
+
+  <!-- Slider Control -->
+  <div class="volume-slider__control">
+    <div class="volume-slider__track">
+      <div class="volume-slider__fill" [style.width.%]="volume()"></div>
+    </div>
+    
+    <input 
+      type="range" 
+      min="0" 
+      max="100" 
+      [value]="volume()"
+      (input)="updateVolume($event)"
+      aria-label="Volume control"
+      class="volume-slider__input"
+    />
+  </div>
+  
+  <!-- Value Display -->
+  <span class="volume-slider__value">{{ volume() }}</span>
+</div>

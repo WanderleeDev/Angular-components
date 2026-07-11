@@ -1,0 +1,28 @@
+<footer class="footer-wrapper">
+  <div class="footer-container">
+    <div class="footer-copyright">
+      <span>&copy; {{ year() }} {{ companyName() }}. All rights reserved.</span>
+    </div>
+
+    <div class="footer-links">
+      @for (link of links(); track link) {
+      <a href="javascript:void(0)" class="footer-link">{{ link }}</a>
+      }
+    </div>
+
+    <div class="footer-socials">
+      <a href="javascript:void(0)" class="social-icon-btn" aria-label="Github">
+        <span class="material-icons">code</span>
+      </a>
+      <a href="javascript:void(0)" class="social-icon-btn" aria-label="Twitter">
+        <span class="material-icons">chat</span>
+      </a>
+      <a
+        href="javascript:void(0)"
+        class="social-icon-btn"
+        aria-label="LinkedIn">
+        <span class="material-icons">business</span>
+      </a>
+    </div>
+  </div>
+</footer>
