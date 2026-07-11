@@ -33,7 +33,7 @@ export const routes: Routes = [
       {
         path: ':category',
         redirectTo: (route: PartialMatchRouteSnapshot) =>
-          `${route.paramMap.get('category')}/page/1`,
+          `/catalog/${route.paramMap.get('category')}/page/1`,
         pathMatch: 'full',
       },
       {

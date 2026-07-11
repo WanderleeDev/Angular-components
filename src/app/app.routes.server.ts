@@ -9,7 +9,10 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path: 'catalog/:category',
-    renderMode: RenderMode.Server,
+    renderMode: RenderMode.Prerender,
+    getPrerenderParams: async () => {
+      return categories.map(category => ({ category }));
+    },
   },
   {
     path: 'catalog/:category/page/:page',
