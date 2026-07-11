@@ -10,7 +10,6 @@ import { Catalog } from 'app/modules/components/loader';
 import { getMetadataSection, pagination } from 'app/modules/shared/utils';
 import { LoadingStateComponent } from 'app/modules/shared/presentation/components/loading-state/loading-state.component';
 import { ErrorStateComponent } from 'app/modules/shared/presentation/components/error-state/error-state.component';
-import { Window } from '../components/window/window';
 import { NgComponentOutlet } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Paths, SectionMetadata } from 'app/modules/components/loader/types';
@@ -19,10 +18,11 @@ import { TailwindIcon } from 'app/modules/shared/presentation/components/icons/t
 import { CssIcon } from 'app/modules/shared/presentation/components/icons/css-icon.component';
 import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { Window } from '../../components/window/window';
 import {
   MODAL_CODE_DATA,
   ModalCodeComponent,
-} from '../components/modal-code/modal-code.component';
+} from '../../components/modal-code/modal-code.component';
 
 @Component({
   imports: [

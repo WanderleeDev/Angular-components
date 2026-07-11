@@ -1,8 +1,4 @@
-import {
-  Routes,
-  ActivatedRouteSnapshot,
-  PartialMatchRouteSnapshot,
-} from '@angular/router';
+import { Routes, ActivatedRouteSnapshot } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -35,14 +31,14 @@ export const routes: Routes = [
         title: (route: ActivatedRouteSnapshot) =>
           `catalog | ${route.paramMap.get('category')}`,
         loadComponent: () =>
-          import('./modules/catalog/presentation/views/category-view'),
+          import('./modules/catalog/presentation/views/category-view/category-view'),
       },
       {
         path: ':category/page/:page',
         title: (route: ActivatedRouteSnapshot) =>
           `catalog | ${route.paramMap.get('category')}`,
         loadComponent: () =>
-          import('./modules/catalog/presentation/views/category-view'),
+          import('./modules/catalog/presentation/views/category-view/category-view'),
       },
     ],
   },

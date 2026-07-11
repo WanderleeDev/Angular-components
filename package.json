@@ -9,6 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "prebuild": "ng generate ngx-theme-stack:sync --project miAngularComponents",
+    "postbuild": "cp dist/mi-angular-components/browser/404/index.html dist/mi-angular-components/browser/404.html",
     "registry:build": "node scripts/build-registry.js"
   },
   "private": true,
