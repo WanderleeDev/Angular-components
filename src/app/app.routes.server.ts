@@ -27,11 +27,6 @@ export const serverRoutes: ServerRoute[] = [
     },
   },
   {
-    path: 'catalog/**',
-    renderMode: RenderMode.Prerender,
-    getPrerenderParams: async () => [],
-  },
-  {
     path: '**',
     renderMode: RenderMode.Prerender,
     getPrerenderParams: async () => [{ '**': '404' }],
