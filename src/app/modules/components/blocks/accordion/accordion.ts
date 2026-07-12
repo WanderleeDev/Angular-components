@@ -21,6 +21,9 @@ const ERROR_IMAGE =
   },
   styles: [
     `
+      :host .accordion-grid {
+        interpolate-size: allow-keywords;
+      }
       :host .accordion-grid:has(details:nth-of-type(1)[open]) .accordion-img-1,
       :host .accordion-grid:has(details:nth-of-type(2)[open]) .accordion-img-2,
       :host .accordion-grid:has(details:nth-of-type(3)[open]) .accordion-img-3,
