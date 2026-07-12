@@ -1,9 +1,4 @@
-import {
-  Component,
-  signal,
-  computed,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 
 interface TabDetail {
   id: string;
@@ -18,10 +13,8 @@ interface TabDetail {
   selector: 'app-tabs-showcase',
   imports: [],
   templateUrl: './tabs-showcase.html',
+  styleUrl: './tabs-showcase.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'block w-full',
-  },
 })
 export class TabsShowcase {
   protected readonly activeTabId = signal<string>('analytics');

@@ -62,9 +62,13 @@ export const BLOCK_METADATA: SectionMetadata = {
     },
     'tabs-showcase': {
       css: {
-        ts: 'assets/registry/blocks/tabs-showcase/tabs-showcase.ts',
-        html: 'assets/registry/blocks/tabs-showcase/tabs-showcase.html',
-        css: 'assets/registry/blocks/tabs-showcase/tabs-showcase.css',
+        ts: 'assets/registry/blocks/tabs-showcase/css/tabs-showcase.ts',
+        html: 'assets/registry/blocks/tabs-showcase/css/tabs-showcase.html',
+        css: 'assets/registry/blocks/tabs-showcase/css/tabs-showcase.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/blocks/tabs-showcase/tailwind/tabs-showcase.ts',
+        html: 'assets/registry/blocks/tabs-showcase/tailwind/tabs-showcase.html',
       },
     },
     'masonry-grid': {
