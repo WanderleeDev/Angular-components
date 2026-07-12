@@ -1,0 +1,99 @@
+<div class="team-container">
+  <div class="team-header">
+    <span class="category-tag">Our Team</span>
+    <h2>Meet the experts</h2>
+    <p>
+      Get to know the world-class staff engineers and architects powering our
+      systems.
+    </p>
+  </div>
+
+  <div class="team-grid">
+    @for (member of members(); track member.name) {
+    <div class="member-card">
+      <div class="avatar-wrapper">
+        <img [src]="member.avatar" [alt]="member.name" class="member-avatar" />
+      </div>
+
+      <h3>{{ member.name }}</h3>
+      <span class="member-role">{{ member.role }}</span>
+
+      <div class="member-actions">
+        <button (click)="openBio(member)" class="bio-btn">Read Bio</button>
+
+        <div class="social-links">
+          <a
+            [href]="member.github"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            aria-label="GitHub">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-5 h-5">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+          <a
+            [href]="member.linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            aria-label="LinkedIn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-5 h-5">
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+
+  @if (selectedMember(); as activeMember) {
+  <div (click)="closeBio()" class="modal-backdrop">
+    <div (click)="$event.stopPropagation()" class="modal-card">
+      <button
+        (click)="closeBio()"
+        class="modal-close-btn"
+        aria-label="Close Modal">
+        <span class="material-icons">close</span>
+      </button>
+
+      <div class="modal-content">
+        <div class="modal-left">
+          <div class="modal-avatar-wrapper">
+            <img
+              [src]="activeMember.avatar"
+              [alt]="activeMember.name"
+              class="modal-avatar" />
+          </div>
+          <h3>{{ activeMember.name }}</h3>
+          <span class="modal-role">{{ activeMember.role }}</span>
+        </div>
+
+        <div class="modal-right">
+          <h4>Biography</h4>
+          <p>{{ activeMember.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

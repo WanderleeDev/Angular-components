@@ -13,10 +13,8 @@ interface TeamMember {
   selector: 'app-team-grid',
   imports: [],
   templateUrl: './team-grid.html',
+  styleUrl: './team-grid.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'block w-full',
-  },
 })
 export class TeamGrid {
   protected readonly members = signal<TeamMember[]>([

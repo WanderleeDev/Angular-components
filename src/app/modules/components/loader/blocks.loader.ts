@@ -41,9 +41,13 @@ export const BLOCK_METADATA: SectionMetadata = {
     },
     accordion: {
       css: {
-        ts: 'assets/registry/blocks/accordion/accordion.ts',
-        html: 'assets/registry/blocks/accordion/accordion.html',
-        css: 'assets/registry/blocks/accordion/accordion.css',
+        ts: 'assets/registry/blocks/accordion/css/accordion.ts',
+        html: 'assets/registry/blocks/accordion/css/accordion.html',
+        css: 'assets/registry/blocks/accordion/css/accordion.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/blocks/accordion/tailwind/accordion.ts',
+        html: 'assets/registry/blocks/accordion/tailwind/accordion.html',
       },
     },
     'timeline-block': {
@@ -55,9 +59,13 @@ export const BLOCK_METADATA: SectionMetadata = {
     },
     'team-grid': {
       css: {
-        ts: 'assets/registry/blocks/team-grid/team-grid.ts',
-        html: 'assets/registry/blocks/team-grid/team-grid.html',
-        css: 'assets/registry/blocks/team-grid/team-grid.css',
+        ts: 'assets/registry/blocks/team-grid/css/team-grid.ts',
+        html: 'assets/registry/blocks/team-grid/css/team-grid.html',
+        css: 'assets/registry/blocks/team-grid/css/team-grid.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/blocks/team-grid/tailwind/team-grid.ts',
+        html: 'assets/registry/blocks/team-grid/tailwind/team-grid.html',
       },
     },
     'tabs-showcase': {
