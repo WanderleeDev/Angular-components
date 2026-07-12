@@ -34,9 +34,13 @@ export const BLOCK_METADATA: SectionMetadata = {
   filePaths: {
     'hero-banner': {
       css: {
-        ts: 'assets/registry/blocks/hero-banner/hero-banner.ts',
-        html: 'assets/registry/blocks/hero-banner/hero-banner.html',
-        css: 'assets/registry/blocks/hero-banner/hero-banner.css',
+        ts: 'assets/registry/blocks/hero-banner/css/hero-banner.ts',
+        html: 'assets/registry/blocks/hero-banner/css/hero-banner.html',
+        css: 'assets/registry/blocks/hero-banner/css/hero-banner.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/blocks/hero-banner/tailwind/hero-banner.ts',
+        html: 'assets/registry/blocks/hero-banner/tailwind/hero-banner.html',
       },
     },
     accordion: {
@@ -52,9 +56,13 @@ export const BLOCK_METADATA: SectionMetadata = {
     },
     'timeline-block': {
       css: {
-        ts: 'assets/registry/blocks/timeline-block/timeline-block.ts',
-        html: 'assets/registry/blocks/timeline-block/timeline-block.html',
-        css: 'assets/registry/blocks/timeline-block/timeline-block.css',
+        ts: 'assets/registry/blocks/timeline-block/css/timeline-block.ts',
+        html: 'assets/registry/blocks/timeline-block/css/timeline-block.html',
+        css: 'assets/registry/blocks/timeline-block/css/timeline-block.css',
+      },
+      tailwind: {
+        ts: 'assets/registry/blocks/timeline-block/tailwind/timeline-block.ts',
+        html: 'assets/registry/blocks/timeline-block/tailwind/timeline-block.html',
       },
     },
     'team-grid': {
